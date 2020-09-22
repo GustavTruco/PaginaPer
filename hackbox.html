@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hackbox</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Hackbox</h1>
+        <h6>by Gustavo Varas</h6>
+        <div>
+            <form action="" method="post" id="Form">
+                <p>Nombre:</p>
+                <input type="text" name="Nombre" id="nombre" class="text-field" size=10 maxlength="100" required> 
+                <br>
+                <p>Archivo:</p>
+                <input type="file" name="Archivo" id="archivo" required>
+                <br>
+                <p>Privacidad:</p>
+                <select name="" id="privacidad" required>
+                    <option value="1"> Publico</option>
+                    <option value="2"> Privado</option>
+                </select>
+                <br>
+
+                <p>Contraseña:</p>
+                <input type="password" name="Password" id="password" size=10 maxlength="10">
+                <br>
+                <p>Autodestruir:</p>
+
+                <br>
+                <p>Comenterio:</p>
+                <br>
+                <textarea form="Form" name="commentario" id="comentario" cols="40" rows="10" placeholder="Ingrese sus comentarios acá.  "></textarea>
+
+                <button type="submit">Upload</button>
+
+            
+            </form>
+        </div>
+    </body>
+</html>
