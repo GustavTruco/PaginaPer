@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f8ff;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Header*/
+
+header {
+    margin: auto;
+    width: 30%;
+    height: 50px;
+}
+
+header ul {
+    justify-content: space-evenly;
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin: 20px;
+    margin-top: 30px;
+}    
+
+header li:hover {
+    border-bottom: 1px dashed #dddddd ;
+}
+
+header a {
+    text-decoration: none;
+    color: #787276;
+    font-size: 18px;
+    text-shadow: 1px 1px #c7c6c1;
+}
+
+header a:hover{
+    color: #dddddd;
+    text-shadow: 1px 1px #48494b;
+}
+
+/*---------------- */
+/*Nombre Portada*/
+
+div.title{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+div.title h2{
+    font-size: 150px;
+    color: #201e1f;
+    text-shadow: 2px 2px #d9dddc;
+}
+/*---------------- */
+
+/* Responsive*/
+
+@media screen and (max-width:1000px){
+    div.title h2 {
+        font-size: 125px;
+    }
+}
+
+@media screen and (max-width:800px){
+    div.title h2 {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width:600px){
+    div.title h2 {
+        font-size: 75px;
+    }
+}
+/*---------------- */
