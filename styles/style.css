@@ -11,14 +11,18 @@ h1,h2,h3,h4,h5,h6 {
 
 body{
     background-color: #f8f8ff;
+    height: 100vh;
+    background-image: url("../img/3254309.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 /* Header*/
 
 header {
     margin: auto;
-    width: 30%;
-    height: 50px;
+    width: 25%;
+    height: 60px;
 }
 
 header ul {
@@ -40,7 +44,7 @@ header li:hover {
 header a {
     text-decoration: none;
     color: #787276;
-    font-size: 18px;
+    font-size: 20px;
     text-shadow: 1px 1px #c7c6c1;
 }
 
@@ -59,7 +63,7 @@ div.title{
     text-align: center;
 }
 div.title h2{
-    font-size: 150px;
+    font-size: 175px;
     color: #201e1f;
     text-shadow: 2px 2px #d9dddc;
 }
@@ -68,14 +72,13 @@ div.title h2{
 /* Proyectos*/
 
 div.proyecto {
-    width: 80%;
+    width: 40%;
     margin:auto;
     margin-top: 50px;
-    background-color: #a5a4a15b;
-    background-o
+    background-color: #a5a4a162;
     padding: 15px;
     border-radius: 0 30% 0 30%;
-    height:65vh;
+    padding-bottom: 75px;
 }
 
 .proyecto h3 {
@@ -84,27 +87,107 @@ div.proyecto {
 }
 
 div.ramo {
-    width: 85%;
+    width: 95%;
     margin: auto;
     margin-top: 25px;
 }
 
 .ramo h4 {
-    font-size: 30px;
+    font-size: 33px;
 }
 
+.ramo h5 {
+    font-size: 28px;
+    margin: 15px 0px 0px 15px;
+}
+
+.ramo ul{
+    margin-top: 15px;
+    margin-left: 15%;    
+}
+.ramo ul li{
+    margin-top: 10px;
+}
+.ramo ul a {
+    font-size: 20px;
+    text-decoration: none;
+    color:#72524d;
+    text-shadow: 2px 2px #bda29d;
+}
+.ramo p {
+    font-size: 20px;
+    text-shadow: 2px 2px #d9dddc;
+    margin-left: 10%;
+    margin-top: 15px;
+}
+.ramo ul a:hover {
+    color:#e4a79e;
+    text-shadow: 1px 1px #72524d;
+}
 
 /*---------------- */
 /* Responsive*/
+@media screen and (max-width:1300px){
+    div.title h2 {
+        font-size: 150px;
+    }
+
+    div.proyecto {
+        width: 50%;
+    }
+
+    .proyecto h3 {
+        font-size: 45px;
+    }
+
+    .ramo h4 {
+        font-size: 30px;
+    }
+
+    .ramo h5 {
+        font-size: 25px;
+    }
+}
 
 @media screen and (max-width:1000px){
     div.title h2 {
         font-size: 125px;
     }
+    div.proyecto {
+        width: 60%;
+    }
+    
+    .proyecto h3 {
+        font-size: 40px;
+    }
+
+    .ramo h4 {
+        font-size: 28px;
+    }
+
+    .ramo h5 {
+        font-size: 23px;
+    }
+}
 
 @media screen and (max-width:800px){
     div.title h2 {
         font-size: 100px;
+    }
+    div.proyecto {
+        width: 70%;
+    }
+
+    .proyecto h3 {
+        font-size: 37px;
+    }
+
+    .ramo h4 {
+        font-size: 26px;
+    }
+
+    .ramo h5 {
+        font-size: 21px;
     }
 }
 
@@ -112,6 +195,18 @@ div.ramo {
     div.title h2 {
         font-size: 75px;
     }
-}
+    div.proyecto {
+        width: 80%;
+    }
+    .proyecto h3 {
+        font-size: 35px;
+    }
 
-/*---------------- */
+    .ramo h4 {
+        font-size: 25px;
+    }
+
+    .ramo h5 {
+        font-size: 20px;
+    }
+}
