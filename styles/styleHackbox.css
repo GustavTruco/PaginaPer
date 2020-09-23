@@ -1,7 +1,79 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
-p{
+
+.banner {
+    width: 80%;
+    margin: auto;
+}
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #201e1f;
+    text-shadow:2px 2px lightcyan;
+    text-align: center;
+    font-size: 175px;
+}
+h6 {
+    text-align: end;
+    text-shadow: 1px 1px lightcyan;
+    font-size: 15px;
+    margin-right: 5%;
+}
+
+.formulario{
+    width: 800px;
+    margin: auto;
+}
+.formulario div{
+    padding: 10px 0;
+    align-items: center;
+}
+p{  
     display: inline;
+    padding:0 20px 0 30%;
+    font-size: 20px;
+}
+textarea {
+    margin-left: 30%;
+    margin-top: 20px;
+}
+
+button{
+    width: 10%;
+    height: 25px;
+    font-size: 13px;
+    border-radius: 10px;
+    margin-left:45%;
+    background-color: gainsboro;
+}
+
+/* Responsive*/
+@media screen and (max-width:1200px){
+    .banner {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    h1 {
+        font-size: 150px;
+    }
+}
+
+@media screen and (max-width:800px){
+    h1 {
+        font-size: 125px;
+    }
+
+    .formulario{
+        width: 550px;
+    }
+}
+
+@media screen and (max-width:600px){
+    h1 {
+        font-size: 100px;
+    }
 }
