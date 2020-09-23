@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f8ff;
 }
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Orbitron', sans-serif;
+    color: #201e1f;
+}
+
+body{
+    background-color: #f8f8ff;
 }
 
 /* Header*/
@@ -30,7 +34,7 @@ header li {
 }    
 
 header li:hover {
-    border-bottom: 1px dashed #dddddd ;
+    border-bottom: 2px dashed #dddddd ;
 }
 
 header a {
@@ -61,13 +65,42 @@ div.title h2{
 }
 /*---------------- */
 
+/* Proyectos*/
+
+div.proyecto {
+    width: 80%;
+    margin:auto;
+    margin-top: 50px;
+    background-color: #a5a4a15b;
+    background-o
+    padding: 15px;
+    border-radius: 0 30% 0 30%;
+    height:65vh;
+}
+
+.proyecto h3 {
+    font-size: 50px;
+    padding-left: 15px;
+}
+
+div.ramo {
+    width: 85%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.ramo h4 {
+    font-size: 30px;
+}
+
+
+/*---------------- */
 /* Responsive*/
 
 @media screen and (max-width:1000px){
     div.title h2 {
         font-size: 125px;
     }
-}
 
 @media screen and (max-width:800px){
     div.title h2 {
@@ -80,4 +113,5 @@ div.title h2{
         font-size: 75px;
     }
 }
+
 /*---------------- */
