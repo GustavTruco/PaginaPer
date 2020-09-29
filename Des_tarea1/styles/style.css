@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #5a4c49;
+}
+
+body{
+    background-color: #5a4c49;;
+    height: 100vh;
+}
+
+.content{
+    background-color: #ebdfcf;
+    width: 93%;
+    margin: auto;
+    padding-bottom: 150px;
+    border-left: 3px solid #c7c6c1;
+    border-right: 3px solid #c7c6c1;
+    height: fit-content;
+}
+
+/* Header*/
+
+header {
+    margin: auto;
+    width: fit-content;
+    height: 60px;
+}
+
+header ul {
+    justify-content: space-evenly;
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+}
+
+header li {
+    margin: 20px;
+    margin-top: 30px;
+}    
+
+header li:hover {
+    border-bottom: 2px dashed whitesmoke ;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 23px;
+    color: #5a4c49;
+    text-shadow: 1px 1px #c7c6c1;
+}
+
+header a:hover{
+    color: whitesmoke;
+    text-shadow: 1px 1px #5a4c49;
+}
+
+.listado{
+    width: 100%;
+}
+.listado h2{
+    font-size:75px;
+    text-shadow: 2px 2px #c7c6c1;
+    text-align: center;
+    margin: 100px 0 75px 0px;
+}
+.listado h3{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 75px;
+    text-shadow: 2px 2px #c7c6c1;
+}
+div.titulos, div.elemento {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.titulos h4{
+    width: 200px;
+    margin: 5px;
+    text-align: center;
+    border-bottom:2px solid #5a4c49;
+    font-size: 25px;
+    text-shadow: 2px 2px #c7c6c1;
+}
+.elemento{
+    align-items: center;
+    border-radius: 8px;
+}
+
+.elemento p{
+    width: 200px;
+    text-align: center;
+    margin: 10px 5px;
+    font-size: 25px;
+    text-shadow: 2px 2px #c7c6c1;
+}
+
+.elemento img{
+    width: 150px;
+    height: auto;
+    margin: 9px 24px;
+    border-radius: 5px;
+    box-shadow: 5px 5px gray;
+}
+
+.listado a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    text-shadow: 1px 1px #c7c6c1;
+}
+.listado a:hover{
+    color:#8c5c6c;
+    text-shadow: 1px 1px #5a4c49;
+}
+
+.banner {
+    width: 85%;
+    margin: auto;
+}
+
+div.palido {
+    background-color: #f1eae0b2;
+}
+
+.banner h1 {
+    margin: 75px 0;
+    text-align: center;
+    font-size: 110px;
+    text-shadow: 2px 2px #c7c6c1;
+}
+.banner p{
+    width: 70%;
+    margin: auto;
+    font-size: 30px;
+    margin-bottom: 125px;
+    text-shadow: 2px 2px #c7c6c1;
+}
