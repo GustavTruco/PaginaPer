@@ -23,11 +23,11 @@ function validacionFormulario() {
 
     let regex = /^[a-zA-Z ]*$/;
     if (nombre.length < 10 || nombre.length > 100 || !regex.test(nombre)) {
-        mensaje += "Error en el nombre del archivo\n";
+        mensaje += "Error en el nombre del archivo";
         
     }
     if (document.getElementById('archivo').files.length==0){
-        mensaje += "No has seleccionado un Archivo \n";
+        mensaje += "No has seleccionado un Archivo";
     }
     /*
     La idea sería ir añadiendo más validaciones aquí, e ir concatenando el mensaje
@@ -37,9 +37,8 @@ function validacionFormulario() {
         return true;
     }
 
-    mensaje=+ "Se han encontrado los siguientes errores:\n";
-    mostrarError(mensaje)
-    return False;
+    mostrarError("Se han encontrado los siguientes errores:"+ mensaje)
+    return false;
 
 }
 
