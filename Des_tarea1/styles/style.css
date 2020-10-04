@@ -1,4 +1,5 @@
 * {
+    z-index: 0;
     margin: 0;
     padding: 0;
 }
@@ -58,6 +59,7 @@ header a:hover{
     text-shadow: 1px 1px #5a4c49;
 }
 
+
 .listado{
     width: 100%;
 }
@@ -86,6 +88,7 @@ div.titulos, div.elemento {
     border-bottom:2px solid #5a4c49;
     font-size: 25px;
     text-shadow: 2px 2px #c7c6c1;
+    align-items: center;
 }
 .elemento{
     align-items: center;
@@ -114,6 +117,7 @@ div.titulos, div.elemento {
     color: black;
     text-shadow: 1px 1px #c7c6c1;
 }
+
 .listado a:hover{
     color:#8c5c6c;
     text-shadow: 1px 1px #5a4c49;
@@ -126,6 +130,7 @@ div.titulos, div.elemento {
 
 div.palido {
     background-color: #f1eae0b2;
+    border-radius: 4px;
 }
 
 .banner h1 {
@@ -141,3 +146,191 @@ div.palido {
     margin-bottom: 125px;
     text-shadow: 2px 2px #c7c6c1;
 }
+
+
+.censo{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    text-shadow: 2px 2px #c7c6c1;
+}
+
+.censo .seccion, .censo .fotos{
+    width: 90%;
+    margin: auto;
+    padding: 0px 10px;
+}
+
+.censo h3{
+    font-size: 40px;    
+    margin: 25px 0px;
+}
+
+.censo h4{
+    font-size: 25px;    
+    display: inline;
+    margin-left: 10%;
+}
+
+
+.censo img{
+    width: 320px;
+    height: 240px;
+    margin: auto;
+    margin-left: 10%;
+    border-radius: 5px;
+    box-shadow: 5px 5px gray;
+}
+
+.enlaces{
+    width: 50%;
+    margin: auto;
+    margin-top:25px;
+    justify-content: space-between;
+    padding: 10px;
+    display: flex;
+}
+
+.enlaces a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #5a4c49;
+    margin: 0 50px;
+}
+.enlaces a:hover{
+    color: whitesmoke;
+    text-shadow: 1px 1px #5a4c49;
+    border-bottom: 2px dashed whitesmoke ;
+    text-decoration: none;
+}
+
+.censo p{
+    display: inline;
+    font-size: 25px;
+    margin-left: 5px;
+    color:#5a4c49;
+    text-shadow: 1px 1px #c7c6c1;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding: 100px 0px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 800px;
+    height:600px;
+    margin-bottom:50px;
+  }
+
+  .close {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+    z-index: 500;
+    width: 20px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    opacity: 0.5;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.estatistics{
+    width: 80%;
+    margin: auto;
+}
+
+.estatistics h3{
+    color:#5a4c49;
+    text-shadow: 1px 1px #c7c6c1;
+    font-size: 40px;
+    margin: 75px 0 25px 0;
+    text-align: center;
+}
+
+.estatistics p {
+    color:#5a4c49;
+    text-shadow: 1px 1px #c7c6c1;
+    font-size: 30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.estatistics img{
+    width: 400px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px gray;
+}
+
+.foto{
+    width: fit-content;
+    margin: auto;
+}
+
+/* Responsive*/
+
+@media screen and (max-width:1400px){
+    .titulos h4, .elemento p{
+        width: 150px;
+        font-size: 23px;
+    }
+   }
+   @media screen and (max-width:1050px){
+       .titulos h4, .elemento p{
+           width: 100px;
+           font-size: 20px;
+       }
+
+       .enlaces{
+           width: 80%;
+       }
+   }
+   
+   @media screen and (max-width:725px){
+       .titulos h4, .elemento p{
+           width: 75px;
+           font-size: 18px;
+       }
+
+       .elemento img{
+           width: 100px;
+       }
+
+       .censo h4 {
+           display: inline-block;
+       }
+       .enlaces{
+        width: 90%;
+    }
+   }
+   
+   @media screen and (max-width:580px){
+       .titulos h4, .elemento p{
+           width: 60px;
+           font-size: 15px;
+       }
+       .enlaces{
+        width: 90%;
+    }
+        .enlaces a{
+            margin: 0 25px;
+        }
+   }
