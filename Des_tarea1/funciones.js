@@ -9,3 +9,10 @@ function achicar(){
     var modal= document.getElementById("myModal");
     modal.style.display = "none";
 }
+
+function masMascota(){
+    var original= document.getElementById("infomascota");
+    var duplicado= original.cloneNode(true);
+    duplicado.id="";
+    original.parentNode.appendChild(duplicado);
+}
