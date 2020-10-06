@@ -155,7 +155,7 @@ function validar() {
 
 
     document.getElementsByName("tipo-mascota").forEach(function(element){
-        if (element.parentElement.id!="infomascota"){
+        if (element.parentElement.parentElement.id!="infomascota"){
         
         if (element.value==""){
             mensaje +="<br>";
@@ -174,7 +174,7 @@ function validar() {
 
     document.getElementsByName("edad-mascota").forEach(function(element){
         if (element.parentElement.parentElementid!="infomascota"){    
-            if(element.value==""||!Number.isInteger(element.value)||element.value<0){
+            if(element.value==""||!(/^\d+$/).test(element.value)||element.value<0){
                 mensaje +="<br>";
                 mensaje += "- Ingrese una edad válida para su mascota";
             }
