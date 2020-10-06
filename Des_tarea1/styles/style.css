@@ -408,6 +408,9 @@ button:hover{
     background-color: #8c5c6c;
     color: #c7c6c1;
     font-size: 25px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* Responsive*/
