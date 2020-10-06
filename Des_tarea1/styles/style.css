@@ -262,7 +262,7 @@ div.palido {
 
   .modal-content2 button{
     width: fit-content;
-    height: 30px;
+    height: fit-content;
     font-size: 13px;
     border-radius: 10px;
     margin: 10px 10px;
