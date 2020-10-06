@@ -157,23 +157,23 @@ function validar() {
     document.getElementsByName("tipo-mascota").forEach(function(element){
         if (element.parentElement.parentElement.id!="infomascota"){
         
-        if (element.value==""){
-            mensaje +="<br>";
-            mensaje += "- Seleccione el tipo de su mascota";
-        }
-        if (element.value=="otro"){
-            document.getElementsByName("tipo-mascota-otro").forEach(function(el){
-                if (el.parentNode==element.parentNode && (el.value==""||el.length>40)){
-                    mensaje +="<br>";
-                    mensaje += "- Ingrese un tipo válido para su mascota";  
-                } 
-            });
+            if (element.value==""){
+                mensaje +="<br>";
+                mensaje += "- Seleccione el tipo de su mascota";
+            }
+            if (element.value=="otro"){
+                document.getElementsByName("tipo-mascota-otro").forEach(function(el){
+                    if (el.parentNode==element.parentNode && (el.value==""||el.length>40)){
+                        mensaje +="<br>";
+                        mensaje += "- Ingrese un tipo válido para su mascota";  
+                    } 
+                });
         }
     }
     });
 
     document.getElementsByName("edad-mascota").forEach(function(element){
-        if (element.parentElement.parentElementid!="infomascota"){    
+        if (element.parentElement.parentElement.id!="infomascota"){    
             if(element.value==""||!(/^\d+$/).test(element.value)||element.value<0){
                 mensaje +="<br>";
                 mensaje += "- Ingrese una edad válida para su mascota";
@@ -182,7 +182,7 @@ function validar() {
     });
 
     document.getElementsByName("color-mascota").forEach(function(element){
-        if (element.parentElement.parentElementid!="infomascota"){
+        if (element.parentElement.parentElement.id!="infomascota"){
         if(element.value==""||element.length>30){
             mensaje +="<br>";
             mensaje += "- Ingrese un color válido para su mascota";
@@ -191,7 +191,7 @@ function validar() {
     });
    
     document.getElementsByName("raza-mascota").forEach(function(element){
-        if (element.parentElement.parentElementid!="infomascota"){
+        if (element.parentElement.parentElement.id!="infomascota"){
         if(element.value==""||element.length>30){
             mensaje +="<br>";
             mensaje += "- Ingrese una raza válido para su mascota";
@@ -200,7 +200,7 @@ function validar() {
     });
 
     document.getElementsByName("esterilizado-mascota").forEach(function(element){
-        if (element.parentElement.parentElementid!="infomascota"){
+        if (element.parentElement.parentElement.id!="infomascota"){
         if(element.value==""){
             mensaje +="<br>";
             mensaje += "- Seleccione el estado de esterilizacion de su mascota";
@@ -209,7 +209,7 @@ function validar() {
     });
 
     document.getElementsByName("vacunas-mascota").forEach(function(element){
-        if (element.parentElement.parentElementid!="infomascota"){
+        if (element.parentElement.parentElement.id!="infomascota"){
         if(element.value==""){
             mensaje +="<br>";
             mensaje += "- Seleccione el estado de vacunas de su mascota";
@@ -218,7 +218,7 @@ function validar() {
     });
 
     document.getElementsByName("foto-mascota").forEach(function(element){
-        if (element.parentElement.parentElementid!="infomascota"){
+        if (element.parentElement.parentElement.id!="infomascota"){
         if(element.value==""){
             mensaje +="<br>";
             mensaje += "- Suba una foto de su mascota";
