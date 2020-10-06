@@ -153,7 +153,10 @@ function validar() {
         mensaje += "- Ingrese un celular de contacto válido";
     }
 
+
     document.getElementsByName("tipo-mascota").forEach(function(element){
+        if (element.parentElement.id!="infomascota"){
+        
         if (element.value==""){
             mensaje +="<br>";
             mensaje += "- Seleccione el tipo de su mascota";
@@ -166,48 +169,61 @@ function validar() {
                 } 
             });
         }
+    }
     });
 
     document.getElementsByName("edad-mascota").forEach(function(element){
+        if (element.parentElement.parentElementid!="infomascota"){    
             if(element.value==""||!Number.isInteger(element.value)||element.value<0){
                 mensaje +="<br>";
                 mensaje += "- Ingrese una edad válida para su mascota";
             }
+        }
     });
 
     document.getElementsByName("color-mascota").forEach(function(element){
+        if (element.parentElement.parentElementid!="infomascota"){
         if(element.value==""||element.length>30){
             mensaje +="<br>";
             mensaje += "- Ingrese un color válido para su mascota";
         }
+    }
     });
    
     document.getElementsByName("raza-mascota").forEach(function(element){
+        if (element.parentElement.parentElementid!="infomascota"){
         if(element.value==""||element.length>30){
             mensaje +="<br>";
             mensaje += "- Ingrese una raza válido para su mascota";
         }
+    }
     });
 
     document.getElementsByName("esterilizado-mascota").forEach(function(element){
+        if (element.parentElement.parentElementid!="infomascota"){
         if(element.value==""){
             mensaje +="<br>";
             mensaje += "- Seleccione el estado de esterilizacion de su mascota";
         }
+    }
     });
 
     document.getElementsByName("vacunas-mascota").forEach(function(element){
+        if (element.parentElement.parentElementid!="infomascota"){
         if(element.value==""){
             mensaje +="<br>";
             mensaje += "- Seleccione el estado de vacunas de su mascota";
         }
+    }
     });
 
     document.getElementsByName("foto-mascota").forEach(function(element){
+        if (element.parentElement.parentElementid!="infomascota"){
         if(element.value==""){
             mensaje +="<br>";
             mensaje += "- Suba una foto de su mascota";
         }
+    }
     });
     if (mensaje.length < 1){
         return true;
