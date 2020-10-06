@@ -139,14 +139,14 @@ function validar() {
         mensaje += "- Ingrese un nombre de contacto válido";
     }
 
-    let regex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var regex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (document.getElementById("email").value==""||document.getElementById("email").length>20 || !regex.test(document.getElementById("email").value)){
         mensaje +="<br>";
         mensaje += "- Ingrese un correo de contacto válido";
     }
 
-    let regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+    regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 
     if (document.getElementById("celular").value!=""&&(document.getElementById("celular").length>12 || !regex.test(document.getElementById("celular").value))){
         mensaje +="<br>";
