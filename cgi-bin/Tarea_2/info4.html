@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang=es>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="funciones.js"></script>
+        <title>Información Censo</title>
+    </head>
+    <body>
+        <div class="content">
+            <header>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="informe.html">Informar Mascotas</a></li>
+                    <li><a href="listado.html">Ver Listado de Mascotas</a></li>
+                    <li><a href="estadisticas.html">Estadísticas</a></li>
+                </ul>
+            </header>
+            <div class="censo">
+                <div class="seccion palido">
+                        <h3>Domicilio:</h3> 
+                        <h4>Región: </h4> <p>Metropolitana</p>
+                        <h4>Comuna: </h4> <p>Peñalolen</p>
+                        <h4>Nombre Calle: </h4> <p>Nueva Dos</p>
+                        <h4>Número: </h4> <p>1364</p>
+                        <h4>Sector: </h4> <p>Rotonda Grecia</p>
+                </div>
+                <div class="seccion">
+                        <h3>Datos de Contacto:</h3>
+                        <h4>Nombre: </h4> <p>Josefa Perez</p>
+                        <h4>Email: </h4> <p>jose30@gmail.com</p>
+                        <br>
+                        <h4>Número de Celular: </h4> <p>+56 9 5673 4563</p>
+                </div>
+                <div class="seccion palido">
+                        <h3>Información de Mascota:</h3>
+                        <h4>Tipo:</h4> <p>Perro</p>
+                        <h4>Edad en Años:</h4> <p>2 y 7</p>
+                        <br>
+                        <h4>Color: </h4> <p>Pardo Claro y Pardo oscuro con blanco</p>
+                        <h4>Raza: </h4> <p>Mezcla Pitbull</p>
+                        <h4>Esterilizado: </h4> <p>Si</p>
+                        <h4>Vacunas al Día: </h4> <p>Si</p>
+                </div>
+                <div class="fotos">
+                    <h3>Fotos</h3>
+                    <img src="img/perros2.jpeg" alt="" id="foto" onclick="agrandar(this)">
+                </div>
+
+                <div class="enlaces palido">
+                    <div><a href="listado.html">Volver al listado</a></div>
+                    <div><a href="index.html">Ir a Portada</a></div>
+                </div>
+            </div>
+
+            <div id="myModal" class="modal">
+                <img  class="close" src="img/close.svg" alt="" onclick="achicar()">
+                <img class="modal-content" id="img01" src="img/close.svg" alt="Imagen agrandada">
+            </div>
+
+        </div>
+
+    </body>
+</html>
