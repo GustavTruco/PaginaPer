@@ -1,3 +1,12 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import cgi
+import cgitb; cgitb.enable()
+import html
+
+print("Content-type: text/html; charset=UTF-8\r\n\r\n")
+print("""
 <!DOCTYPE html>
 <html lang=es>
     <head>
@@ -11,9 +20,9 @@
         <div class="content">
             <header>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.py">Inicio</a></li>
                     <li><a href="informe.html">Informar Mascotas</a></li>
-                    <li><a href="listado.html">Ver Listado de Mascotas</a></li>
+                    <li><a href="listado.py">Ver Listado de Mascotas</a></li>
                     <li><a href="estadisticas.html">Estadísticas</a></li>
                 </ul>
             </header>
@@ -21,31 +30,30 @@
                 <div class="seccion palido">
                         <h3>Domicilio:</h3> 
                         <h4>Región: </h4> <p>Metropolitana</p>
-                        <h4>Comuna: </h4> <p>Las Condes</p>
-                        <h4>Nombre Calle: </h4> <p>Las Lomas</p>
-                        <h4>Número: </h4> <p>410</p>
-                        <h4>Sector: </h4> <p>General Blanche</p>
+                        <h4>Comuna: </h4> <p>Ñuñoa</p>
+                        <h4>Nombre Calle: </h4> <p>Irarrazabal</p>
+                        <h4>Número: </h4> <p>2000</p>
+                        <h4>Sector: </h4> <p>Villa Seca</p>
                 </div>
-                <div class="seccion ">
+                <div class="seccion">
                         <h3>Datos de Contacto:</h3>
-                        <h4>Nombre: </h4> <p>Julian Donoso</p>
-                        <h4>Email: </h4> <p>julidonoso@gmail.com</p>
+                        <h4>Nombre: </h4> <p>Gustavo Varas</p>
+                        <h4>Email: </h4> <p>g.varas@gmail.com</p>
                         <br>
-                        <h4>Número de Celular: </h4> <p>+56 9 9723 4567</p>
+                        <h4>Número de Celular: </h4> <p>+56 9 4444 0440</p>
                 </div>
                 <div class="seccion palido">
                         <h3>Información de Mascota:</h3>
-                        <h4>Tipo:</h4> <p>Perro</p>
-                        <h4>Edad en Años:</h4> <p>10</p>
-                        <h4>Color: </h4> <p>Gris</p>
-                        <h4>Raza: </h4> <p>Pug</p>
-                        <h4>Esterilizado: </h4> <p>No</p>
-                        <h4>Vacunas al Día: </h4> <p>No</p>
+                        <h4>Tipo:</h4> <p>Hamster</p>
+                        <h4>Edad en Años:</h4> <p>2</p>
+                        <h4>Color: </h4> <p>Blanco, negro y cafe</p>
+                        <h4>Raza: </h4> <p>Roborowski</p>
+                        <h4>Esterilizado: </h4> <p>N/A</p>
+                        <h4>Vacunas al Día: </h4> <p>N/A</p>
                 </div>
                 <div class="fotos">
                     <h3>Fotos</h3>
-                    <img src="img/perro1.jpeg" alt="" onclick="agrandar(this)">
-                    <img src="img/pug1.png" alt="" onclick="agrandar(this)">
+                    <img src="img/hamster3.png" alt="Hmasters" id="foto" onclick="agrandar(this)">
                 </div>
 
                 <div class="enlaces palido">
@@ -53,10 +61,13 @@
                     <div><a href="index.html">Ir a Portada</a></div>
                 </div>
             </div>
+            
         </div>
-        <div id="myModal" class="modal">
+
+        <div id="myModal" class="modal" >
             <img  class="close" src="img/close.svg" alt="" onclick="achicar()">
             <img class="modal-content" id="img01" src="img/close.svg" alt="Imagen agrandada">
         </div>
     </body>
 </html>
+""")

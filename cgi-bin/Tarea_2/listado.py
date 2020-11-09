@@ -1,3 +1,12 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import cgi
+import cgitb; cgitb.enable()
+import html
+
+print("Content-type: text/html; charset=UTF-8\r\n\r\n")
+print("""
 <!DOCTYPE html>
 <html lang=es>
     <head>
@@ -10,9 +19,9 @@
         <div class="content">
             <header>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.py">Inicio</a></li>
                     <li><a href="informe.html">Informar Mascotas</a></li>
-                    <li><a href="listado.html">Ver Listado de Mascotas</a></li>
+                    <li><a href="listado.py">Ver Listado de Mascotas</a></li>
                     <li><a href="estadisticas.html">Estadísticas</a></li>
                 </ul>
             </header>
@@ -27,7 +36,7 @@
                     <h4>Total Fotos</h4>
                 </div>
                 <div class="elemento palido">
-                    <a href="info.html">
+                    <a href="info.py">
                         <p>23/01/2020</p>
                         <p>Ñuñoa</p>
                         <p>Irarrázabal</p>
@@ -37,7 +46,7 @@
                     </a>
                 </div>
                 <div class="elemento">
-                    <a href="info2.html">
+                    <a href="info.py">
                         <p>04/03/2020</p>
                         <p>Macul</p>
                         <p>Macul</p>
@@ -47,7 +56,7 @@
                     </a>
                 </div>
                 <div class="elemento palido">
-                    <a href="info3.html">
+                    <a href="info.py">
                         <p>28/04/2020</p>
                         <p>Ñuñoa</p>
                         <p>Duble Almeyda</p>
@@ -57,7 +66,7 @@
                     </a>
                 </div>
                 <div class="elemento">
-                    <a href="info4.html">
+                    <a href="info.py">
                         <p>12/09/2020</p>
                         <p>Peñañolen</p>
                         <p>Nueva Dos</p>
@@ -67,7 +76,7 @@
                     </a>
                 </div>
                 <div class="elemento palido">
-                    <a href="info5.html">
+                    <a href="info.py">
                         <p>26/09/2020</p>
                         <p>Las Condes</p>
                         <p>Las Lomas</p>
@@ -80,5 +89,4 @@
         </div>
     </body>
 </html>
-
-
+""")

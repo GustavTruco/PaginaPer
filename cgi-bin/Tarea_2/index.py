@@ -18,7 +18,7 @@ print("""<!DOCTYPE html>
         <div class="content">
             <header>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.py">Inicio</a></li>
                     <li><a href="informe.html">Informar Mascotas</a></li>
                     <li><a href="listado.html">Ver Listado de Mascotas</a></li>
                     <li><a href="estadisticas.html">Estadísticas</a></li>
