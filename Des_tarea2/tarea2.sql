@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema tarea2
+-- Schema cc500270_db
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema tarea2
+-- Schema cc500270_db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `tarea2` DEFAULT CHARACTER SET utf8 ;
-USE `tarea2` ;
+CREATE SCHEMA IF NOT EXISTS `cc500270_db` DEFAULT CHARACTER SET utf8 ;
+USE `cc500270_db` ;
 
 -- -----------------------------------------------------
--- Table `tarea2`.`region`
+-- Table `cc500270_db`.`region`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tarea2`.`region` (
+CREATE TABLE IF NOT EXISTS `cc500270_db`.`region` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`))
@@ -28,9 +28,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tarea2`.`comuna`
+-- Table `cc500270_db`.`comuna`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tarea2`.`comuna` (
+CREATE TABLE IF NOT EXISTS `cc500270_db`.`comuna` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(200) NOT NULL,
   `region_id` INT NOT NULL,
@@ -38,16 +38,16 @@ CREATE TABLE IF NOT EXISTS `tarea2`.`comuna` (
   INDEX `fk_comuna_region1_idx` (`region_id` ASC),
   CONSTRAINT `fk_comuna_region1`
     FOREIGN KEY (`region_id`)
-    REFERENCES `tarea2`.`region` (`id`)
+    REFERENCES `cc500270_db`.`region` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tarea2`.`domicilio`
+-- Table `cc500270_db`.`domicilio`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tarea2`.`domicilio` (
+CREATE TABLE IF NOT EXISTS `cc500270_db`.`domicilio` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `fecha_ingreso` DATETIME NOT NULL,
   `comuna_id` INT NOT NULL,
@@ -61,16 +61,16 @@ CREATE TABLE IF NOT EXISTS `tarea2`.`domicilio` (
   INDEX `fk_domicilio_comuna1_idx` (`comuna_id` ASC),
   CONSTRAINT `fk_domicilio_comuna1`
     FOREIGN KEY (`comuna_id`)
-    REFERENCES `tarea2`.`comuna` (`id`)
+    REFERENCES `cc500270_db`.`comuna` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tarea2`.`tipo_mascota`
+-- Table `cc500270_db`.`tipo_mascota`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tarea2`.`tipo_mascota` (
+CREATE TABLE IF NOT EXISTS `cc500270_db`.`tipo_mascota` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(40) NOT NULL,
   PRIMARY KEY (`id`))
@@ -78,9 +78,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tarea2`.`mascota_domicilio`
+-- Table `cc500270_db`.`mascota_domicilio`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tarea2`.`mascota_domicilio` (
+CREATE TABLE IF NOT EXISTS `cc500270_db`.`mascota_domicilio` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `tipo_mascota_id` INT NOT NULL,
   `edad` INT NOT NULL,
@@ -94,21 +94,21 @@ CREATE TABLE IF NOT EXISTS `tarea2`.`mascota_domicilio` (
   INDEX `fk_mascota_domicilio_domicilio1_idx` (`domicilio_id` ASC),
   CONSTRAINT `fk_mascota_domicilio_tipo_mascota1`
     FOREIGN KEY (`tipo_mascota_id`)
-    REFERENCES `tarea2`.`tipo_mascota` (`id`)
+    REFERENCES `cc500270_db`.`tipo_mascota` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_mascota_domicilio_domicilio1`
     FOREIGN KEY (`domicilio_id`)
-    REFERENCES `tarea2`.`domicilio` (`id`)
+    REFERENCES `cc500270_db`.`domicilio` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tarea2`.`foto_mascota`
+-- Table `cc500270_db`.`foto_mascota`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tarea2`.`foto_mascota` (
+CREATE TABLE IF NOT EXISTS `cc500270_db`.`foto_mascota` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `ruta_archivo` VARCHAR(300) NOT NULL,
   `nombre_archivo` VARCHAR(300) NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `tarea2`.`foto_mascota` (
   INDEX `fk_foto_mascota_domicilio1_idx` (`mascota_domicilio_id` ASC),
   CONSTRAINT `fk_foto_mascota_domicilio1`
     FOREIGN KEY (`mascota_domicilio_id`)
-    REFERENCES `tarea2`.`mascota_domicilio` (`id`)
+    REFERENCES `cc500270_db`.`mascota_domicilio` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
