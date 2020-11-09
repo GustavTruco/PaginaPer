@@ -22,7 +22,7 @@ print("""
                 <a href="https://anakena.dcc.uchile.cl/~gvaras/">Inicio</a>
             </li>
             <li>
-                <a href="proyectos.html">Proyectos</a>
+                <a href="https://anakena.dcc.uchile.cl/~gvaras/proyectos">Proyectos</a>
             </li>
         </ul>
     </header>
