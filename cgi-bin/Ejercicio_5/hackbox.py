@@ -1,4 +1,4 @@
-#!/usr/bin/python/python.exe
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 import cgi
