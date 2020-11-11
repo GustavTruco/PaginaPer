@@ -9,6 +9,7 @@ import sys
 import codecs
 import string
 import html
+import random
 from typing import Tuple, Union
 
 cgitb.enable()
@@ -23,7 +24,7 @@ if 'HTTP_COOKIE' in os.environ:
 
 
 def SSID_generator(size=10, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
+    return ''.join(random.choice(chars) for i in range(size))
 
 
 def evaluate_cookie(ck):
@@ -44,7 +45,7 @@ valid_users = {
     'Gasret': '12345678901234'
 }
 
-valid_SSID={}
+valid_SSID=[]
 
 # Variable que ira almacenando los errores
 msgError = ''
@@ -60,6 +61,10 @@ if 'username' in login_form and 'api' in login_form:
         c['username']['max-age'] = 10000  # segundos
         c['login'] = 'true'
         c['login']['max-age'] = 10000  # segundos
+        SSID=SSID_generator()
+        valid_SSID.append(SSID)
+        c['SSID']=SSID
+        c['SSID']['max-age'] = 10000
         print(c)  # Esto no se debe imprimir despues del content-type
     else:
         msgError += 'API_KEY o Usuario incorrecto'
