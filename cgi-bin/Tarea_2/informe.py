@@ -101,6 +101,7 @@ for id_num,nombre in cursor:
     print("<option value='{}'>{}</option>".format(id_num,nombre))
 
 print("""
+                            <option value="otro">otro</option>
                             </select>
                             <input class="oculto" type="text" name="tipo-mascota-otro" size=40 maxlength=40>
                             <h4>Edad en años:</h4>
@@ -151,6 +152,7 @@ for id_num,nombre in cursor:
     print("<option value='{}'>{}</option>".format(id_num,nombre))
 
 print("""
+                            <option value="otro">otro</option>
                             </select>
                             <input class="oculto" type="text" name="tipo-mascota-otro" size=40 maxlength=40>
 
