@@ -90,7 +90,6 @@
                                 <option value="otro">otro</option>
                             </select>
                             <input class="oculto" type="text" name="tipo-mascota-otro" size=40 maxlength=40>
-
                             <h4>Edad en años:</h4>
                             <input type="text" name="edad-mascota" size=5>
                        </div>
@@ -120,7 +119,7 @@
                        </div>
                        <div>
                             <h4>Fotos:</h4>
-                            <input class="especial" type="file" name="foto-mascota">
+                            <input class="especial" type="file" name="foto-mascota" id="foto-mascota">
                             <button type="button" onclick="duplicar('foto-mascota',this)">agregar otra foto</button>
                        </div>
                     </div>
@@ -186,6 +185,14 @@
                         <div class="buttons">
                             <button type="button" onclick="achicar()">No estoy seguro</button>
                             <button type="submit" onclick="achicar()">Si, estoy total y absolutamente seguro</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="recibido" class="modal">
+                    <div class="modal-content2">
+                        <h4>Hemos recibido su información, muchas gracias por colaborar</h4>
+                        <div class="buttons">
+                            <button type="button" onclick="achicar()">Cerrar</button>
                         </div>
                     </div>
                 </div>
