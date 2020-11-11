@@ -35,7 +35,7 @@ def evaluate_cookie(ck):
     :param ck: Cookie
     :return: Datos
     """
-    if ck['login'].value=='true' or ck['SSID'].value is in valid_SSID:
+    if ck['login'].value=='true' or ck['SSID'].value in valid_SSID:
         return ck['username'].value
     return None
 
