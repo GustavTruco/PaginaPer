@@ -35,7 +35,8 @@ def evaluate_cookie(ck):
     :param ck: Cookie
     :return: Datos
     """
-
+    if ck['login'].value=='true' or ck['SSID'].value is in valid_SSID:
+        return ck['username'].value
     return None
 
 # Pueden hacer esto desde el servidor, SQL
@@ -82,7 +83,7 @@ if c == '' or evaluate_cookie(c) is None:  # Mas estricta
     exit()
 
 else:  # Imprime la aplicación
-    #user, _ = evaluate_cookie(c)
+    user = evaluate_cookie(c)
     print(f"""
 <!DOCTYPE html>
 <!--suppress ALL -->
@@ -114,7 +115,7 @@ else:  # Imprime la aplicación
 </div>
 
 <div class="titulo negrita">Hackbox</div>
-<div class="saludo">Bienvenido </div>
+<div class="saludo">Bienvenido @{user}</div>
 <div class="main">
 
     <form id="miformulario" method="post" action="" onsubmit="return validacionFormulario()">
