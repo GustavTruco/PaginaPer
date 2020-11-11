@@ -1,73 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-import cgi
-import cgitb; cgitb.enable()
-import html
-import mysql.connector
-import re
-
-database=mysql.connector.connect(
-            host="localhost",
-            user="cc500270_u",
-            password="cuDuisphar",
-            database="cc500270_db"
-        )
-
-cursor=database.cursor()
-
-sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
-
-form = cgi.FieldStorage()
-
-print (form['edad-mascota'])
-def validar():
-    msensaje=""
-    if form['region'].value=="":
-        mensaje +="<br>"
-        mensaje += "- Seleccione su Región"
-
-    if form['comuna'].value=="" or form['comuna'].value=="Seleccione su Comuna":
-        mensaje +="<br>"
-        mensaje += "- Seleccione su Comuna"
-
-    if form['calle'].value=="" or len(form['calle'].value)>250:
-        mensaje +="<br>"
-        mensaje += "- Ingrese un nombre de calle válido"
-
-    if form['numero'].value=="" or len(form['numero'].value)>20:
-        mensaje +="<br>"
-        mensaje += "- Ingrese un número de vivienda válido"
-
-    if form['sector'].value!="" and len(form['sector'].value)>100:
-        mensaje +="<br>"
-        mensaje += "- Ingrese un sector de vivienda válido"
-
-    if form['nombre'].value=="" or len(form['nombre'].value)>250:
-        mensaje +="<br>"
-        mensaje += "- Ingrese un nombre de contacto válido"
-
-    regex = r"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-
-    if form['email'].value=="" or not bool(re.match(regex,form['email'].value)) or len(form['email'].value)>20:
-        mensaje +="<br>"
-        mensaje += "- Ingrese un correo de contacto válido"
-
-    regex =r"/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
-
-    if form['celular'].value=="" and not bool(re.match(regex,form['celular'].value)) or len(form['celular'].value)>20:
-        mensaje +="<br>"
-        mensaje += "- Ingrese un celular de contacto válido"
-
-
-    return mensaje
-
-
-
-
-print("Content-type: text/html\r\n\r\n")
-
-print("""
 <!DOCTYPE html>
 <html lang=es>
     <head>
@@ -247,30 +177,15 @@ print("""
                     <button type="button" onclick="duplicar('infomascota',this)">agregar otra mascota</button>
                     <button type="button" onclick="abrir()">Enviar informacion de este domicilio</button>
                 </div>
+                
             <div id="myModal" class="modal" style="display: block;">
                 <div class="modal-content2">
-""")
-
-msg=validar()
-if msg=="":
-    print("""
                     <h4>Su información ha sido recibida muchas gracias por participar</h4>
                     <div class="buttons">
                         <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
-        """)
-else:
-    print("""
-                    <h4>Su información Contiene los siguientes errores</h4>
-                    <p>{}</p>
-                    <div class="buttons">
-                        <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
-        """.format(msg))
-
-print("""
                     </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
-""")
