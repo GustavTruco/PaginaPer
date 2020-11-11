@@ -1,3 +1,12 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import cgi
+import cgitb; cgitb.enable()
+import html
+
+print("Content-type: text/html; charset=UTF-8\r\n\r\n")
+print("""
 <!DOCTYPE html>
 <html lang=es>
     <head>
@@ -12,7 +21,7 @@
             <header>
                 <ul>
                     <li><a href="index.py">Inicio</a></li>
-                    <li><a href="informe.html">Informar Mascotas</a></li>
+                    <li><a href="informe.py">Informar Mascotas</a></li>
                     <li><a href="listado.py">Ver Listado de Mascotas</a></li>
                     <li><a href="estadisticas.html">Estadísticas</a></li>
                 </ul>
@@ -201,3 +210,5 @@
     
     </body>
 </html>
+
+""")
