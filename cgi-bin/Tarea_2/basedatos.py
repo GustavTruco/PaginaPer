@@ -22,6 +22,8 @@ sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
 
+print("Content-type: text/html\r\n\r\n")
+
 print (form['edad-mascota'].value)
 
 def validar():
@@ -68,7 +70,7 @@ def validar():
 
 
 
-print("Content-type: text/html\r\n\r\n")
+
 
 print("""
 <!DOCTYPE html>
