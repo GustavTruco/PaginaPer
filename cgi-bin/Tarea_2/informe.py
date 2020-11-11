@@ -54,7 +54,7 @@ query=("SELECT * FROM region;")
 cursor.execute(query)
 
 for id_num,nombre in cursor:
-    print("<option value='{}'>{}</option>".format(id_num,nombre[0]))
+    print("<option value='{}'>{}</option>".format(id_num,nombre))
 
 print("""
                         </select>
