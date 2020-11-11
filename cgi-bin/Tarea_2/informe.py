@@ -141,6 +141,7 @@ print("""
                        <div class="entrada">
                            <h4>Tipo:</h4>
                             <select name="tipo-mascota" required onchange="addOtro(this)">
+                            <option value="">Seleccione el tipo</option>
 """)
 
 query=("SELECT * FROM tipo_mascota;")
