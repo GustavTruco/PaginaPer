@@ -24,7 +24,7 @@ form = cgi.FieldStorage()
 
 print("Content-type: text/html\r\n\r\n")
 
-print (form['edad-mascota'].value)
+print (form['edad-mascota'].value[1])
 
 def validar():
     msensaje=""
