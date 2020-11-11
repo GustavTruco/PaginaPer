@@ -53,8 +53,7 @@ print("""
 query=("SELECT nombre FROM region;")
 cursor.execute(query)
 
-for name in cursor:
-    nombre,_=name
+for nombre in cursor:
     print("<option value='{}'>{}</option>".format(nombre,nombre))
 
 print("""
