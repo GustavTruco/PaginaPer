@@ -7,6 +7,7 @@ import os
 from http import cookies
 import sys
 import codecs
+import string
 import html
 from typing import Tuple, Union
 
