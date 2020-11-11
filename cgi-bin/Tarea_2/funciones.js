@@ -38,7 +38,9 @@ function agrandar(el){
 
 function achicar(){
     var modal= document.getElementById("myModal");
+    var recibido =document.getElementById("recibido");
     modal.style.display = "none";
+    recibido.style.display = "none";
 }
 function abrir(){
     var modal= document.getElementById("myModal");
@@ -226,6 +228,8 @@ function validar() {
     }
     });
     if (mensaje.length < 1){
+        var recibido= document.getElementsById("recibido");
+        recibido.style.display="block";
         return true;
     }
 

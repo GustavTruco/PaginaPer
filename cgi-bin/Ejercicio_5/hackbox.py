@@ -21,6 +21,9 @@ if 'HTTP_COOKIE' in os.environ:
     c = cookies.SimpleCookie(os.environ['HTTP_COOKIE'])
 
 
+def SSID_generator(size=10, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
 def evaluate_cookie(ck: 'cookies.SimpleCookie') -> Union[Tuple[str, bool], None]:
     """
     Recibe una cookie, y retorna el nombre de usuario y el estado del login. Si
@@ -45,6 +48,8 @@ valid_users = {
     'admin': 'sdf9-9sdf-3294'
 }
 
+valid_SSID={}
+
 # Variable que ira almacenando los errores
 msgError = ''
 
@@ -55,8 +60,12 @@ if 'username' in login_form and 'api' in login_form:
     api = html.escape(login_form.getvalue('api'))
     if name in valid_users.keys() and api == valid_users[name]:
         c = cookies.SimpleCookie()
-        c['login'] = 'username:{0}, login:true'.format(name)
+        c['username'] = '{0}'.format(name)
+        c['username']['max-age'] = 10000  # segundos
+        c['login'] = 'true'
         c['login']['max-age'] = 10000  # segundos
+        c['SSID'] = SSID_generator()
+        c['SSID']['max-age'] = 10000  # segundos
         print(c)  # Esto no se debe imprimir despues del content-type
     else:
         msgError += 'API_KEY o Usuario incorrecto'
