@@ -58,6 +58,8 @@ if 'username' in login_form and 'api' in login_form:
         c = cookies.SimpleCookie()
         c['username'] = '{0}'.format(name)
         c['username']['max-age'] = 10000  # segundos
+        c['login'] = 'true'
+        c['login']['max-age'] = 10000  # segundos
         print(c)  # Esto no se debe imprimir despues del content-type
     else:
         msgError += 'API_KEY o Usuario incorrecto'
