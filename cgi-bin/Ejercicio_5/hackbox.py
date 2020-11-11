@@ -34,8 +34,9 @@ def evaluate_cookie(ck: 'cookies.SimpleCookie') -> Union[Tuple[str, bool], None]
     :param ck: Cookie
     :return: Datos
     """
+
     return None
-    
+
 # Pueden hacer esto desde el servidor, SQL
 valid_users = {
     'pablo': 'a9sd-ds9f-34i0',
@@ -78,7 +79,7 @@ if c == '' or evaluate_cookie(c) is None:  # Mas estricta
     exit()
 
 else:  # Imprime la aplicación
-    user, _ = evaluate_cookie(c)
+    #user, _ = evaluate_cookie(c)
     print(f"""
 <!DOCTYPE html>
 <!--suppress ALL -->
@@ -110,7 +111,7 @@ else:  # Imprime la aplicación
 </div>
 
 <div class="titulo negrita">Hackbox</div>
-<div class="saludo">Bienvenido @{user}</div>
+<div class="saludo">Bienvenido </div>
 <div class="main">
 
     <form id="miformulario" method="post" action="" onsubmit="return validacionFormulario()">
