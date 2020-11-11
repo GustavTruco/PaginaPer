@@ -45,7 +45,8 @@ def evaluate_cookie(ck: 'cookies.SimpleCookie') -> Union[Tuple[str, bool], None]
 # Pueden hacer esto desde el servidor, SQL
 valid_users = {
     'pablo': 'a9sd-ds9f-34i0',
-    'admin': 'sdf9-9sdf-3294'
+    'admin': 'sdf9-9sdf-3294',
+    'Gasret': '1234567890123'
 }
 
 valid_SSID={}
@@ -81,6 +82,7 @@ if c == '' or evaluate_cookie(c) is None:  # Mas estricta
         print(i)
     bs.close()
     exit()
+
 else:  # Imprime la aplicación
     user, _ = evaluate_cookie(c)
     print(f"""
