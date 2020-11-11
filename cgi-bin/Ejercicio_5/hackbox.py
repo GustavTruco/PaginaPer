@@ -25,7 +25,7 @@ if 'HTTP_COOKIE' in os.environ:
 def SSID_generator(size=10, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
-"""
+
 def evaluate_cookie(ck: 'cookies.SimpleCookie') -> Union[Tuple[str, bool], None]:
     """
     Recibe una cookie, y retorna el nombre de usuario y el estado del login. Si
@@ -34,16 +34,8 @@ def evaluate_cookie(ck: 'cookies.SimpleCookie') -> Union[Tuple[str, bool], None]
     :param ck: Cookie
     :return: Datos
     """
-    if 'login' not in ck.keys():
-        return None
-    b = ck['login'].value.split(', ')
-    if len(b) != 2 or 'username:' not in b[0] or 'login:' not in b[1]:
-        return None
-    uname = b[0].replace('username:', '')
-    ustatus = b[1].replace('login:', '')
-    return uname, ustatus == 'true'
-
-"""
+    return None
+    
 # Pueden hacer esto desde el servidor, SQL
 valid_users = {
     'pablo': 'a9sd-ds9f-34i0',
