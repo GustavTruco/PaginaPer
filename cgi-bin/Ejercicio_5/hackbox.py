@@ -26,7 +26,7 @@ def SSID_generator(size=10, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 
-def evaluate_cookie(ck: 'cookies.SimpleCookie') -> Union[Tuple[str, bool], None]:
+def evaluate_cookie(ck):
     """
     Recibe una cookie, y retorna el nombre de usuario y el estado del login. Si
     'login' no existe, o tiene formato distinto, retorna None.
