@@ -50,11 +50,11 @@ print("""
                         <option value="">Seleccione su Region</option>
 """)
 
-query=("SELECT nombre FROM region;")
+query=("SELECT * FROM region;")
 cursor.execute(query)
 
-for nombre in cursor:
-    print("<option value='{}'>{}</option>".format(nombre[0],nombre[0]))
+for id_num,nombre in cursor:
+    print("<option value='{}'>{}</option>".format(id_num,nombre[0]))
 
 print("""
                         </select>
