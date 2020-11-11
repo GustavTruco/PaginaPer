@@ -6,6 +6,7 @@ import cgitb; cgitb.enable()
 import html
 import mysql.connector
 import re
+from io import TextIOWrapper
 
 database=mysql.connector.connect(
             host="localhost",
@@ -20,7 +21,8 @@ sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
 
-print (form['edad-mascota'])
+print (form['edad-mascota'].value)
+
 def validar():
     msensaje=""
     if form['region'].value=="":
