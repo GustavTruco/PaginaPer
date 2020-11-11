@@ -91,16 +91,16 @@ print("""
                        <div class="entrada">
                            <h4>Tipo:</h4>
                             <select name="tipo-mascota" onchange="addOtro(this)">
-                                <option value="">Seleccione el tipo</option>
-                                <option value="perro">perro</option>
-                                <option value="gato">gato</option>
-                                <option value="pez">pez</option>
-                                <option value="tortuga">tortuga</option>
-                                <option value="hámster">hámster</option>
-                                <option value="loro">loro</option>
-                                <option value="iguana">iguana</option>
-                                <option value="araña">araña</option>
-                                <option value="otro">otro</option>
+                            <option value="">Seleccione el tipo</option>
+""")
+
+query=("SELECT * FROM tipo_mascota;")
+cursor.execute(query)
+
+for id_num,nombre in cursor:
+    print("<option value='{}'>{}</option>".format(id_num,nombre))
+
+print("""
                             </select>
                             <input class="oculto" type="text" name="tipo-mascota-otro" size=40 maxlength=40>
                             <h4>Edad en años:</h4>
@@ -141,16 +141,15 @@ print("""
                        <div class="entrada">
                            <h4>Tipo:</h4>
                             <select name="tipo-mascota" required onchange="addOtro(this)">
-                                <option value="">Seleccione el tipo</option>
-                                <option value="perro">perro</option>
-                                <option value="gato">gato</option>
-                                <option value="pez">pez</option>
-                                <option value="tortuga">tortuga</option>
-                                <option value="hámster">hámster</option>
-                                <option value="loro">loro</option>
-                                <option value="iguana">iguana</option>
-                                <option value="araña">araña</option>
-                                <option value="otro">otro</option>
+""")
+
+query=("SELECT * FROM tipo_mascota;")
+cursor.execute(query)
+
+for id_num,nombre in cursor:
+    print("<option value='{}'>{}</option>".format(id_num,nombre))
+
+print("""
                             </select>
                             <input class="oculto" type="text" name="tipo-mascota-otro" size=40 maxlength=40>
 
