@@ -6,6 +6,7 @@ import cgitb; cgitb.enable()
 import html
 import mysql.connector
 import re
+import sys
 from io import TextIOWrapper
 
 database=mysql.connector.connect(
