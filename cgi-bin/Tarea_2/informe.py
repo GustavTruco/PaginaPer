@@ -44,9 +44,9 @@ print("""
 """)
 
 query=("SELECT nombre FROM region;")
-cursor.execute(query)
+database.cursor.execute(query)
 
-for name in cursor:
+for name in databade.cursor:
     print("<option value='{}'>{}</option>",name,name)
 
 print("""
