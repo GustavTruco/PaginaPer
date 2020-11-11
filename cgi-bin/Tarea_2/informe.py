@@ -4,10 +4,17 @@
 import cgi
 import cgitb; cgitb.enable()
 import html
+import mysql.connector
 
-import basedatos
+database=mysql.connector.connect(
+            host="localhost",
+            user="cc500270_u",
+            password="cuDuisphar",
+            database="cc500270_db"
+        )
 
-database=DB("cc500270_u","cuDuisphar")
+cursor=database.cursor()
+
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("""
@@ -44,9 +51,9 @@ print("""
 """)
 
 query=("SELECT nombre FROM region;")
-database.cursor.execute(query)
+cursor.execute(query)
 
-for name in databade.cursor:
+for name in cursor:
     print("<option value='{}'>{}</option>",name,name)
 
 print("""
