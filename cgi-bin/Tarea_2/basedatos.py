@@ -21,50 +21,58 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
-
+mensaje=""
 print("Content-type: text/html\r\n\r\n")
 
 def validar():
-
-    mensaje=""
+    global(mensaje)
+    global(form)
 
     if form['region'].value=="":
         mensaje +="<br>"
         mensaje += "- Seleccione su Región"
+        return False
 
     if form['comuna'].value=="" or form['comuna'].value=="Seleccione su Comuna":
         mensaje +="<br>"
         mensaje += "- Seleccione su Comuna"
+        return False
 
     if form['calle'].value=="" or len(form['calle'].value)>250:
         mensaje +="<br>"
         mensaje += "- Ingrese un nombre de calle válido"
+        return False
 
     if form['numero'].value=="" or len(form['numero'].value)>20:
         mensaje +="<br>"
         mensaje += "- Ingrese un número de vivienda válido"
+        return False
 
     if form['sector'].value!="" and len(form['sector'].value)>100:
         mensaje +="<br>"
         mensaje += "- Ingrese un sector de vivienda válido"
+        return False
 
     if form['nombre'].value=="" or len(form['nombre'].value)>250:
         mensaje +="<br>"
         mensaje += "- Ingrese un nombre de contacto válido"
+        return False
 
     regex = r"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
 
     if form['email'].value=="" or not bool(re.match(regex,form['email'].value)) or len(form['email'].value)>20:
         mensaje +="<br>"
         mensaje += "- Ingrese un correo de contacto válido"
+        return False
 
     regex =r"/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
 
     if form['celular'].value=="" and not bool(re.match(regex,form['celular'].value)) or len(form['celular'].value)>20:
         mensaje +="<br>"
         mensaje += "- Ingrese un celular de contacto válido"
+        return False
 
-    return ("")
+    return True
 
 
 print("""
@@ -88,9 +96,8 @@ print("""
             </header>
             <div class="estatistics">
 """)
-print(validar())
-msg=validar()
-if msg=="":
+
+if validar():
     print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
 
@@ -107,7 +114,7 @@ else:
             <h3>Su información contiene los siguientes errores</h3>
             <p>""")
                     
-    print(msg)
+    print(mensaje)
     print("""</p>
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
