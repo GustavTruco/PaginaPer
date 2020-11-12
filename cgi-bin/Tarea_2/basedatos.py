@@ -94,7 +94,7 @@ print("""
 """)
 tipos=form.getlist('tipo-mascota')
 for tipo in tipos:
-    if tipo==None or tipo=="":
+    if tipo=="":
         print("HEEELP)
     print(tipo)
 msg=validar()
