@@ -24,6 +24,7 @@ form = cgi.FieldStorage()
 
 print("Content-type: text/html\r\n\r\n")
 def validar():
+
     mensaje=""
 
     if form['region'].value=="":
@@ -67,6 +68,17 @@ def validar():
         if tipo=="":
             mensaje +="<br>"
             mensaje += "- Seleccione el tipo de su mascota"
+    
+    if "otro" in tipos:
+        otros=form.getlist('tipo-mascota-otro')
+        for otro in otros:
+            if otro="" or len(otro)>40:
+                mensaje+="<br>"
+                mensaje+="- Ingrese un tipo valido de mascota"
+            else:
+                query= "INSERT INTO tipo_mascota (nombre) VALUES ('{}');".format(otro)
+                cursor.execute(query)
+
 
 
     return mensaje
