@@ -61,7 +61,8 @@ def validar():
         mensaje +="<br>"
         mensaje += "- Ingrese un celular de contacto válido"
 
-    for tipo in form['tipo-mascota']
+    for tipo in form['tipo-mascota']:
+        pass
 
     return mensaje
 
@@ -92,8 +93,7 @@ print("""
             <div class="estatistics">
 """)
 
-p=form['tipo-mascota']
-print(p)
+print(form['tipo-mascota'][0].value)
 msg=validar()
 if msg=="":
     print("""
