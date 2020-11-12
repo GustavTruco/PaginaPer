@@ -92,7 +92,7 @@ print("""
             <div class="estatistics">
 """)
 
-p=form['tipo-mascota'][0].value
+p=form['tipo-mascota']
 print(p)
 msg=validar()
 if msg=="":
