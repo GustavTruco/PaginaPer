@@ -93,7 +93,7 @@ print("""
             <div class="estatistics">
 """)
 
-print(form['tipo-mascota'][1].value,form['tipo-mascota'][2].value)
+print(form['tipo-mascota'].value)
 msg=""
 if msg=="":
     print("""
