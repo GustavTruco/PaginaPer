@@ -75,9 +75,6 @@ def validar():
             if otro="" or len(otro)>40:
                 mensaje+="<br>"
                 mensaje+="- Ingrese un tipo valido de mascota"
-            else:
-                query= "INSERT INTO tipo_mascota (nombre) VALUES ('{}');".format(otro)
-                cursor.execute(query)
 
 
 
