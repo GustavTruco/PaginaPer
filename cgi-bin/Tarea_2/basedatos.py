@@ -69,14 +69,46 @@ def validar():
             mensaje +="<br>"
             mensaje += "- Seleccione el tipo de su mascota"
     
-    if "otro" in tipos:
-        otros=form.getlist('tipo-mascota-otro')
-        for otro in otros:
-            if otro="" or len(otro)>40:
-                mensaje+="<br>"
-                mensaje+="- Ingrese un tipo valido de mascota"
+    edades=form.getlist('edad-mascota')
+    for edad in edades:
+        if edad=="" or edad.isdigit() or edad<0:
+            mensaje +="<br>"
+            mensaje += "- Ingrese una edad valida para su mascota"
 
+    colores=form.getlist('color-mascota')
+    for color in colores:
+        if color=="" or len(color)>30:
+            mensaje +="<br>"
+            mensaje += "- Ingrese un color válido para su mascota"
+    
+    razas=form.getlist('raza-mascota')
+    for raza in razas:
+        if raza=="" or len(raza)>30:
+            mensaje +="<br>"
+            mensaje += "- Ingrese una raza válida para su mascota"
 
+    esterilizados=form.getlist('esterilizado-mascota')
+    for esterilizado in esterilizados:
+        if esterilizado=="":
+            mensaje +="<br>"
+            mensaje += "- Seleccione el estado de esterilizacion de su mascota"
+
+    vacunas=form.getlist('vacunas-mascota')
+    for vacuna in vacunas:
+        if vacuna="":
+            mensaje +="<br>"
+            mensaje += "- Seleccione el estado de vacunas de su mascota"
+    
+    fotos=form.getlist('foto-mascota')
+    for foto in fotos:
+        if foto==""
+            mensaje +="<br>"
+            mensaje += "- Suba una foto de su mascota"
+        else:
+            filename=foto.filename
+            if '.png' not in filename and '.jpg' not in filename and '.jpeg' not in filename and '.PNG' not in filename and '.JPG' not in filename:
+                mensaje +="<br>"
+                mensaje += "- Ingrese un formato valido para fotos"    
 
     return mensaje
 
@@ -106,9 +138,6 @@ print("""
             </header>
             <div class="estatistics">
 """)
-tipos=form.getlist('tipo-mascota')
-for tipo in tipos:
-        print(tipo)
 msg=validar()
 if msg=="":
     print("""
@@ -124,7 +153,7 @@ if msg=="":
 </html>""")
 else:
     print("""
-            <h3>Su información Contiene los siguientes errores</h3>
+            <h3>Su información contiene los siguientes errores</h3>
             <p>""")
                     
     print(msg)
