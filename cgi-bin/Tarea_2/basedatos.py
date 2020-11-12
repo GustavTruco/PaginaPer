@@ -22,17 +22,17 @@ sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
 
-region= form['region'].value
-comuna= form['comuna'].value
-calle= form['calle'].value
-numero= form['numero'].value
-sector= form['sector'].value
-nombre= form['nombre'].value
-email= form['email'].value
-celular= form['celular'].value
+#region= form['region'].value
+#comuna= form['comuna'].value
+#calle= form['calle'].value
+#numero= form['numero'].value
+#sector= form['sector'].value
+#nombre= form['nombre'].value
+#email= form['email'].value
+#celular= form['celular'].value
 
 
-datos=(region,comuna,calle,numero,sector,nombre,email,celular)
+#datos=(region,comuna,calle,numero,sector,nombre,email,celular)
 
 mensaje=""
 
@@ -40,7 +40,7 @@ regex = r"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 regex =r"/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
 
-print("Content-type: text/html\r\n\r\n")
+print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("""
 <!DOCTYPE html>
 <html lang=es>
@@ -62,18 +62,16 @@ print("""
             </header>
             <div class="estatistics">
 
-            <h3>Su información ha sido recibida muchas gracias por participar</h3>
+                <h3>Su información ha sido recibida muchas gracias por participar</h3>
 
-            <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
-            <div class="buttons">
+                <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
 """)
-print(datos)
+print(form.keys())
 print("""
-
-
-                <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
+                <div class="buttons">
+                    <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
+                </div>
             </div>
-        </div>
         </div>
     </body>
 </html>""")
