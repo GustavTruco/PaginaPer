@@ -92,8 +92,9 @@ print("""
             </header>
             <div class="estatistics">
 """)
-
-print(form['tipo-mascota'])
+tipos=form.getlist('tipo-mascota')
+for tipo in tipos:
+    print(tipo)
 msg=validar()
 if msg=="":
     print("""
