@@ -259,7 +259,12 @@ if msg=="":
                     <h4>Su información ha sido recibida muchas gracias por participar</h4>
                     <div class="buttons">
                         <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
-        """)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>""")
 else:
     print("""
                     <h4>Su información Contiene los siguientes errores</h4>
@@ -269,13 +274,11 @@ else:
     print("""</p>
                     <div class="buttons">
                         <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
-        """)
-
-print("""
+        
                     </div>
                 </div>
             </div>
         </div>
     </body>
-</html>
-""")
+</html>""")
+
