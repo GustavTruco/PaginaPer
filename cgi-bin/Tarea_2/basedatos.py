@@ -86,8 +86,8 @@ print("""
             <div class="estatistics">
 """)
 
-if mensaje=="":
-    print("""
+
+print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
 
             <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
@@ -98,7 +98,7 @@ if mensaje=="":
         </div>
     </body>
 </html>""")
-else:
+if mensaje!="":
     print("""
             <h3>Su información contiene los siguientes errores</h3>
             <p>""")
@@ -107,7 +107,6 @@ else:
     print("""</p>
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
-
             </div>
             </div>
         </div>
