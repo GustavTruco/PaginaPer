@@ -66,14 +66,7 @@ def validar():
         if tipo=="":
             mensaje +="<br>"
             mensaje += "- Seleccione el tipo de su mascota"
-        if tipo=="otro":
-            otros= form.getlist('tipo-mascota-otro')
-            for otro in otros:
-                if otro="" or len(otro)>40:
-                    mensaje +="<br>"
-                    mensaje += "- Ingrese un tipo válido para su mascota"
-                else:
-                    print(otro)
+        print(tipo)
 
 
     return mensaje
