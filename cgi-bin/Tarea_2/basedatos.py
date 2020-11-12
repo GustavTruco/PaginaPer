@@ -67,52 +67,6 @@ def validar():
     return mensaje
 
 
-def validar_mascota():
-    mensaje=""
-    tipos=form.getlist('tipo-mascota')
-    for tipo in tipos:
-        if tipo=="":
-            mensaje +="<br>"
-            mensaje += "- Seleccione el tipo de su mascota"
-    
-    edades=form.getlist('edad-mascota')
-    for edad in edades:
-        if edad=="" or edad.isdigit() or edad<0:
-            mensaje +="<br>"
-            mensaje += "- Ingrese una edad valida para su mascota"
-
-    colores=form.getlist('color-mascota')
-    for color in colores:
-        if color=="" or len(color)>30:
-            mensaje +="<br>"
-            mensaje += "- Ingrese un color válido para su mascota"
-    
-    razas=form.getlist('raza-mascota')
-    for raza in razas:
-        if raza=="" or len(raza)>30:
-            mensaje +="<br>"
-            mensaje += "- Ingrese una raza válida para su mascota"
-
-    esterilizados=form.getlist('esterilizado-mascota')
-    for esterilizado in esterilizados:
-        if esterilizado=="":
-            mensaje +="<br>"
-            mensaje += "- Seleccione el estado de esterilizacion de su mascota"
-
-    vacunas=form.getlist('vacunas-mascota')
-    for vacuna in vacunas:
-        if vacuna="":
-            mensaje +="<br>"
-            mensaje += "- Seleccione el estado de vacunas de su mascota"
-    
-    fotos=form.getlist('foto-mascota')
-    for foto in fotos:
-        if foto==""
-            mensaje +="<br>"
-            mensaje += "- Suba una foto de su mascota"
-    return ""
-
-
 print("""
 <!DOCTYPE html>
 <html lang=es>
