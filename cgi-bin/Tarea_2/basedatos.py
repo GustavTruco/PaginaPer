@@ -263,10 +263,13 @@ if msg=="":
 else:
     print("""
                     <h4>Su información Contiene los siguientes errores</h4>
-                    <p>{}</p>
+                    <p>""")
+                    
+    print(msg)
+    print("""</p>
                     <div class="buttons">
                         <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
-        """.format(msg))
+        """)
 
 print("""
                     </div>
