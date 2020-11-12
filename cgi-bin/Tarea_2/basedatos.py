@@ -93,8 +93,8 @@ print("""
             <div class="estatistics">
 """)
 
-print(form['tipo-mascota'][0].value)
-msg=validar()
+print(form['tipo-mascota'][1].value,form['tipo-mascota'][2].value)
+msg=""
 if msg=="":
     print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
