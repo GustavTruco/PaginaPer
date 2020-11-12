@@ -91,7 +91,8 @@ print("""
             <div class="estatistics">
 """)
 
-msg="validar()"
+print(form['tipo-mascota'])
+msg=validar()
 if msg=="":
     print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
@@ -109,7 +110,7 @@ else:
             <h3>Su información Contiene los siguientes errores</h3>
             <p>""")
                     
-    print("msg")
+    print(msg)
     print("""</p>
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
