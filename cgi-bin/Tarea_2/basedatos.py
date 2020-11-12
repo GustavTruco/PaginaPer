@@ -73,8 +73,9 @@ def validar():
                     mensaje +="<br>"
                     mensaje += "- Ingrese un tipo válido para su mascota"
                 else:
+                    print(otro)
                     query="INSERT INTO tipo_mascota (nombre) VALUES ("+otro+");"
-                    cursor.execute(query)
+                    #cursor.execute(query)
     
 
 
