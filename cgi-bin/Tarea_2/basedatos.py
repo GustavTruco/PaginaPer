@@ -61,8 +61,22 @@ def validar():
         mensaje +="<br>"
         mensaje += "- Ingrese un celular de contacto válido"
 
-    for tipo in form['tipo-mascota']:
-        pass
+    tipos=form.getlist('tipo-mascota')
+    for tipo in tipos:
+        if tipo=="":
+            mensaje +="<br>"
+            mensaje += "- Seleccione el tipo de su mascota"
+        if tipo=="otro"
+            otros= form.getlist('tipo-mascota-otro')
+            for otro in otros:
+                if otro="" or len(otro)>40:
+                    mensaje +="<br>"
+                    mensaje += "- Ingrese un tipo válido para su mascota"
+                else:
+                    query="INSERT INTO tipo_mascota (nombre) VALUES ({})".format(otro)
+                    cursor.execute(query)
+    
+    
 
     return mensaje
 
@@ -92,11 +106,7 @@ print("""
             </header>
             <div class="estatistics">
 """)
-tipos=form.getlist('tipo-mascota')
-for tipo in tipos:
-    if tipo=="":
-        print("HEEELP")
-    print(tipo)
+
 msg=validar()
 if msg=="":
     print("""
