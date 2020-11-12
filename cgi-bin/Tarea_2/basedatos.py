@@ -88,22 +88,25 @@ print("""
                     <li><a href="estadisticas.html">Estadísticas</a></li>
                 </ul>
             </header>
+            <div class="estatistics">
 """)
 
-msg=""
+msg="validar()"
 if msg=="":
     print("""
-            <h4>Su información ha sido recibida muchas gracias por participar</h4>
+            <h3>Su información ha sido recibida muchas gracias por participar</h3>
+
+            <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
             <div class="buttons">
                 <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
             </div>
         </div>
-        
+        </div>
     </body>
 </html>""")
 else:
     print("""
-            <h4>Su información Contiene los siguientes errores</h4>
+            <h3>Su información Contiene los siguientes errores</h3>
             <p>""")
                     
     print("msg")
@@ -111,6 +114,7 @@ else:
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
 
+            </div>
             </div>
         </div>
     </body>
