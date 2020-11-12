@@ -104,11 +104,6 @@ def validar():
         if foto==""
             mensaje +="<br>"
             mensaje += "- Suba una foto de su mascota"
-        else:
-            filename=foto.filename
-            if '.png' not in filename and '.jpg' not in filename and '.jpeg' not in filename and '.PNG' not in filename and '.JPG' not in filename:
-                mensaje +="<br>"
-                mensaje += "- Ingrese un formato valido para fotos"    
 
     return mensaje
 
