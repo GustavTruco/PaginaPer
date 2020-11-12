@@ -87,7 +87,7 @@ print("""
             <div class="estatistics">
 """)
 
-if mensaje="":
+if mensaje=="":
     print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
 
