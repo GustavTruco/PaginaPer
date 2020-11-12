@@ -93,7 +93,7 @@ print("""
 """)
 
 for tipo in form['tipo-mascota']
-print(tipo[1])
+print(tipo.value)
 msg=validar()
 if msg=="":
     print("""
