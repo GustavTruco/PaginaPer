@@ -22,7 +22,6 @@ sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
 mensaje=""
-print("Content-type: text/html\r\n\r\n")
 
 if form['region'].value=="":
     mensaje +="<br>"
@@ -64,7 +63,7 @@ if form['celular'].value=="" and not bool(re.match(regex,form['celular'].value))
     mensaje +="<br>"
     mensaje += "- Ingrese un celular de contacto válido"
 
-
+print("Content-type: text/html\r\n\r\n")
 print("""
 <!DOCTYPE html>
 <html lang=es>
