@@ -64,7 +64,7 @@ def validar():
         mensaje +="<br>"
         mensaje += "- Ingrese un celular de contacto válido"
 
-    return ""
+    return ("")
 
 
 print("""
@@ -88,6 +88,7 @@ print("""
             </header>
             <div class="estatistics">
 """)
+print(validar())
 msg=validar()
 if msg=="":
     print("""
