@@ -21,47 +21,24 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
+
+region= form['region'].value
+comuna= form['comuna'].value
+calle= form['calle'].value
+numero= form['numero'].value
+sector= form['sector'].value
+nombre= form['nombre'].value
+email= form['email'].value
+celular= form['celular'].value
+
+
+datos=(region,comuna,calle,numero,sector,nombre,email,celular)
+
 mensaje=""
-
-if form['region'].value=="":
-    mensaje +="<br>"
-    mensaje += "- Seleccione su Región"
-
-if form['comuna'].value=="" or form['comuna'].value=="Seleccione su Comuna":
-    mensaje +="<br>"
-    mensaje += "- Seleccione su Comuna"
-
-if form['calle'].value=="" or len(form['calle'].value)>250:
-    mensaje +="<br>"
-    mensaje += "- Ingrese un nombre de calle válido"
-
-
-if form['numero'].value=="" or len(form['numero'].value)>20:
-    mensaje +="<br>"
-    mensaje += "- Ingrese un número de vivienda válido"
-
-if form['sector'].value!="" and len(form['sector'].value)>100:
-    mensaje +="<br>"
-    mensaje += "- Ingrese un sector de vivienda válido"
-
-
-if form['nombre'].value=="" or len(form['nombre'].value)>250:
-    mensaje +="<br>"
-    mensaje += "- Ingrese un nombre de contacto válido"
-
 
 regex = r"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
 
-if form['email'].value=="" or not bool(re.match(regex,form['email'].value)) or len(form['email'].value)>20:
-    mensaje +="<br>"
-    mensaje += "- Ingrese un correo de contacto válido"
-
-
 regex =r"/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
-
-if form['celular'].value=="" and not bool(re.match(regex,form['celular'].value)) or len(form['celular'].value)>20:
-    mensaje +="<br>"
-    mensaje += "- Ingrese un celular de contacto válido"
 
 print("Content-type: text/html\r\n\r\n")
 print("""
@@ -84,20 +61,23 @@ print("""
                 </ul>
             </header>
             <div class="estatistics">
-""")
 
-
-print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
 
             <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
             <div class="buttons">
+""")
+print(datos)
+print("""
+
+
                 <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
             </div>
         </div>
         </div>
     </body>
 </html>""")
+
 if mensaje!="":
     print("""
             <h3>Su información contiene los siguientes errores</h3>
