@@ -24,9 +24,8 @@ form = cgi.FieldStorage()
 mensaje=""
 print("Content-type: text/html\r\n\r\n")
 
-def validar():
+def validar(form):
     global(mensaje)
-    global(form)
 
     if form['region'].value=="":
         mensaje +="<br>"
@@ -97,7 +96,7 @@ print("""
             <div class="estatistics">
 """)
 
-if validar():
+if validar(form):
     print("""
             <h3>Su información ha sido recibida muchas gracias por participar</h3>
 
