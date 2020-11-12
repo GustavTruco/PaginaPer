@@ -25,6 +25,7 @@ form = cgi.FieldStorage()
 print("Content-type: text/html\r\n\r\n")
 def validar():
     mensaje=""
+
     if form['region'].value=="":
         mensaje +="<br>"
         mensaje += "- Seleccione su Región"
@@ -66,7 +67,6 @@ def validar():
         if tipo=="":
             mensaje +="<br>"
             mensaje += "- Seleccione el tipo de su mascota"
-        print(tipo)
 
 
     return mensaje
@@ -97,7 +97,9 @@ print("""
             </header>
             <div class="estatistics">
 """)
-
+tipos=form.getlist('tipo-mascota')
+for tipo in tipos:
+        print(tipo)
 msg=validar()
 if msg=="":
     print("""
