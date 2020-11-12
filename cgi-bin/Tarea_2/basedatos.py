@@ -23,6 +23,7 @@ sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 form = cgi.FieldStorage()
 
 print("Content-type: text/html\r\n\r\n")
+
 def validar():
 
     mensaje=""
@@ -63,6 +64,11 @@ def validar():
         mensaje +="<br>"
         mensaje += "- Ingrese un celular de contacto válido"
 
+    return mensaje
+
+
+def validar_mascota():
+    mensaje=""
     tipos=form.getlist('tipo-mascota')
     for tipo in tipos:
         if tipo=="":
@@ -104,12 +110,7 @@ def validar():
         if foto==""
             mensaje +="<br>"
             mensaje += "- Suba una foto de su mascota"
-
-    return mensaje
-
-
-
-
+    return ""
 
 
 print("""
