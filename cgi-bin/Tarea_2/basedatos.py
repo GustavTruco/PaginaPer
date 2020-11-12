@@ -92,8 +92,8 @@ print("""
             <div class="estatistics">
 """)
 
-for tipo in form['tipo-mascota']
-print(tipo.value)
+p=form['tipo-mascota'].value
+print(p)
 msg=validar()
 if msg=="":
     print("""
