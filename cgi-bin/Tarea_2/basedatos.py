@@ -170,9 +170,9 @@ if mensaje=="":
         allnombres_archivos.append(nombres_archivos)
         i+=1
 
-    for lista in allnombres_archivos:
-        for elem in lista:
-            ext=elem.split(".")[1]
+    for nombres in allnombres_archivos:
+        for nom in nombres:
+            ext=str(nom).split('.')[1]
             if ext not in permited_ext:
                 mensaje=+="<br> -Ingrese una imagen con formato válido"
     print(allnombres_archivos)
