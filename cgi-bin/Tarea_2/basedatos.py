@@ -8,6 +8,7 @@ import mysql.connector
 import re
 import sys
 from io import TextIOWrapper
+from datetime
 
 database=mysql.connector.connect(
             host="localhost",
@@ -36,6 +37,26 @@ for string in obligatorios:
         mensaje+=string
         c+=1
 
+if "sector" in keys:
+    sector= html.escape(form['sector'].value)
+    if len(sector)>100:
+        mensaje+="<br> -Ingrese un sector de vivienda válido"
+else: 
+    sector=""
+if "celular" in keys:
+    celular=html.escape(form['celular'].value)
+else:
+    celular=""
+
+if "tipo-mascota-otro" in keys:
+    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
+    for otro in otros:
+        if len(otro)>40:
+            mensaje+="<br> -Ingrese un tipo de mascota válido"
+        else:
+            query=("INSERT INTO tipo_mascota (nombre) VALUES ({});".format(otro))
+            cursor.execute(query)
+
 if c>0:
     mensaje+="<br> -Faltan datos obligatorios en el formulario"
 else:
@@ -58,20 +79,21 @@ else:
     
     tipos=[html.escape(elem) for elem in form.getlist("tipo-mascota")]
     edades=[html.escape(elem) for elem in form.getlist("edad-mascota")]
+    for edad in edades:
+        if not edad.isdigit() or edad<0:
+            mensaje+="<br> -Ingrese una edad para su mascota válida"
+
     colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
+    for color in colores:
+        if len(color)>30:
+            mensaje+="<br> -Ingrese un color de mascota válido"
     razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
+    for raza in razas:
+        if len(raza)>30:
+            mensaje+="<br> -Ingrese una raza de mascota válida"
     esterilizados=form.getlist("esterilizado-mascota")
     vacunas=form.getlist("vacunas-mascota")
 
-if "sector" in keys:
-    sector= html.escape(form['sector'].value)
-    if len(sector)>100:
-        mensaje+="<br> -Ingrese un sector de vivienda válido"
-if "celular" in keys:
-    celular=html.escape(form['celular'].value)
-
-if "tipo-mascota-otro" in keys:
-    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
@@ -97,12 +119,6 @@ print("""
             <div class="estatistics">
 
 """)
-for tipo in tipos: 
-    print(str(tipo))
-    print("<br>")
-for otro in otros:
-    print(otro)
-    print("<br>")
 
 if mensaje=="":
     print("""
@@ -117,6 +133,19 @@ if mensaje=="":
         </div>
     </body>
 </html>""")
+
+    fecha = datetime.datetime.now()
+    query=("SELECT * from comuna where nombre='{}';".format(comuna))
+    cursor.execute(query)
+    for id_com,_,_ in cursor:
+        id_comuna=id_com
+
+    query=("""INSERT INTO domicilio (fecha_ingreso,comuna_id,
+            nombre_calle,numero,sector,nombre_contacto,email,celular)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""")
+    data=(fecha,id_comuna,calle,numero,sector,nombre,email,celular)
+    cursor.execute(query,data)
+
 
 if mensaje!="":
     print("""
