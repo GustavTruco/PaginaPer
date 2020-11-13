@@ -155,12 +155,12 @@ if mensaje=="":
     i=1
     allfiles=[]
     while i<=num_mascotas:
-    print("foto-mascota"+str(i))
-    fotos=form["foto-mascota"+str(i)]
-    filenames=[foto.filename for foto in fotos]
-    print(filenames)
-    #allfiles.append(filenames)
-    i+=1
+        print("foto-mascota"+str(i))
+        fotos=form["foto-mascota"+str(i)]
+        filenames=[foto.filename for foto in fotos]
+        print(filenames)
+        #allfiles.append(filenames)
+        i+=1
     #print(allfiles)
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
