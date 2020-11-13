@@ -117,6 +117,7 @@ while i<num_mascotas:
     fotos=form["fotos-mascota"+str(i)]
     filenames=[foto.filename for foto in fotos]
     allfiles.append(filenames)
+    i+=1
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
