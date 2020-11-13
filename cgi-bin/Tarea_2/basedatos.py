@@ -40,12 +40,14 @@ if "sector" in keys:
     sector= html.escape(form['sector'].value)
     if len(sector)>100:
         mensaje+="<br> -Ingrese un sector de vivienda válido"
-else: 
-    sector=""
+        
+#else: 
+#    sector=""
+
 if "celular" in keys:
     celular=html.escape(form['celular'].value)
-else:
-    celular=""
+#else:
+#    celular=""
 
 if "tipo-mascota-otro" in keys:
     otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
@@ -76,22 +78,22 @@ else:
     if not re.search(regex,email):
         mensaje+="<br> -Ingrese un correo electrónico válido"
     
-    #tipos=[html.escape(elem) for elem in form.getlist("tipo-mascota")]
-    #edades=[html.escape(elem) for elem in form.getlist("edad-mascota")]
-    #for edad in edades:
-    #    if not edad.isdigit() or edad<0:
-    #        mensaje+="<br> -Ingrese una edad para su mascota válida"
+    tipos=[html.escape(elem) for elem in form.getlist("tipo-mascota")]
+    edades=[html.escape(elem) for elem in form.getlist("edad-mascota")]
+    for edad in edades:
+        if not edad.isdigit() or edad<0:
+            mensaje+="<br> -Ingrese una edad para su mascota válida"
 
-    #colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
-    #for color in colores:
-    #    if len(color)>30:
-    #        mensaje+="<br> -Ingrese un color de mascota válido"
-    #razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
-    #for raza in razas:
-    #    if len(raza)>30:
-    #        mensaje+="<br> -Ingrese una raza de mascota válida"
-    #esterilizados=form.getlist("esterilizado-mascota")
-    #vacunas=form.getlist("vacunas-mascota")
+    colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
+    for color in colores:
+        if len(color)>30:
+            mensaje+="<br> -Ingrese un color de mascota válido"
+    razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
+    for raza in razas:
+        if len(raza)>30:
+            mensaje+="<br> -Ingrese una raza de mascota válida"
+    esterilizados=form.getlist("esterilizado-mascota")
+    vacunas=form.getlist("vacunas-mascota")
 
 
 
