@@ -203,6 +203,7 @@ if mensaje=="":
         if tipo=="otro":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
             cursor.execute(query6,(otros[i],))
+            database.commit()
         query5=("Select * from tipo_mascota where nombre=%s;")
         cursor.execute(query5,(tipo,))
         records=cursor.fetchone()
