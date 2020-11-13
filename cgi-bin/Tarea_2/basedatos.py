@@ -117,12 +117,10 @@ print("""
                 </ul>
             </header>
             <div class="estatistics">
-
 """)
 
 if mensaje=="":
-    print("""
-                <h3>Su información ha sido recibida muchas gracias por participar</h3>
+    print("""<h3>Su información ha sido recibida muchas gracias por participar</h3>
 
                 <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
 
@@ -138,17 +136,16 @@ if mensaje=="":
     #for id_com,_,_ in cursor:
     #    id_comuna=id_com
 
-    query=("""INSERT INTO domicilio (fecha_ingreso,comuna_id,
-            nombre_calle,numero,sector,nombre_contacto,email,celular)
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""")
+    query=("INSERT INTO domicilio (fecha_ingreso,comuna_id,"
+            "nombre_calle,numero,sector,nombre_contacto,email,celular)"
+            "VALUES (%s,%s,%s,%s,%s,%s,%s,%s);")
     data=(fecha,id_comuna,calle,numero,sector,nombre,email,celular)
     print (data)
     #cursor.execute(query,data)
 
 
 if mensaje!="":
-    print("""
-            <h3>Su información contiene los siguientes errores</h3>
+    print("""<h3>Su información contiene los siguientes errores</h3>
             <p>""")
                     
     print(mensaje)
