@@ -215,7 +215,7 @@ if mensaje=="":
         #-----------#
         #fotos
         query7=("Select * from mascota _domicilio where tipo_mascota_id=%s and edad=%s and color=%s"
-            "raza=%s and esterilizado=%s and vacunas_al_dia=%s and domicilio_id=5%s;")
+            "raza=%s and esterilizado=%s and vacunas_al_dia=%s and domicilio_id=%s;")
         cursor.execute(query7,data) 
         records=cursor.fetchone()
         id_mas=records[0]
