@@ -149,39 +149,40 @@ print("""
             </header>
             <div class="estatistics">
 """)
+num_mascotas=len(tipos)
+i=1
+allnombres_archivos=[]
+while i<=num_mascotas:
+    name='foto-mascota'+str(i)
+    fotos=form[name]
+    nombres_archivos=[]
+    if type(fotos)==list:
+        for foto in fotos:
+            fn=foto.filename
+            nombres_archivos.append(fn)
+    else:
+        fn=fotos.filename
+        nombres_archivos.append(fn)
+    allnombres_archivos.append(nombres_archivos)
+    i+=1
+
+for nombres in allnombres_archivos:
+    for nom in nombres:
+        ext=str(nom).split('.')[1]
+        if ext not in permited_ext:
+            mensaje+="<br> -Ingrese una imagen con formato válido"
+            
 if mensaje=="":
     print(tipos)
     print(edades)
     print(otros)
-    num_mascotas=len(tipos)
-    i=1
-    allnombres_archivos=[]
-    while i<=num_mascotas:
-        name='foto-mascota'+str(i)
-        fotos=form[name]
-        nombres_archivos=[]
-        if type(fotos)==list:
-            for foto in fotos:
-                fn=foto.filename
-                nombres_archivos.append(fn)
-        else:
-            fn=fotos.filename
-            nombres_archivos.append(fn)
-        allnombres_archivos.append(nombres_archivos)
-        i+=1
-
-    for nombres in allnombres_archivos:
-        for nom in nombres:
-            ext=str(nom).split('.')[1]
-            if ext not in permited_ext:
-                mensaje+="<br> -Ingrese una imagen con formato válido"
+    
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
             "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
-    query2=("Select * from comuna where nombre=%s;")
-    data2=(comuna)
-    cursor.execute(query2,data2)
+    query2=(f"Select * from comuna where nombre={comuna};")
+    cursor.execute(query2)
     records=cursor.fetchone()
     if records:
         print(records[0])
