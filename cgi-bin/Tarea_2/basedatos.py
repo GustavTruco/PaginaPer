@@ -156,8 +156,8 @@ if mensaje=="":
     allfiles=[]
     while i<=num_mascotas:
         print("foto-mascota"+str(i))
-        fotos=form["foto-mascota"+str(i)]
-        print(fotos.filename)
+        fotos=form.getlist("foto-mascota"+str(i))
+        print(fotos)
         for foto in fotos:
             print(foto.filename)
         #allfiles.append(filenames)
