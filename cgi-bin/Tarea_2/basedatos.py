@@ -183,7 +183,11 @@ if mensaje=="":
     data2=(comuna)
     cursor.execute(query2,data2)
     records=cursor.fetchone()
-    print(records[0])
+    if records:
+        print(records[0])
+    else:
+        print("F")
+    
 
 
     #----------------------------------------#
