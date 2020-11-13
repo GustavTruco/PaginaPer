@@ -45,6 +45,8 @@ function abrir(){
     modal.style.display = "block";
 }
 
+let index=1;
+
 function duplicar(el,th){
     if (el!="foto-mascota"){
         var original= document.getElementById(el);
@@ -52,14 +54,13 @@ function duplicar(el,th){
         duplicado.id="";
         duplicado.style.display="block";
         original.parentNode.appendChild(duplicado);
+        fixFotoindex(duplicado);
+        index++;
     }
     else{
         var count=0;
-        var i=-1;
-        document.getElementsByName("tipo-mascota").forEach(function(element){
-            i=i+1;
-        });
-        document.getElementsByName("foto-mascota-"+String(i)).forEach(function(element){
+        var name= th.getAttribute("name");
+        document.getElementsByName(name).forEach(function(element){
             if (element.parentNode==th.parentNode){
                 count=count+1;
             }
@@ -68,12 +69,23 @@ function duplicar(el,th){
             var original= document.getElementById(el);
             var duplicado= original.cloneNode(true);
             duplicado.id="";
+            dublicado.setAttribute("name",name);
             duplicado.style.display="block";
-            duplicado.setAttribute('name',"foto-mascota-"+String(i));
             th.parentNode.appendChild(duplicado); 
         }
     }
 }
+
+function fixFotoindex(parent){
+    parent.childNodes.forEach(
+        function (child){
+            if (child.getAttribute("name")=="foto-mascota"+String(index)){
+                child.setAttribute("name","foto-mascota"+String(index+1))
+            }
+        }
+    );
+}
+
 
 function addOtro(el){
     var value="";

@@ -185,7 +185,7 @@ print("""
                        </div>
                        <div>
                             <h4>Fotos:</h4>
-                            <input class="especial" type="file" name="foto-mascota" accept="image/*">
+                            <input class="especial" type="file" name="foto-mascota1" accept="image/*">
                             <button type="button" onclick="duplicar('foto-mascota',this)">agregar otra foto</button>
                        </div>
                     </div>
