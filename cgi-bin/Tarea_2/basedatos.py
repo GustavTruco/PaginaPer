@@ -53,7 +53,7 @@ if "tipo-mascota-otro" in keys:
         if len(otro)>40:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
         else:
-            query=("INSERT INTO tipo_mascota (nombre) VALUES ({});".format(otro))
+            #query=("INSERT INTO tipo_mascota (nombre) VALUES ({});".format(otro))
             #cursor.execute(query)
 
 if c>0:
