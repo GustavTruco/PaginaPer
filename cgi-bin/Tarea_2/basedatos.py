@@ -30,8 +30,10 @@ keys=form.keys()
 
 mensaje=""
 c=0
+
 for string in obligatorios:
     if string not in keys:
+        mensaje+=string
         c+=1
 
 if c>0:
