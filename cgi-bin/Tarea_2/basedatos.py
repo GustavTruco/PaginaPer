@@ -57,11 +57,17 @@ else:
         mensaje+="<br> -Ingrese un correo electrónico válido"
 
     tipos=form.getlist("tipo-mascota")
+    tipos.pop(0)
     edades=form.getlist("edad-mascota")
+    edades.pop(0)
     colores=form.getlist("color-mascota")
+    colores.pop(0)
     razas=form.getlist("raza-mascota")
+    razas.pop(0)
     esterilizados=form.getlist("esterilizado-mascota")
+    esterilizados.pop(0)
     vacunas=form.getlist("vacunas-mascota")
+    vacunas.pop(0)
 
 if "sector" in keys:
     sector=form['sector'].value
@@ -101,6 +107,7 @@ print("""
 """)
 print(tipos)
 print(edades)
+print(otros)
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
