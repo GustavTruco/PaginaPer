@@ -8,7 +8,7 @@ import mysql.connector
 import re
 import sys
 from io import TextIOWrapper
-from datetime
+import datetime
 
 database=mysql.connector.connect(
             host="localhost",
