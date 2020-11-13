@@ -164,6 +164,7 @@ while i<=num_mascotas:
         #    mensaje+="<br> -Ingrese un archivo de imagen valido"
         #    break
         nombres_archivos.append(fn)
+        print(fn)
     allnombres_archivos.append(nombres_archivos)
     i+=1
 
