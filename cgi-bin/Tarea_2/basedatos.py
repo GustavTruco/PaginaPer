@@ -27,6 +27,8 @@ obligatorios=["region","comuna","calle","numero","nombre",
 
 opcionales=["sector","celular","tipo-mascota-otro"]
 
+permmited_ext=["jpeg","jpg","gif","png"]
+
 keys=form.keys()
 
 mensaje=""
@@ -160,8 +162,9 @@ if mensaje=="":
         nombres_archivos=[]
         for foto in fotos:
             fn=foto.filename
-            ext=fn.split(".")[1]
-            print(str(ext))
+            ext=fn.split(".")[1].lower()
+            if ext not in permmited_ext:
+                mensaje+="<br> -Ingrese un archivo de imagen valido"
             nombres_archivos.append(fn)
         allnombres_archivos.append(nombres_archivos)
         i+=1
