@@ -6,6 +6,7 @@ import cgitb; cgitb.enable()
 import mysql.connector
 import re
 import sys
+import os
 from io import TextIOWrapper
 
 database=mysql.connector.connect(
@@ -238,9 +239,10 @@ if mensaje=="":
         #fotos
         c=0
           
+        dir_path=os.path.dirname(os.path.realpath(__file__))
+        print(dir_path)
         if (len(allnombres_archivos[i])>1):
             for archivo in allarchivos[i]:
-                print(archivo.value)
                 new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
                 f=open("/DBIMG/"+new_n,"wb+")
                 f.write(archivo.value)
@@ -250,7 +252,6 @@ if mensaje=="":
         else:
             new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
             archivo=allarchivos[i]
-            print(archivo.value)
             f=open("/DBIMG/"+new_n,"wb+")
             f.write(archivo.value)
             f.close
