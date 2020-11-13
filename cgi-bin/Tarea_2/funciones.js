@@ -55,9 +55,8 @@ function duplicar(el,th){
         duplicado.title=String(index)
         duplicado.style.display="block";
         original.parentNode.appendChild(duplicado);
-        index++;
         duplicado.childNodes.forEach(function(child){
-            if (child.class=="buscado"){
+            if (child.className=="buscado"){
                 child.childNodes.forEach(function(child){
                     if (child.name=="foto-mascota"){
                         child.name="foto-mascota"+String(index);
@@ -65,10 +64,10 @@ function duplicar(el,th){
                 });
             }
         });
+        index++;
     }
     else{
         var count=0;
-        console.log(th.parentNode.parentNode.title);
         var name= "foto-mascota"+th.parentNode.parentNode.title
         document.getElementsByName(name).forEach(function(element){
             if (element.parentNode==th.parentNode){
