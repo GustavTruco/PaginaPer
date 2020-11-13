@@ -242,7 +242,7 @@ if mensaje=="":
             for archivo in allarchivos[i]:
                 print(archivo.value)
                 new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
-                f=open("./DBIMG/"+new_n,"wb+")
+                f=open("/DBIMG/"+new_n,"wb+")
                 f.write(archivo.value)
                 f.close
                 print("FILE SAVED")
@@ -251,7 +251,7 @@ if mensaje=="":
             new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
             archivo=allarchivos[i]
             print(archivo.value)
-            f=open("./DBIMG/"+new_n,"wb+")
+            f=open("/DBIMG/"+new_n,"wb+")
             f.write(archivo.value)
             f.close
             print("FILE SAVED")
