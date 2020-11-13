@@ -182,7 +182,7 @@ if mensaje=="":
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
             "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
     print(comuna)
-    query2=("Select * from comuna where nombre='%s';")
+    query2=("Select * from comuna where nombre=%s;")
     print(comuna)
     cursor.execute(query2,(comuna,))
     print(comuna)
