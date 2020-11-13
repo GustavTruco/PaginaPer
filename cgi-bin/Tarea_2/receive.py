@@ -76,14 +76,21 @@ if "sector" in keys:
     sector= html.escape(form['sector'].value)
     if len(sector)>100:
         mensaje+="<br> -Ingrese un sector de vivienda válido"
+else:
+    sector=""
+
 if "celular" in keys:
     celular=html.escape(form['celular'].value)
+else:
+    celular=""
 
 if "tipo-mascota-otro" in keys:
     otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
     for otro in otros:
         if len(otro)>40:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
+else:
+    otros=[]
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
@@ -108,12 +115,6 @@ print("""
             </header>
             <div class="estatistics">
 """)
-for tipo in tipos: 
-    print(str(tipo))
-    print("<br>")
-for otro in otros:
-    print(otro)
-    print("<br>")
 
 if mensaje=="":
     print("""
@@ -126,6 +127,15 @@ if mensaje=="":
         </div>
     </body>
 </html>""")
+
+    #-----------#
+    if len(otros)>0:
+        for otro in otros:
+            data=(otro)
+            query="INSERT INTO tipo_mascota (nombre) VALUES (%s);"
+            cursor.execute(query,data)
+            cursor.commmit()
+    #-----------#
 
 if mensaje!="":
     print("""
