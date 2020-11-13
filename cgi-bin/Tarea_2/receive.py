@@ -58,6 +58,9 @@ else:
     
     tipos=[html.escape(elem) for elem in form.getlist("tipo-mascota")]
     edades=[html.escape(elem) for elem in form.getlist("edad-mascota")]
+    for edad in edades:
+        if not edad.isdigit() or edad<0:
+            mensaje+="<br> -Ingrese una edad para su mascota válida"
     colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
     razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
     esterilizados=form.getlist("esterilizado-mascota")
