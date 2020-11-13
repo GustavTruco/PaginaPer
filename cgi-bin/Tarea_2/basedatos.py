@@ -70,19 +70,38 @@ else:
 
     colores=form.getlist("color-mascota")
     colores.pop(0)
+    for color in colores:
+        if len(color)>30:
+            mensaje+="<br> -Ingrese un color válido"
     razas=form.getlist("raza-mascota")
     razas.pop(0)
+    for raza in razas:
+        if len(raza)>30:
+            mensaje+="<br> -Ingresea raza válido"
+
     esterilizados=form.getlist("esterilizado-mascota")
     esterilizados.pop(0)
+    for esterilizado in esterilizados:
+        if esterilizado=="":
+            mensaje+="<br> -Ingrese estado de esterilización"
+
     vacunas=form.getlist("vacunas-mascota")
     vacunas.pop(0)
+    for vacuna in vacunas:
+        if vacuna=="":
+            mensaje+="<br> -Ingrese estado de vacunas"
 
 if "sector" in keys:
     sector=form['sector'].value
     if len(sector)>100:
         mensaje+="<br> -Ingrese un sector de vivienda válido"
+else: 
+    sector=""
+
 if "celular" in keys:
     celular=form['celular'].value
+else:
+    celular=""
 
 if "tipo-mascota-otro" in keys:
     otros=form.getlist("tipo-mascota-otro")
@@ -90,6 +109,7 @@ if "tipo-mascota-otro" in keys:
     for otro in otros:
         if len(otro)>40:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
+otro=[]
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
