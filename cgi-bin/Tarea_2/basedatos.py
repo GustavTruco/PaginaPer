@@ -219,6 +219,7 @@ if mensaje=="":
         cursor.execute(query7,data) 
         records=cursor.fetchone()
         id_mas=records[0]
+        print(id_mas)
         c=0
         for archivo in allarchivos[i]:
             new_name=str(id_dom)+"-"+str(id_mas)+"-"+str(c)+".png"
