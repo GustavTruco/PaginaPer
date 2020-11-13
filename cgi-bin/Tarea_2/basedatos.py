@@ -190,7 +190,7 @@ if mensaje=="":
     cursor.execute(query1,data)
     database.commit()
 
-    query3=("Select * from domicilio where nombre_calle=%s and numero=%s and nombre_contacto=%s email=%s;")
+    query3=("Select * from domicilio where nombre_calle=%s and numero=%s and nombre_contacto=%s and email=%s;")
     cursor.execute(query3,(calle,numero,nombre,email,))
     records=cursor.fetchone()
     id_dom=records[0]
