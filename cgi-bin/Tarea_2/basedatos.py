@@ -236,8 +236,21 @@ if mensaje=="":
         
         #-----------#
         #fotos
-        new_n=str(id_com)+"-"+str(id_dom)+"-"+str(i)+".png"
-        print(len(allnombres_archivos[i]))
+        c=0
+        new_n=str(id_com)+"-"+str(id_dom)+"-"+str(i)+"-"+str(c)+".png"  
+        if (len(allnombres_archivos[i])>1):
+            for archivo in allarchivos[i]:
+                f=open("./DBIMG/"+new_n,"wb")
+                f.write(archivo.file.read())
+                f.close
+                c+=1
+        else:
+            archivo=allarchivos[i]
+            f=open("./DBIMG/"+new_n,"wb")
+            f.write(archivo.file.read())
+            f.close
+            c+=1
+    
         #-----------#
         i+=1
 
