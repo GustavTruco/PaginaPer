@@ -8,7 +8,6 @@ import mysql.connector
 import re
 import sys
 from io import TextIOWrapper
-import datetime
 
 database=mysql.connector.connect(
             host="localhost",
@@ -128,7 +127,7 @@ if mensaje=="":
                     <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
     """)
 
-    fecha = datetime.datetime.now()
+    #fecha = datetime.datetime.now()
     query=("SELECT * from comuna where nombre='{}';".format(comuna))
     print(comuna)
     print("<br>")
@@ -138,8 +137,8 @@ if mensaje=="":
 
     query=("INSERT INTO domicilio (fecha_ingreso,comuna_id,"
             "nombre_calle,numero,sector,nombre_contacto,email,celular)"
-            "VALUES (%s,%s,%s,%s,%s,%s,%s,%s);")
-    data=(fecha,id_comuna,calle,numero,sector,nombre,email,celular)
+            "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
+    data=(id_comuna,calle,numero,sector,nombre,email,celular)
     print (data)
     #cursor.execute(query,data)
 
