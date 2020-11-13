@@ -69,7 +69,7 @@ function duplicar(el,th){
             var original= document.getElementById(el);
             var duplicado= original.cloneNode(true);
             duplicado.id="";
-            dublicado.setAttribute("name",name);
+            duplicado.setAttribute("name",name);
             duplicado.style.display="block";
             th.parentNode.appendChild(duplicado); 
         }
