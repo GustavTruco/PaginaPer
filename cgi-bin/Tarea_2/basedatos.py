@@ -159,10 +159,10 @@ while i<=num_mascotas:
     nombres_archivos=[]
     for foto in fotos:
         fn=foto.filename
-        ext=fn.split(".")[1].lower()
-        if not ext in permited_ext:
-            mensaje+="<br> -Ingrese un archivo de imagen valido"
-            break
+        #ext=fn.split(".")[1].lower()
+        #if not ext in permited_ext:
+        #    mensaje+="<br> -Ingrese un archivo de imagen valido"
+        #    break
         nombres_archivos.append(fn)
     allnombres_archivos.append(nombres_archivos)
     i+=1
