@@ -144,7 +144,8 @@ if mensaje=="":
             nombre_calle,numero,sector,nombre_contacto,email,celular)
             VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""")
     data=(fecha,id_comuna,calle,numero,sector,nombre,email,celular)
-    cursor.execute(query,data)
+    print (data)
+    #cursor.execute(query,data)
 
 
 if mensaje!="":
