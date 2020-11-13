@@ -214,8 +214,8 @@ if mensaje=="":
         database.commit()
         #-----------#
         #fotos
-        query7=("Select * from mascota _domicilio where tipo_mascota_id=%s and edad=%s and color=%s"
-            "raza=%s and esterilizado=%s and vacunas_al_dia=%s and domicilio_id=%s;")
+        query7=("Select * from mascota _domicilio where tipo_mascota_id=%s and edad=%s and raza=%s and domicilio_id=%s;")
+        data=(int(tipo),int(edades[i]),razas[i],id_dom,)
         cursor.execute(query7,data) 
         records=cursor.fetchone()
         id_mas=records[0]
