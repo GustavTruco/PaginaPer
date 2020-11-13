@@ -216,7 +216,7 @@ if mensaje=="":
         #-----------#
         #fotos
         c=0
-        if type(allarchivos[i])==list:
+        if len(allnombres_archivos[i])>1:
             for archivo in allarchivos[i]:
                 new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
                 print(new_name)
@@ -231,7 +231,7 @@ if mensaje=="":
             print(new_name)
             f=open("./DBIMG"+new_name,"wb")
             print("hola")
-            f.write(archivo.file.read())
+            f.write(allarchivos[i].file.read())
             print("hola")
             f.close()
         #-----------#
