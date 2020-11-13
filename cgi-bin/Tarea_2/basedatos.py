@@ -208,7 +208,22 @@ if mensaje=="":
             tipo=records[0]
       
         print(tipo,id_dom)
-        print(edades[i],edades[i],colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]))
+
+        edad=edades[i]
+        print(edad)
+
+        color=colores[i]
+        print(color)
+
+        raza=razas[i]
+        print(raza)
+
+        esterilizado=esterilizados[i]
+        print(esterilizado)
+
+        vacuna=vacunas[i]
+        print(vacuna)
+        
         query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
             "VALUES (%s,%s,%s,%s,%s,%s,%s);")
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
