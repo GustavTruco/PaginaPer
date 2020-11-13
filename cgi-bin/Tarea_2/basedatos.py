@@ -194,9 +194,6 @@ if mensaje=="":
     id_dom=records[0]
 
     i=0
-
-    print(allnombres_archivos)
-    print(allarchivos)
     while i<num_mascotas:
         print(i)
         tipo=tipos[i]
