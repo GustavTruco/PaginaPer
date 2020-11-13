@@ -222,7 +222,9 @@ if mensaje=="":
         c=0
         while c<len(allarchivos[i]):
             new_name=str(id_dom)+"-"+str(id_mas)+"-"+str(c)+".png"
-            open("./DBIMG"+new_name,"wb").rite(allarchivos[i][c].file.read())
+            f=open("./DBIMG"+new_name,"wb")
+            f.write(allarchivos[i][c].file.read())
+            f.close()
             c+=1
 
         #-----------#
