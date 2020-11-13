@@ -233,13 +233,13 @@ if mensaje=="":
         cursor.execute(query4,data)
         database.commit()
         print("END QUERY")
-        i+=1
+        
         #-----------#
         #fotos
         new_n=str(id_com)+"-"+str(id_dom)+"-"+str(i)+".png"
-        print(allarchivos)
+        print(allarchivos[i])
         #-----------#
-
+        i+=1
 
 
     #----------------------------------------#
