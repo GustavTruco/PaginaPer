@@ -58,6 +58,10 @@ else:
 
     tipos=form.getlist("tipo-mascota")
     tipos.pop(0)
+    for tipo in tipos:
+        if tipo !="":
+            mensaje+="<br> -Ingrese un tipo de mascota válido"
+            
     edades=form.getlist("edad-mascota")
     edades.pop(0)
     colores=form.getlist("color-mascota")
@@ -78,6 +82,7 @@ if "celular" in keys:
 
 if "tipo-mascota-otro" in keys:
     otros=form.getlist("tipo-mascota-otro")
+    otros.pop(0)
     for otro in otros:
         if len(otro)>40:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
