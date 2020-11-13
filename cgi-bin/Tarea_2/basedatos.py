@@ -175,8 +175,6 @@ for nombres in allnombres_archivos:
             mensaje+="<br> -Ingrese una imagen con formato válido"
             
 if mensaje=="":
-    print(tipos)
-    print(edades)
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
@@ -216,7 +214,6 @@ if mensaje=="":
         #fotos
         c=0
         print(len(allarchivos))
-        print(len(allarchivos[i]))
         if type(allarchivos[i])==list:
             for archivo in allarchivos[i]:
                 new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
