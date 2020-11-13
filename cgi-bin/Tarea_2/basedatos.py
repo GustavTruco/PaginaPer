@@ -177,9 +177,6 @@ for nombres in allnombres_archivos:
 if mensaje=="":
     print(tipos)
     print(edades)
-    print(otros)
-    print(allarchivos)
-    print(len(allarchivos))
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
@@ -200,6 +197,7 @@ if mensaje=="":
 
     i=0
     while i<num_mascotas:
+        print(i)
         tipo=tipos[i]
         if tipo=="otro":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
@@ -233,14 +231,13 @@ if mensaje=="":
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
-
+        i+=1
         #-----------#
         #fotos
 
 
         #-----------#
 
-        i+=1
 
 
     #----------------------------------------#
