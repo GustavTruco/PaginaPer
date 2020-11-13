@@ -174,7 +174,7 @@ if mensaje=="":
         for nom in nombres:
             ext=str(nom).split('.')[1]
             if ext not in permited_ext:
-                mensaje=+="<br> -Ingrese una imagen con formato válido"
+                mensaje+="<br> -Ingrese una imagen con formato válido"
     print(allnombres_archivos)
     
     print("""
