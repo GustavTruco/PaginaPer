@@ -158,10 +158,11 @@ if mensaje=="":
         print('foto-mascota'+str(i))
         name='foto-mascota'+str(i)
         fotos=form[name]
+        nombres_archivos=[]
         for foto in fotos:
             fn=foto.filename
-            print(str(fn))
-            print("hola")
+            nombres_archivos.append(fn)
+        print(nombres_archivos)
         #allfiles.append(filenames)
         i+=1
     #print(allfiles)
