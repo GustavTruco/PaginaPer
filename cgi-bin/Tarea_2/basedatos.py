@@ -175,8 +175,18 @@ if mensaje=="":
             ext=str(nom).split('.')[1]
             if ext not in permited_ext:
                 mensaje+="<br> -Ingrese una imagen con formato válido"
-    print(allnombres_archivos)
-    
+    #--------------------------------------#
+    #Ingresar datos a la base de datos:
+    query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
+            "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
+    query2=("Select * from comuna where nombre='%s';")
+    data2=(comuna)
+    cursor.execute(query2,data2)
+    for id_com,-,- in cursor:
+        print(str(id_com))
+
+
+    #----------------------------------------#
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
                 <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
