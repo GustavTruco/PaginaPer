@@ -226,6 +226,11 @@ function validar() {
     }
     });
 
+    if (mensaje.length<1){
+        return true;
+    }
+
+
     mostrarError("Se han encontrado los siguientes errores:"+ mensaje)
     return false;
 
