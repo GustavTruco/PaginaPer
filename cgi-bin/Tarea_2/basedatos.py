@@ -184,7 +184,7 @@ if mensaje=="":
     print(comuna)
     query2=("Select * from comuna where nombre=%s;")
     print(comuna)
-    cursor.execute(query2,comuna)
+    cursor.execute(query2,(comuna))
     print(comuna)
     records=cursor.fetchone()
     print(comuna)
