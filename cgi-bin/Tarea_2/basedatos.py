@@ -213,7 +213,8 @@ if mensaje=="":
         #-----------#
         #fotos
         c=0
-        if len(allnombres_archivos[i])>1:
+        #if len(allnombres_archivos[i])>1:
+        if False:
             for archivo in allarchivos[i]:
                 new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
                 print(new_name)
