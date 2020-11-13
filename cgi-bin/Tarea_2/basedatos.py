@@ -205,17 +205,19 @@ if mensaje=="":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
             cursor.execute(query6,(otros[i],))
             database.commit()
+            query5=("Select * from tipo_mascota where nombre=%s;")
+            cursor.execute(query5,(otros[i],))
+            print("Query5")
+            records=cursor.fetchone()
+            tipo=records[0]
             print("Query6")
-        query5=("Select * from tipo_mascota where nombre=%s;")
-        cursor.execute(query5,(tipo,))
-        print("Query5")
-        records=cursor.fetchone()
-        id_tip=records[0]
-        print(id_tip,id_dom)
-        data=(id_tip,edades[i],colores[i],razas[i],esterilizados[i],vacunas[i],id_dom,)
+      
+        print(tipo,id_dom)
+        data=(tipo,edades[i],colores[i],razas[i],esterilizados[i],vacunas[i],id_dom,)
         cursor.execute(query4,data)
         database.commit()
         print("Query4")
+        i+=1
 
 
     #----------------------------------------#
