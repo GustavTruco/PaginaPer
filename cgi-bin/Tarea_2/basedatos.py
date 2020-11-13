@@ -153,11 +153,11 @@ num_mascotas=len(tipos)
 i=1
 allfiles=[]
 while i<=num_mascotas:
-    print("fotos-mascota"+str(i))
-    #fotos=form["fotos-mascota"+str(i)]
-    #filenames=[foto.filename for foto in fotos]
-    #allfiles.append(filenames)
-    #i+=1
+    print("foto-mascota"+str(i))
+    fotos=form["foto-mascota"+str(i)]
+    filenames=[foto.filename for foto in fotos]
+    allfiles.append(filenames)
+    i+=1
 print(allfiles)
 
 if mensaje=="":
