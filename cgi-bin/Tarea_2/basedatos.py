@@ -236,8 +236,8 @@ if mensaje=="":
         i+=1
         #-----------#
         #fotos
-        new_n=str(id_com)+"-"+str(id_dom)+str(i)+".png"
-        print(new_n)
+        new_n=str(id_com)+"-"+str(id_dom)+"-"+str(i)+".png"
+        print(allarchivos[i])
         #-----------#
 
 
