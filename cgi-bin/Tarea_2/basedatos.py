@@ -128,11 +128,7 @@ if mensaje=="":
 
                 <div class="buttons">
                     <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>""")
+    """)
 
     fecha = datetime.datetime.now()
     query=("SELECT * from comuna where nombre='{}';".format(comuna))
@@ -159,9 +155,11 @@ if mensaje!="":
     print("""</p>
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
-            </div>
+        """)
+print("""
+
+                </div>
             </div>
         </div>
     </body>
 </html>""")
-
