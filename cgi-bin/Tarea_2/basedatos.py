@@ -65,7 +65,7 @@ else:
     edades=form.getlist("edad-mascota")
     edades.pop(0)
     for edad in edades:
-        if not edad.isdigit() or edad<0:
+        if not edad.isdigit() or int(edad)<0:
             mensaje+="<br> -Ingrese una edad para su mascota válida"
 
     colores=form.getlist("color-mascota")
