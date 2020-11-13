@@ -209,6 +209,7 @@ if mensaje=="":
       
         print(tipo,id_dom)
 
+        print(edades)
         edad=edades[i]
         print(edad)
 
@@ -223,7 +224,7 @@ if mensaje=="":
 
         vacuna=vacunas[i]
         print(vacuna)
-        
+
         query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
             "VALUES (%s,%s,%s,%s,%s,%s,%s);")
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
