@@ -197,6 +197,7 @@ if mensaje=="":
 
     i=0
     while i<num_mascotas:
+        print("help",i)
         tipo=tipos[i]
         if tipo=="otro":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
