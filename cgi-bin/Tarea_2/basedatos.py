@@ -137,7 +137,8 @@ print("""
 print(tipos)
 print(edades)
 print(otros)
-print(form['foto-mascota'].filename)
+fotos=form.getlist
+print(fotos.filename)
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
