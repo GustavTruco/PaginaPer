@@ -97,8 +97,12 @@ print("""
             <div class="estatistics">
 
 """)
-print(tipos)
-print(otros)
+for tipo in tipos: 
+    print(str(tipo))
+    print("<br>")
+for otro in otros:
+    print(otro)
+    print("<br>")
 
 if mensaje=="":
     print("""
