@@ -59,7 +59,7 @@ function duplicar(el,th){
     }
     else{
         var count=0;
-        var name= th.getAttribute("name");
+        var name= th.name;
         document.getElementsByName(name).forEach(function(element){
             if (element.parentNode==th.parentNode){
                 count=count+1;
@@ -69,7 +69,7 @@ function duplicar(el,th){
             var original= document.getElementById(el);
             var duplicado= original.cloneNode(true);
             duplicado.id="";
-            duplicado.setAttribute("name",name);
+            duplicado.name=name;
             duplicado.style.display="block";
             th.parentNode.appendChild(duplicado); 
         }
@@ -79,8 +79,8 @@ function duplicar(el,th){
 function fixFotoindex(parent){
     parent.childNodes.forEach(
         function (child){
-            if (child.getAttribute("name")=="foto-mascota"+String(index)){
-                child.setAttribute("name","foto-mascota"+String(index+1))
+            if (child.name=="foto-mascota"+String(index)){
+                child.name="foto-mascota"+String(index+1);
             }
         }
     );
