@@ -190,15 +190,15 @@ if mensaje=="":
     cursor.execute(query1,data)
     database.commit()
 
-    query3=("Select * from domicilio where nombre_calle=%s and numero=%s and nombre_contacto=%s;")
-    cursor.execute(query3,(calle,numero,nombre,))
+    query3=("Select * from domicilio where nombre_calle=%s and numero=%s and nombre_contacto=%s email=%s;")
+    cursor.execute(query3,(calle,numero,nombre,email,))
     records=cursor.fetchone()
     id_dom=records[0]
 
     i=0
-    print("WHILE")
+    print("STAR PET QUERY")
     while i<num_mascotas:
-        print("help",i)
+        print(i)
         tipo=tipos[i]
         if tipo=="otro":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
@@ -208,15 +208,28 @@ if mensaje=="":
             cursor.execute(query5,(otros[i],))
             records=cursor.fetchone()
             tipo=records[0]
+      
+        print(tipo,id_dom)
 
+        print(edades)
         edad=edades[i]
+        print(edad)
+
         color=colores[i]
+        print(color)
+
         raza=razas[i]
+        print(raza)
+
         esterilizado=esterilizados[i]
+        print(esterilizado)
+
         vacuna=vacunas[i]
+        print(vacuna)
+
         query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
             "VALUES (%s,%s,%s,%s,%s,%s,%s);")
-        data=(int(tipo),int(edad),color,raza,int(esterilizado),int(vacuna),int(id_dom),)
+        data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
         print("END QUERY")
