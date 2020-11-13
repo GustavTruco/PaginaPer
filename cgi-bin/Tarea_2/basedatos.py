@@ -21,9 +21,11 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
+
 obligatorios=["region","comuna","calle","numero","nombre",
         "email","tipo-mascota","edad-mascota","color-mascota",
         "raza-mascota","esterilizado-mascota","vacunas-mascota","foto-mascota"]
+
 opcionales=["sector","celular","tipo-mascota-otro"]
 
 keys=form.keys()
@@ -86,7 +88,8 @@ if "tipo-mascota-otro" in keys:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
 
 
-print("Content-type: text/html; charset=UTF-8\r\n\r\n")
+print("Content-type: text/html; charset=UTF-8")
+print("")
 print("""
 <!DOCTYPE html>
 <html lang=es>
@@ -141,3 +144,6 @@ if mensaje!="":
         </div>
     </body>
 </html>""")
+
+cursor.close()
+database.close()
