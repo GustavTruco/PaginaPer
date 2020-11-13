@@ -32,7 +32,7 @@ mensaje=""
 c=0
 
 for string in obligatorios:
-    if string not in keys:
+    if string not in form:
         mensaje+=string
         c+=1
 
