@@ -160,6 +160,7 @@ if mensaje=="":
         fotos=form[name]
         for foto in fotos:
             fn=foto.filename
+            print(str(fn))
             print("hola")
         #allfiles.append(filenames)
         i+=1
