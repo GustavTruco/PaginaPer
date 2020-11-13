@@ -128,14 +128,6 @@ if mensaje=="":
     </body>
 </html>""")
 
-    #-----------#
-    if len(otros)>0:
-        for otro in otros:
-            data=(otro)
-            query="INSERT INTO tipo_mascota (nombre) VALUES (%s);"
-            cursor.execute(query,data)
-            cursor.commmit()
-    #-----------#
 
 if mensaje!="":
     print("""
