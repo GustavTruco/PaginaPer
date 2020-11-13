@@ -66,7 +66,7 @@ else:
         if len(color)>30:
             mensaje+="<br> -Ingrese un color de mascota válido"
     razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
-     for raza in razas:
+    for raza in razas:
         if len(raza)>30:
             mensaje+="<br> -Ingrese una raza de mascota válida"
     esterilizados=form.getlist("esterilizado-mascota")
