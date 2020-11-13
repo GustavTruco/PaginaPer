@@ -37,56 +37,6 @@ for string in obligatorios:
         mensaje+=string
         c+=1
 
-if c>0:
-    mensaje+="<br> -Faltan datos obligatorios en el formulario"
-else:
-    region= form['region'].value
-    comuna= form['comuna'].value
-    calle=form['calle'].value
-    if len(calle)>250:
-        mensaje+="<br> -Ingrese un nombre de calle válido"
-    numero=form['numero'].value
-    if len(numero)>20:
-        mensaje+="<br> -Ingrese un número de casa válido"
-    nombre= form['nombre'].value
-    if len(nombre)>200:
-        mensaje+="<br> -Ingrese un nombre válido"
-    email= form['email'].value
-
-    regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
-    if not re.search(regex,email):
-        mensaje+="<br> -Ingrese un correo electrónico válido"
-    
-    tipos=form.getlist("tipo-mascota")
-    edades=form.getlist("edad-mascota")
-    for edad in edades:
-        if not edad.isdigit() or edad<0:
-            mensaje+="<br> -Ingrese una edad para su mascota válida"
-    colores=form.getlist("color-mascota")
-    for color in colores:
-        if len(color)>30:
-            mensaje+="<br> -Ingrese un color de mascota válido"
-    razas=form.getlist("raza-mascota")
-    for raza in razas:
-        if len(raza)>30:
-            mensaje+="<br> -Ingrese una raza de mascota válida"
-    esterilizados=form.getlist("esterilizado-mascota")
-    vacunas=form.getlist("vacunas-mascota")
-
-if "sector" in keys:
-    sector=form['sector'].value
-    if len(sector)>100:
-        mensaje+="<br> -Ingrese un sector de vivienda válido"
-if "celular" in keys:
-    celular=form['celular'].value
-
-if "tipo-mascota-otro" in keys:
-    otros=form.getlist("tipo-mascota-otro")
-    for otro in otros:
-        if len(otro)>40:
-            mensaje+="<br> -Ingrese un tipo de mascota válido"
-
-
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
 print("""
