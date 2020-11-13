@@ -161,7 +161,7 @@ if mensaje=="":
         for foto in fotos:
             fn=foto.filename
             ext=os.path.splitext(fn)[1]
-            print(ext)
+            print(str(ext))
             nombres_archivos.append(fn)
         allnombres_archivos.append(nombres_archivos)
         i+=1
