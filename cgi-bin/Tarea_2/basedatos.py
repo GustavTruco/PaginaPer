@@ -175,6 +175,8 @@ for nombres in allnombres_archivos:
             mensaje+="<br> -Ingrese una imagen con formato válido"
             
 if mensaje=="":
+    print(tipos)
+    print(edades)
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
@@ -210,29 +212,8 @@ if mensaje=="":
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
-        print("Query DONE")
         #-----------#
         #fotos
-        #c=0
-        #new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
-        #print(new_name)
-        #if len(allnombres_archivos[i])>1:
-        #if False:
-        #    for archivo in allarchivos[i]:        
-        #        f=open("./DBIMG/"+new_name,"wb")
-        #        print("hola")
-        #        f.write(archivo.file.read())
-        #        print("hola")
-        #        f.close()
-        #        c+=1
-        #else:
-        #    new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
-        #    print(new_name)
-        #    f=open("./DBIMG/"+new_name,"wb")
-        #    print("hola")
-        #   f.write(allarchivos[i].file.read())
-        #    print("hola")
-        #    f.close()
         #-----------#
         i+=1
 
