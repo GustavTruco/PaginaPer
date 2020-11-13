@@ -137,6 +137,3 @@ if mensaje!="":
         </div>
     </body>
 </html>""")
-
-cursor.close()
-database.close()

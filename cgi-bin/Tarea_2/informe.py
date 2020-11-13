@@ -210,6 +210,3 @@ print("""
 </html>
 
 """)
-
-cursor.close()
-database.close()
