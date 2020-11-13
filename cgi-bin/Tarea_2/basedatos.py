@@ -21,7 +21,6 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
-
 obligatorios=["region","comuna","calle","numero","nombre",
         "email","tipo-mascota","edad-mascota","color-mascota",
         "raza-mascota","esterilizado-mascota","vacunas-mascota","foto-mascota"]
@@ -34,29 +33,8 @@ c=0
 
 for string in obligatorios:
     if string not in form:
+        mensaje+=string
         c+=1
-
-if "sector" in keys:
-    sector= html.escape(form['sector'].value)
-    if len(sector)>100:
-        mensaje+="<br> -Ingrese un sector de vivienda válido"
-        
-#else: 
-#    sector=""
-
-if "celular" in keys:
-    celular=html.escape(form['celular'].value)
-#else:
-#    celular=""
-
-if "tipo-mascota-otro" in keys:
-    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
-    for otro in otros:
-        if len(otro)>40:
-            mensaje+="<br> -Ingrese un tipo de mascota válido"
-        else:
-            #query=("INSERT INTO tipo_mascota (nombre) VALUES ({});".format(otro))
-            #cursor.execute(query)
 
 if c>0:
     mensaje+="<br> -Faltan datos obligatorios en el formulario"
@@ -83,18 +61,29 @@ else:
     for edad in edades:
         if not edad.isdigit() or edad<0:
             mensaje+="<br> -Ingrese una edad para su mascota válida"
-
     colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
     for color in colores:
         if len(color)>30:
             mensaje+="<br> -Ingrese un color de mascota válido"
     razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
-    for raza in razas:
+     for raza in razas:
         if len(raza)>30:
             mensaje+="<br> -Ingrese una raza de mascota válida"
     esterilizados=form.getlist("esterilizado-mascota")
     vacunas=form.getlist("vacunas-mascota")
 
+if "sector" in keys:
+    sector= html.escape(form['sector'].value)
+    if len(sector)>100:
+        mensaje+="<br> -Ingrese un sector de vivienda válido"
+if "celular" in keys:
+    celular=html.escape(form['celular'].value)
+
+if "tipo-mascota-otro" in keys:
+    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
+    for otro in otros:
+        if len(otro)>40:
+            mensaje+="<br> -Ingrese un tipo de mascota válido"
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
@@ -119,21 +108,28 @@ print("""
             </header>
             <div class="estatistics">
 """)
+for tipo in tipos: 
+    print(str(tipo))
+    print("<br>")
+for otro in otros:
+    print(otro)
+    print("<br>")
+
 if mensaje=="":
-    print("""<h3>Su información ha sido recibida muchas gracias por participar</h3>
-
+    print("""
+                <h3>Su información ha sido recibida muchas gracias por participar</h3>
                 <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
-
                 <div class="buttons">
                     <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
                 </div>
-                </div>
+            </div>
         </div>
     </body>
 </html>""")
 
 if mensaje!="":
-    print("""<h3>Su información contiene los siguientes errores</h3>
+    print("""
+            <h3>Su información contiene los siguientes errores</h3>
             <p>""")
                     
     print(mensaje)
@@ -141,7 +137,7 @@ if mensaje!="":
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
             </div>
-        </div>
+            </div>
         </div>
     </body>
-</html>""")  
+</html>""")

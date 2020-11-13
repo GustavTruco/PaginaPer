@@ -38,7 +38,7 @@ print("""
                 </ul>
             </header>
 
-            <form method="post" action="receive.py" id="formulario" onsubmit="return validar()" enctype="multipart/fomr-data">
+            <form method="post" action="basedatos.py" id="formulario" onsubmit="return validar()" enctype="multipart/fomr-data">
                 <div class="error oculto" id="error">
                     <p>error</p>
                 </div>
