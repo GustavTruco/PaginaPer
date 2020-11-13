@@ -52,6 +52,10 @@ else:
     if len(nombre)>200:
         mensaje+="<br> -Ingrese un nombre válido"
     email= form['email'].value
+    regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+    if not re.search(regex,email):
+        mensaje+="<br> -Ingrese un correo electrónico válido"
+
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
