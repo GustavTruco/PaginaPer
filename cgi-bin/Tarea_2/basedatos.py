@@ -161,7 +161,7 @@ if mensaje=="":
     print(filenames)
     #allfiles.append(filenames)
     i+=1
-print(allfiles)
+    #print(allfiles)
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
                 <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
