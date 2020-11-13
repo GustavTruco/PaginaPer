@@ -181,10 +181,13 @@ if mensaje=="":
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
             "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
-    print(comuna,type(comuna))
+    print(comuna)
     query2=(f"Select * from comuna where nombre={comuna};")
+    print(comuna)
     cursor.execute(query2)
+    print(comuna)
     records=cursor.fetchone()
+    print(comuna)
     if records:
         print(records[0])
     else:
