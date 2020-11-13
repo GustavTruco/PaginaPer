@@ -136,9 +136,11 @@ if mensaje=="":
 
     fecha = datetime.datetime.now()
     query=("SELECT * from comuna where nombre='{}';".format(comuna))
-    cursor.execute(query)
-    for id_com,_,_ in cursor:
-        id_comuna=id_com
+    print(comuna)
+    print("<br>")
+    #cursor.execute(query)
+    #for id_com,_,_ in cursor:
+    #    id_comuna=id_com
 
     query=("""INSERT INTO domicilio (fecha_ingreso,comuna_id,
             nombre_calle,numero,sector,nombre_contacto,email,celular)
