@@ -214,15 +214,9 @@ if mensaje=="":
         database.commit()
         #-----------#
         #fotos
-        query7=("Select * from mascota _domicilio where tipo_mascota_id=%s and edad=%s and raza=%s and domicilio_id=%s;")
-        data=(int(tipo),int(edades[i]),razas[i],id_dom,)
-        cursor.execute(query7,data) 
-        records=cursor.fetchone()
-        id_mas=records[0]
-        print(id_mas)
         c=0
         for archivo in allarchivos[i]:
-            new_name=str(id_dom)+"-"+str(id_mas)+"-"+str(c)+".png"
+            new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
             print(new_name)
             f=open("./DBIMG"+new_name,"wb")
             print("hola")
