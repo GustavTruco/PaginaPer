@@ -137,7 +137,7 @@ print("""
 print(tipos)
 print(edades)
 print(otros)
-fotos=form.getlist('foto-mascota')
+fotos=form['foto-mascota']
 fotos.pop(0)
 for foto in fotos:
     print(foto.filename)
