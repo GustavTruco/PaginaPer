@@ -21,7 +21,7 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
-obligatorios=["region","comuna","calle","numero","nombre2",
+obligatorios=["region","comuna","calle","numero","nombre",
         "email","tipo-mascota","edad-mascota","color-mascota",
         "raza-mascota","esterilizado-mascota","vacunas-mascota","foto-mascota"]
 opcionales=["sector","celular"]
@@ -42,9 +42,20 @@ else:
     region= form['region'].value
     comuna= form['comuna'].value
     calle= html.escape(form['calle'].value)
+    if len(calle)>250:
+        mensaje+="<br> -Ingrese un nombre de calle válido"
     numero= html.escape(form['numero'].value)
-    nombre= html.escape(form['nombre2'].value)
+    if len(numero)>20:
+        mensaje+="<br> -Ingrese un número de casa válido"
+    nombre= html.escape(form['nombre'].value)
+    if len(nombre)>200:
+        mensaje+="<br> -Ingrese un nombre válido"
     email= html.escape(form['email'].value)
+
+    regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+    if not re.search(regex,email):
+        mensaje+="<br> -Ingrese un correo electrónico válido"
+    
     tipos=[html.escape(elem) for elem in form.getlist("tipo-mascota")]
     edades=[html.escape(elem) for elem in form.getlist("edad-mascota")]
     colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
@@ -54,13 +65,11 @@ else:
 
 if "sector" in keys:
     sector= html.escape(form['sector'].value)
+    if len(sector)>100:
+        mensaje+="<br> -Ingrese un sector de vivienda válido"
 if "celular" in keys:
     celular=html.escape(form['celular'].value)
 
-
-regex = r"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-
-regex =r"/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/"
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("""
@@ -86,6 +95,8 @@ print("""
 
 """)
 print(keys)
+print(tipos)
+print(form.getlist("tipo-mascota-otro")))
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
