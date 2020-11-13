@@ -115,7 +115,7 @@ print("""
             </header>
             <div class="estatistics">
 """)
-
+print(otros)
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
