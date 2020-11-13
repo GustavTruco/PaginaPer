@@ -190,6 +190,25 @@ if mensaje=="":
     cursor.execute(query1,data)
     database.commit()
 
+    query3=("Select * from domicilio where nombre_calle=%s and numero=%s;")
+    cursor.execute(query3,(calle,numero,))
+    records=cursor.fetchone()
+    id_dom=records[0]
+
+    i=0
+    while i<num_mascotas:
+        query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
+            "VALUES (%s,%s,%s,%s,%s,%s,%s);"))
+        tipo=tipos[i]
+        if tipo=="otro":
+            query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
+            cursor.execute(query6,(otros[i],))
+        query5=("Select * from tipo_mascota where nombre=%s;")
+        cursor.execute(query5,(tipo,))
+        records=cursor.fetchone()
+        id_tip=records[0]
+        data=(id_tip,edades[i],colores[i],razas[i],esterilizados[i],vacunas[i],id_dom)
+
 
     #----------------------------------------#
     print("""
