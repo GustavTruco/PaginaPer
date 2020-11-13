@@ -137,7 +137,7 @@ print("""
 print(tipos)
 print(edades)
 print(otros)
-fotos=form.getlist
+fotos=form.getlist('foto-mascota')
 print(fotos.filename)
 if mensaje=="":
     print("""
