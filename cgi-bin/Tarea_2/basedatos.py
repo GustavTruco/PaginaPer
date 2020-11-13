@@ -111,13 +111,6 @@ print("""
             </header>
             <div class="estatistics">
 """)
-for tipo in tipos: 
-    print(str(tipo))
-    print("<br>")
-for otro in otros:
-    print(otro)
-    print("<br>")
-
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
