@@ -24,7 +24,7 @@ form = cgi.FieldStorage()
 obligatorios=["region","comuna","calle","numero","nombre",
         "email","tipo-mascota","edad-mascota","color-mascota",
         "raza-mascota","esterilizado-mascota","vacunas-mascota","foto-mascota"]
-opcionales=["sector","celular"]
+opcionales=["sector","celular","tipo-mascota-otro"]
 
 keys=form.keys()
 
@@ -70,6 +70,9 @@ if "sector" in keys:
 if "celular" in keys:
     celular=html.escape(form['celular'].value)
 
+if "tipo-mascota-otro" in keys:
+    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otros")]
+
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("""
@@ -94,9 +97,8 @@ print("""
             <div class="estatistics">
 
 """)
-print(keys)
 print(tipos)
-print(form.getlist("tipo-mascota-otro")))
+print(otros)
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
