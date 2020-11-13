@@ -54,7 +54,7 @@ if "tipo-mascota-otro" in keys:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
         else:
             query=("INSERT INTO tipo_mascota (nombre) VALUES ({});".format(otro))
-            cursor.execute(query)
+            #cursor.execute(query)
 
 if c>0:
     mensaje+="<br> -Faltan datos obligatorios en el formulario"
@@ -117,8 +117,6 @@ print("""
             </header>
             <div class="estatistics">
 """)
-print(keys)
-
 if mensaje=="":
     print("""<h3>Su información ha sido recibida muchas gracias por participar</h3>
 
@@ -126,6 +124,7 @@ if mensaje=="":
 
                 <div class="buttons">
                     <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
+                </div>
     """)
 
     
@@ -138,10 +137,9 @@ if mensaje!="":
     print("""</p>
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
+            </div>
         """)
-print("""
-
-                </div>
+print("""            
             </div>
         </div>
     </body>
