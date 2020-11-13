@@ -212,9 +212,9 @@ if mensaje=="":
         database.commit()
         #-----------#
         #fotos
-        c=0
-        new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
-        print(new_name)
+        #c=0
+        #new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
+        #print(new_name)
         #if len(allnombres_archivos[i])>1:
         #if False:
         #    for archivo in allarchivos[i]:        
