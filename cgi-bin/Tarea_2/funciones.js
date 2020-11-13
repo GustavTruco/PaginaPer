@@ -45,22 +45,31 @@ function abrir(){
     modal.style.display = "block";
 }
 
-let index=1;
+let index=2;
 
 function duplicar(el,th){
     if (el!="foto-mascota"){
         var original= document.getElementById(el);
         var duplicado= original.cloneNode(true);
         duplicado.id="";
+        duplicado.title=String(index)
         duplicado.style.display="block";
         original.parentNode.appendChild(duplicado);
-        fixFotoindex(duplicado);
         index++;
+        duplicado.childNodes.forEach(function(child){
+            if (child.class=="buscado"){
+                child.childNodes.forEach(function(child){
+                    if (child.name=="foto-mascota"){
+                        child.name="foto-mascota"+String(index);
+                    }
+                });
+            }
+        });
     }
     else{
         var count=0;
-        console.log(th.previuosElementSibling);
-        var name= th.previuosElementSibling.name;
+        console.log(th.parentNode.parentNode.title);
+        var name= "foto-mascota"+th.parentNode.parentNode.title
         document.getElementsByName(name).forEach(function(element){
             if (element.parentNode==th.parentNode){
                 count=count+1;
@@ -77,20 +86,6 @@ function duplicar(el,th){
     }
 }
 
-function fixFotoindex(parent){
-    if (parent.childNodes==null){
-        return 
-    }
-    parent.childNodes.forEach(
-        function (child){
-            if (child.name=="foto-mascota"+String(index)){
-                child.name="foto-mascota"+String(index+1);
-            }
-            fixFotoindex(child);
-        }
-    );
-
-}
 
 
 function addOtro(el){

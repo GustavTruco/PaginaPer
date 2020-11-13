@@ -86,7 +86,7 @@ print("""
                     </div>
                 </div>
                 <div class="informe palido">
-                    <div class= "oculto" id="infomascota">
+                    <div class= "oculto" id="infomascota" title="0">
                         <h3>Informacion Mascota</h3>
                        <div class="entrada">
                            <h4>Tipo:</h4>
@@ -131,13 +131,13 @@ print("""
                                 <option value="no aplica">no aplica</option>
                             </select>
                        </div>
-                       <div>
+                       <div class="buscado">
                             <h4>Fotos:</h4>
                             <input class="especial" type="file" name="foto-mascota" id="foto-mascota" accept="image/*">
                             <button type="button" onclick="duplicar('foto-mascota',this)">agregar otra foto</button>
                        </div>
                     </div>
-                    <div class="palido">
+                    <div class="palido" title="1">
                         <h3>Informacion Mascota</h3>
                        <div class="entrada">
                            <h4>Tipo:</h4>
@@ -183,9 +183,9 @@ print("""
                                 <option value="no aplica">no aplica</option>
                             </select>
                        </div>
-                       <div>
+                       <div class="buscado">
                             <h4>Fotos:</h4>
-                            <input class="especial" type="file" name="foto-mascota1" accept="image/*">
+                            <input class="especial" type="file" name="foto-mascota1" id="1" accept="image/*">
                             <button type="button" onclick="duplicar('foto-mascota',this)">agregar otra foto</button>
                        </div>
                     </div>
