@@ -186,9 +186,9 @@ if mensaje=="":
     records=cursor.fetchone()
     id_com=records[0]
 
-    data=(id_com,calle,numero,sector,nombre,email,celular)
+    data=(id_com,calle,numero,sector,nombre,email,celular,)
     cursor.execute(query1,data)
-    cursor.commit()
+    database.commit()
 
 
     #----------------------------------------#
