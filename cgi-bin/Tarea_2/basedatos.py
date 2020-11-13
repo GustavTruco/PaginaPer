@@ -242,9 +242,10 @@ if mensaje=="":
         dir_path=os.path.dirname(os.path.realpath(__file__))
         print(dir_path)
         if (len(allnombres_archivos[i])>1):
+            print("2 archivo")
             for archivo in allarchivos[i]:
                 new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
-                f=open("DBIMG/"+new_n,"wb+")
+                f=open(new_n,"wb+")
                 f.write(archivo.value)
                 f.close
                 print("FILE SAVED")
@@ -252,7 +253,8 @@ if mensaje=="":
         else:
             new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
             archivo=allarchivos[i]
-            f=open("DBIMG/"+new_n,"wb+")
+            print("1 archivo")
+            f=open(new_n,"wb+")
             f.write(archivo.value)
             f.close
             print("FILE SAVED")
