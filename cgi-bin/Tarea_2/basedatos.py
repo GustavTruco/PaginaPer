@@ -192,6 +192,7 @@ if mensaje=="":
 
     query3=("Select * from domicilio where nombre_calle=%s and numero=%s;")
     cursor.execute(query3,(calle,numero,))
+    print("Query3")
     records=cursor.fetchone()
     id_dom=records[0]
 
@@ -204,13 +205,16 @@ if mensaje=="":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
             cursor.execute(query6,(otros[i],))
             database.commit()
+            print("Query6")
         query5=("Select * from tipo_mascota where nombre=%s;")
         cursor.execute(query5,(tipo,))
+        print("Query5")
         records=cursor.fetchone()
         id_tip=records[0]
         data=(id_tip,edades[i],colores[i],razas[i],esterilizados[i],vacunas[i],id_dom,)
         cursor.execute(query4,data)
         database.commit()
+        print("Query4")
 
 
     #----------------------------------------#
