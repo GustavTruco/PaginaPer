@@ -192,7 +192,6 @@ if mensaje=="":
 
     query3=("Select * from domicilio where nombre_calle=%s and numero=%s and nombre_contacto=%s;")
     cursor.execute(query3,(calle,numero,nombre,))
-    print("Query3")
     records=cursor.fetchone()
     id_dom=records[0]
 
@@ -205,21 +204,19 @@ if mensaje=="":
             database.commit()
             query5=("Select * from tipo_mascota where nombre=%s;")
             cursor.execute(query5,(otros[i],))
-            print("Query5")
             records=cursor.fetchone()
             tipo=records[0]
-            print("Query6")
       
         print(tipo,id_dom)
-        try:
-            query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
-                "VALUES (%s,%s,%s,%s,%s,%s,%s);")
-            data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
-            cursor.execute(query4,data)
-            database.commit()
-            print("Query4")
-        except mysql.connector.Error as error:
-            print("Failed to insert into MySQL table {}".format(error))
+        print(edades[i],edades[i],colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]))
+        query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
+            "VALUES (%s,%s,%s,%s,%s,%s,%s);")
+        data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
+        cursor.execute(query4,data)
+        database.commit()
+        print("Query4")
+        
+
         i+=1
 
 
