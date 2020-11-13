@@ -39,6 +39,19 @@ for string in obligatorios:
 
 if c>0:
     mensaje+="<br> -Faltan datos obligatorios en el formulario"
+    region=""
+    comuna=""
+    calle=""
+    numero=""
+    nombre=""
+    email=""
+    tipos=[]
+    edades=[]
+    colores=[]
+    razas=[]
+    esterilizados=[]
+    vacunas=[]
+    
 else:
     region= form['region'].value
     comuna= form['comuna'].value
@@ -110,10 +123,11 @@ if "tipo-mascota-otro" in keys:
         if len(otro)>40:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
 otro=[]
+
 num_mascotas=len(tipos)
 i=1
 allfiles=[]
-while i<num_mascotas:
+while i<=num_mascotas:
     fotos=form["fotos-mascota"+str(i)]
     filenames=[foto.filename for foto in fotos]
     allfiles.append(filenames)
