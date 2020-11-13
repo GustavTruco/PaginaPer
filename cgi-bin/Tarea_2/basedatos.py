@@ -34,7 +34,6 @@ c=0
 
 for string in obligatorios:
     if string not in form:
-        mensaje+=string
         c+=1
 
 if "sector" in keys:
