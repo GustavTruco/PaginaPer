@@ -56,7 +56,6 @@ else:
     if not re.search(regex,email):
         mensaje+="<br> -Ingrese un correo electrónico válido"
 
-
     tipos=form.getlist("tipo-mascota")
     edades=form.getlist("edad-mascota")
     colores=form.getlist("color-mascota")
@@ -100,6 +99,7 @@ print("""
             </header>
             <div class="estatistics">
 """)
+print(tipos)
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
