@@ -152,6 +152,7 @@ print("""
 if mensaje=="":
     print(tipos)
     print(edades)
+    print(otros)
     num_mascotas=len(tipos)
     i=1
     allnombres_archivos=[]
@@ -169,7 +170,11 @@ if mensaje=="":
         allnombres_archivos.append(nombres_archivos)
         i+=1
 
-    
+    for lista in allnombres_archivos:
+        for elem in lista:
+            ext=elem.split(".")[1]
+            if ext not in permited_ext:
+                mensaje=+="<br> -Ingrese una imagen con formato válido"
     print(allnombres_archivos)
     
     print("""
