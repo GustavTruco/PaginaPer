@@ -118,17 +118,17 @@ print("""
                             <h4>Esterilizado:</h4>
                             <select name="esterilizado-mascota">
                                 <option value="">¿Esta esterilizado?</option>
-                                <option value="sí">si</option>
-                                <option value="no">no</option>
-                                <option value="no aplica">no aplica</option>
+                                <option value="0">si</option>
+                                <option value="1">no</option>
+                                <option value="2">no aplica</option>
                             </select>
 
                             <h4>Vacunas:</h4>
                             <select name="vacunas-mascota">
                                 <option value="">¿Tiene las vacunas al día?</option>
-                                <option value="si">sí</option>
-                                <option value="no">no</option>
-                                <option value="no aplica">no aplica</option>
+                                <option value="0">sí</option>
+                                <option value="1">no</option>
+                                <option value="2">no aplica</option>
                             </select>
                        </div>
                        <div class="buscado">
@@ -170,17 +170,17 @@ print("""
                             <h4>Esterilizado:</h4>
                             <select name="esterilizado-mascota" required>
                                 <option value="">¿Esta esterilizado?</option>
-                                <option value="sí">si</option>
-                                <option value="no">no</option>
-                                <option value="no aplica">no aplica</option>
+                                <option value="0">si</option>
+                                <option value="1">no</option>
+                                <option value="2">no aplica</option>
                             </select>
 
                             <h4>Vacunas:</h4>
                             <select name="vacunas-mascota" required>
                                 <option value="">¿Tiene las vacunas al día?</option>
-                                <option value="si">sí</option>
-                                <option value="no">no</option>
-                                <option value="no aplica">no aplica</option>
+                                <option value="0">sí</option>
+                                <option value="1">no</option>
+                                <option value="2">no aplica</option>
                             </select>
                        </div>
                        <div class="buscado">
