@@ -228,7 +228,7 @@ function validar() {
     }
     });
     if (mensaje.length < 1){
-        var recibido= document.getElementsById("recibido");
+        var recibido= document.getElementById("recibido");
         recibido.style.display="block";
         return true;
     }
