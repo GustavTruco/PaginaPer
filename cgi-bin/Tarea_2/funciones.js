@@ -136,7 +136,7 @@ function validar() {
         mensaje += "- Ingrese un sector de vivienda válido";
     }
     
-    if(document.getElementById("nombre").value=""||  document.getElementById("nombre".length>250)){
+    if(document.getElementById("nombre").value==""||  document.getElementById("nombre".length>250)){
         mensaje +="<br>";
         mensaje += "- Ingrese un nombre de contacto válido";
     }
@@ -227,11 +227,6 @@ function validar() {
         }
     }
     });
-    if (mensaje.length < 1){
-        var recibido= document.getElementById("recibido");
-        recibido.style.display="block";
-        return true;
-    }
 
     mostrarError("Se han encontrado los siguientes errores:"+ mensaje)
     return false;

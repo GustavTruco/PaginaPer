@@ -203,14 +203,6 @@ print("""
                         </div>
                     </div>
                 </div>
-                <div id="recibido" class="modal">
-                    <div class="modal-content2">
-                        <h4>Hemos recibido su información, muchas gracias por colaborar</h4>
-                        <div class="buttons">
-                            <button type="button" onclick="achicar()">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
             </form>
         </div>
     
