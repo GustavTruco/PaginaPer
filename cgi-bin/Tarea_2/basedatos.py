@@ -37,6 +37,23 @@ for string in obligatorios:
         mensaje+=string
         c+=1
 
+if c>0:
+    mensaje+="<br> -Faltan datos obligatorios en el formulario"
+else:
+    region= form['region'].value
+    comuna= form['comuna'].value
+    calle=form['calle'].value
+    if len(calle)>250:
+        mensaje+="<br> -Ingrese un nombre de calle válido"
+    numero=form['numero'].value
+    if len(numero)>20:
+        mensaje+="<br> -Ingrese un número de casa válido"
+    nombre= form['nombre'].value
+    if len(nombre)>200:
+        mensaje+="<br> -Ingrese un nombre válido"
+    email= form['email'].value
+
+
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
 print("""
