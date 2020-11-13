@@ -66,7 +66,7 @@ else:
         if len(color)>30:
             mensaje+="<br> -Ingrese un color de mascota válido"
     razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
-    for raza in razas:
+     for raza in razas:
         if len(raza)>30:
             mensaje+="<br> -Ingrese una raza de mascota válida"
     esterilizados=form.getlist("esterilizado-mascota")
@@ -76,7 +76,6 @@ if "sector" in keys:
     sector= html.escape(form['sector'].value)
     if len(sector)>100:
         mensaje+="<br> -Ingrese un sector de vivienda válido"
-
 if "celular" in keys:
     celular=html.escape(form['celular'].value)
 
@@ -109,6 +108,13 @@ print("""
             </header>
             <div class="estatistics">
 """)
+for tipo in tipos: 
+    print(str(tipo))
+    print("<br>")
+for otro in otros:
+    print(otro)
+    print("<br>")
+
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
@@ -120,7 +126,6 @@ if mensaje=="":
         </div>
     </body>
 </html>""")
-
 
 if mensaje!="":
     print("""
