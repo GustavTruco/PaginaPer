@@ -55,7 +55,11 @@ function duplicar(el,th){
     }
     else{
         var count=0;
-        document.getElementsByName("foto-mascota").forEach(function(element){
+        var i=-1;
+        document.getElementsByName("tipo-mascota").forEach(function(element){
+            i=i+1;
+        });
+        document.getElementsByName("foto-mascota-"+String(i)).forEach(function(element){
             if (element.parentNode==th.parentNode){
                 count=count+1;
             }
@@ -65,6 +69,7 @@ function duplicar(el,th){
             var duplicado= original.cloneNode(true);
             duplicado.id="";
             duplicado.style.display="block";
+            duplicado.setAttribute('name',"foto-mascota-"+String(i));
             th.parentNode.appendChild(duplicado); 
         }
     }

@@ -139,7 +139,6 @@ print(edades)
 print(otros)
 fotos=form['foto-mascota']
 fotos.pop(0)
-print(fotos)
 for foto in fotos:
     print(foto.filename)
 if mensaje=="":
