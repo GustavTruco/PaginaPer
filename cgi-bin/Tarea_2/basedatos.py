@@ -213,25 +213,25 @@ if mensaje=="":
         #-----------#
         #fotos
         c=0
+        new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
+        print(new_name)
         #if len(allnombres_archivos[i])>1:
-        if False:
-            for archivo in allarchivos[i]:
-                new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
-                print(new_name)
-                f=open("./DBIMG/"+new_name,"wb")
-                print("hola")
-                f.write(archivo.file.read())
-                print("hola")
-                f.close()
-                c+=1
-        else:
-            new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
-            print(new_name)
-            f=open("./DBIMG/"+new_name,"wb")
-            print("hola")
-            f.write(allarchivos[i].file.read())
-            print("hola")
-            f.close()
+        #if False:
+        #    for archivo in allarchivos[i]:        
+        #        f=open("./DBIMG/"+new_name,"wb")
+        #        print("hola")
+        #        f.write(archivo.file.read())
+        #        print("hola")
+        #        f.close()
+        #        c+=1
+        #else:
+        #    new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
+        #    print(new_name)
+        #    f=open("./DBIMG/"+new_name,"wb")
+        #    print("hola")
+        #   f.write(allarchivos[i].file.read())
+        #    print("hola")
+        #    f.close()
         #-----------#
         i+=1
 
