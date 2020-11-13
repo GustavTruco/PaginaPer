@@ -78,7 +78,7 @@ print("""
                     <h3>Datos de contacto</h3>
                     <div class="entrada">
                         <h4>Nombre:</h4>
-                        <input type="text" name="nombre" id="nombre" required size=100 maxlength=200>
+                        <input type="text" name="nombre2" id="nombre" required size=100 maxlength=200>
                         <h4>Email:</h4>
                         <input type="text" name="email" id="email" required size=100>
                         <h4>Número de Celular:</h4>

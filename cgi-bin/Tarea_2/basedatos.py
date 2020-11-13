@@ -21,7 +21,7 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
-obligatorios=["region","comuna","calle","numero","nombre",
+obligatorios=["region","comuna","calle","numero","nombre2",
         "email","tipo-mascota","edad-mascota","color-mascota",
         "raza-mascota","esterilizado-mascota","vacunas-mascota","foto-mascota"]
 opcionales=["sector","celular"]
@@ -43,7 +43,7 @@ else:
     comuna= form['comuna'].value
     calle= html.escape(form['calle'].value)
     numero= html.escape(form['numero'].value)
-    nombre= html.escape(form['nombre'].value)
+    nombre= html.escape(form['nombre2'].value)
     email= html.escape(form['email'].value)
     tipos=[html.escape(elem) for elem in form.getlist("tipo-mascota")]
     edades=[html.escape(elem) for elem in form.getlist("edad-mascota")]
