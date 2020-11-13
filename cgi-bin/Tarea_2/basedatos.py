@@ -51,7 +51,7 @@ if c>0:
     razas=[]
     esterilizados=[]
     vacunas=[]
-    
+
 else:
     region= form['region'].value
     comuna= form['comuna'].value
@@ -124,15 +124,6 @@ if "tipo-mascota-otro" in keys:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
 otro=[]
 
-num_mascotas=len(tipos)
-i=1
-allfiles=[]
-while i<=num_mascotas:
-    fotos=form["fotos-mascota"+str(i)]
-    filenames=[foto.filename for foto in fotos]
-    allfiles.append(filenames)
-    i+=1
-
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
 print("""
@@ -158,6 +149,15 @@ print("""
 """)
 print(tipos)
 print(edades)
+num_mascotas=len(tipos)
+i=1
+allfiles=[]
+while i<=num_mascotas:
+    print("fotos-mascota"+str(i))
+    #fotos=form["fotos-mascota"+str(i)]
+    #filenames=[foto.filename for foto in fotos]
+    #allfiles.append(filenames)
+    #i+=1
 print(allfiles)
 
 if mensaje=="":
