@@ -207,37 +207,26 @@ if mensaje=="":
             cursor.execute(query5,(otros[i],))
             records=cursor.fetchone()
             tipo=records[0]
-      
-        print(tipo,id_dom)
-
-        print(edades)
-        edad=edades[i]
-        print(edad)
-
-        color=colores[i]
-        print(color)
-
-        raza=razas[i]
-        print(raza)
-
-        esterilizado=esterilizados[i]
-        print(esterilizado)
-
-        vacuna=vacunas[i]
-        print(vacuna)
-
         query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
             "VALUES (%s,%s,%s,%s,%s,%s,%s);")
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
-        i+=1
         #-----------#
         #fotos
-
+        query7=("Select * from mascota _domicilio where tipo_mascota_id=%s and edad=%s and color=%s"
+            "raza=%s and esterilizado=%s and vacunas_al_dia=%s and domicilio_id=5%s;")
+        cursor.execute(query7,data) 
+        records=cursor.fetchone()
+        id_mas=records[0]
+        c=0
+        while c<len(allarchivos[i]):
+            new_name=str(id_dom)+"-"+str(id_mas)+"-"+str(c)+".png"
+            open("./DBIMG"+new_name,"wb").rite(allarchivos[i][c].file.read())
+            c+=1
 
         #-----------#
-
+        i+=1
 
 
     #----------------------------------------#
