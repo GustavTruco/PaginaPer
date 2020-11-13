@@ -21,6 +21,7 @@ cursor=database.cursor()
 sys.stdout = TextIOWrapper(sys.stdout.buffer.detach(), encoding='utf8')
 
 form = cgi.FieldStorage()
+
 obligatorios=["region","comuna","calle","numero","nombre",
         "email","tipo-mascota","edad-mascota","color-mascota",
         "raza-mascota","esterilizado-mascota","vacunas-mascota","foto-mascota"]
@@ -127,21 +128,7 @@ if mensaje=="":
                     <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
     """)
 
-    #fecha = datetime.datetime.now()
-    query=("SELECT * from comuna where nombre='{}';".format(comuna))
-    print(comuna)
-    print("<br>")
-    #cursor.execute(query)
-    #for id_com,_,_ in cursor:
-    #    id_comuna=id_com
-
-    query=("INSERT INTO domicilio (fecha_ingreso,comuna_id,"
-            "nombre_calle,numero,sector,nombre_contacto,email,celular)"
-            "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
-    data=(id_comuna,calle,numero,sector,nombre,email,celular)
-    print (data)
-    #cursor.execute(query,data)
-
+    
 
 if mensaje!="":
     print("""<h3>Su información contiene los siguientes errores</h3>
