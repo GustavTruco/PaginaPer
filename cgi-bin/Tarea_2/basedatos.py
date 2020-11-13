@@ -152,10 +152,12 @@ print("""
 num_mascotas=len(tipos)
 i=1
 allnombres_archivos=[]
+allarchivos=[]
 while i<=num_mascotas:
     name='foto-mascota'+str(i)
     fotos=form[name]
     nombres_archivos=[]
+    allarchivos.append(fotos)
     if type(fotos)==list:
         for foto in fotos:
             fn=foto.filename
@@ -176,7 +178,7 @@ if mensaje=="":
     print(tipos)
     print(edades)
     print(otros)
-    
+    print(allarchivos)
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
@@ -230,8 +232,12 @@ if mensaje=="":
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
-        print("Query4")
-        
+
+        #-----------#
+        #fotos
+
+
+        #-----------#
 
         i+=1
 
