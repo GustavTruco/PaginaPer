@@ -110,6 +110,13 @@ if "tipo-mascota-otro" in keys:
         if len(otro)>40:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
 otro=[]
+num_mascotas=len(tipos)
+i=1
+allfiles=[]
+while i<num_mascotas:
+    fotos=form["fotos-mascota"+str(i)]
+    filenames=[foto.filename for foto in fotos]
+    allfiles.append(filenames)
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
@@ -136,11 +143,8 @@ print("""
 """)
 print(tipos)
 print(edades)
-print(otros)
-fotos=form['foto-mascota']
-fotos.pop(0)
-for foto in fotos:
-    print(foto.filename)
+print(allfiles)
+
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
