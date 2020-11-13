@@ -188,10 +188,7 @@ if mensaje=="":
     print(comuna)
     records=cursor.fetchone()
     print(comuna)
-    if records:
-        print(records[0])
-    else:
-        print("F")
+    print(records[0])
     
 
 
