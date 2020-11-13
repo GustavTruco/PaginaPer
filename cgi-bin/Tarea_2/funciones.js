@@ -38,9 +38,7 @@ function agrandar(el){
 
 function achicar(){
     var modal= document.getElementById("myModal");
-    var recibido =document.getElementById("recibido");
     modal.style.display = "none";
-    recibido.style.display = "none";
 }
 function abrir(){
     var modal= document.getElementById("myModal");
