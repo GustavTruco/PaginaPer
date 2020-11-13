@@ -179,6 +179,7 @@ if mensaje=="":
     print(edades)
     print(otros)
     print(allarchivos)
+    print(len(allarchivos))
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
