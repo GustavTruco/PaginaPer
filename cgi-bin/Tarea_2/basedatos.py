@@ -208,7 +208,7 @@ if mensaje=="":
             cursor.execute(query5,(otros[i],))
             records=cursor.fetchone()
             tipo=records[0]
-        
+
         edad=edades[i]
         color=colores[i]
         raza=razas[i]
@@ -216,7 +216,7 @@ if mensaje=="":
         vacuna=vacunas[i]
         query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
             "VALUES (%s,%s,%s,%s,%s,%s,%s);")
-        data=(int(tipo),int(edad),color,raza,int(esterilizado),int(vacuna),id_dom,)
+        data=(int(tipo),int(edad),color,raza,int(esterilizado),int(vacuna),int(id_dom),)
         cursor.execute(query4,data)
         database.commit()
         print("END QUERY")
