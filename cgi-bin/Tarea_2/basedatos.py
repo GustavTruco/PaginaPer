@@ -125,9 +125,10 @@ if mensaje=="":
                 <div class="buttons">
                     <a href="index.py"><button type="button">Cerrar y volver a la portada.</button></a>
                 </div>
-    """)
-
-    
+                </div>
+        </div>
+    </body>
+</html>""")
 
 if mensaje!="":
     print("""<h3>Su información contiene los siguientes errores</h3>
@@ -138,9 +139,7 @@ if mensaje!="":
             <div class="buttons">
                 <a href="informe.py"><button type="button">Cerrar y volver a la portada.</button></a>
             </div>
-        """)
-print("""            
-            </div>
+        </div>
         </div>
     </body>
-</html>""")
+</html>""")  
