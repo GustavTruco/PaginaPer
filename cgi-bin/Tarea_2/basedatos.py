@@ -196,6 +196,7 @@ if mensaje=="":
     id_dom=records[0]
 
     i=0
+    print("WHILE")
     while i<num_mascotas:
         print("help",i)
         tipo=tipos[i]
