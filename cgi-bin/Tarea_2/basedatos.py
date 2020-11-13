@@ -147,20 +147,21 @@ print("""
             </header>
             <div class="estatistics">
 """)
-print(tipos)
-print(edades)
-num_mascotas=len(tipos)
-i=1
-allfiles=[]
-while i<=num_mascotas:
+
+if mensaje=="":
+    print(tipos)
+    print(edades)
+    num_mascotas=len(tipos)
+    i=1
+    allfiles=[]
+    while i<=num_mascotas:
     print("foto-mascota"+str(i))
     fotos=form["foto-mascota"+str(i)]
     filenames=[foto.filename for foto in fotos]
-    allfiles.append(filenames)
+    print(filenames)
+    #allfiles.append(filenames)
     i+=1
 print(allfiles)
-
-if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
                 <p>Podra encontrar toda su informcaion en nuestro censo, viendo en portada los ultimos datos añadidos y en el listado podra encontrar la lista completa de todos los domicilios censados hasta la fecha</p>
