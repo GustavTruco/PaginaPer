@@ -62,7 +62,13 @@ else:
         if not edad.isdigit() or edad<0:
             mensaje+="<br> -Ingrese una edad para su mascota válida"
     colores=[html.escape(elem) for elem in form.getlist("color-mascota")]
+    for color in colores:
+        if len(color)>30:
+            mensaje+="<br> -Ingrese un color de mascota válido"
     razas=[html.escape(elem) for elem in form.getlist("raza-mascota")]
+     for raza in razas:
+        if len(raza)>30:
+            mensaje+="<br> -Ingrese una raza de mascota válida"
     esterilizados=form.getlist("esterilizado-mascota")
     vacunas=form.getlist("vacunas-mascota")
 
@@ -75,6 +81,9 @@ if "celular" in keys:
 
 if "tipo-mascota-otro" in keys:
     otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
+    for otro in otros:
+        if len(otro)>40:
+            mensaje+="<br> -Ingrese un tipo de mascota válido"
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
