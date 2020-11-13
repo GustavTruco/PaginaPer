@@ -159,8 +159,12 @@ if mensaje=="":
         name='foto-mascota'+str(i)
         fotos=form[name]
         nombres_archivos=[]
-        for foto in fotos:
-            fn=foto.filename
+        if type(fotos)==list:
+            for foto in fotos:
+                fn=foto.filename
+                nombres_archivos.append(fn)
+        else:
+            fn=fotos.filename
             nombres_archivos.append(fn)
         allnombres_archivos.append(nombres_archivos)
         i+=1
