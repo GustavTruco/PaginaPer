@@ -149,28 +149,24 @@ print("""
             </header>
             <div class="estatistics">
 """)
-num_mascotas=len(tipos)
-i=1
-print(num_mascotas)
-allnombres_archivos=[]
-while i<=num_mascotas:
-    name='foto-mascota'+str(i)
-    fotos=form[name]
-    nombres_archivos=[]
-    for foto in fotos:
-        fn=foto.filename
-        #ext=fn.split(".")[1].lower()
-        #if not ext in permited_ext:
-        #    mensaje+="<br> -Ingrese un archivo de imagen valido"
-        #    break
-        nombres_archivos.append(fn)
-        print(fn)
-    allnombres_archivos.append(nombres_archivos)
-    i+=1
-
-
-print(allnombres_archivos)
 if mensaje=="":
+    print(tipos)
+    print(edades)
+    num_mascotas=len(tipos)
+    i=1
+    allnombres_archivos=[]
+    while i<=num_mascotas:
+        name='foto-mascota'+str(i)
+        fotos=form[name]
+        nombres_archivos=[]
+        for foto in fotos:
+            fn=foto.filename
+            nombres_archivos.append(fn)
+        allnombres_archivos.append(nombres_archivos)
+        i+=1
+
+    
+    print(allnombres_archivos)
     
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
