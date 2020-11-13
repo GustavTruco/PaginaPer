@@ -71,7 +71,7 @@ if "celular" in keys:
     celular=html.escape(form['celular'].value)
 
 if "tipo-mascota-otro" in keys:
-    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otros")]
+    otros=[html.escape(elem) for elem in form.getlist("tipo-mascota-otro")]
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
