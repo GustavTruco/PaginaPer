@@ -88,7 +88,7 @@ if "tipo-mascota-otro" in keys:
             mensaje+="<br> -Ingrese un tipo de mascota válido"
 
 
-print("Content-type: text/html; charset=UTF-8")
+print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
 print("""
 <!DOCTYPE html>
