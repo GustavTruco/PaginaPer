@@ -220,10 +220,13 @@ if mensaje=="":
         records=cursor.fetchone()
         id_mas=records[0]
         c=0
-        while c<len(allarchivos[i]):
+        for archivo in allarchivos[i]:
             new_name=str(id_dom)+"-"+str(id_mas)+"-"+str(c)+".png"
+            print(new_name)
             f=open("./DBIMG"+new_name,"wb")
-            f.write(allarchivos[i][c].file.read())
+            print("hola")
+            f.write(archivo.file.read())
+            print("hola")
             f.close()
             c+=1
 
