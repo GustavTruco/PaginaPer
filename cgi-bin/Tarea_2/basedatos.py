@@ -240,17 +240,17 @@ if mensaje=="":
           
         if (len(allnombres_archivos[i])>1):
             for archivo in allarchivos[i]:
-                new_n=str(id_com)+"-"+str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
-                f=open("./DBIMG/"+new_n,"wb")
-                f.write(archivo.file.read())
+                new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
+                f=open("./DBIMG/"+new_n,"wb+")
+                f.write(archivo.value)
                 f.close
                 print("FILE SAVED")
                 c+=1
         else:
-            new_n=str(id_com)+"-"+str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
+            new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
             archivo=allarchivos[i]
-            f=open("./DBIMG/"+new_n,"wb")
-            f.write(archivo.file.read())
+            f=open("./DBIMG/"+new_n,"wb+")
+            f.write(archivo.value)
             f.close
             print("FILE SAVED")
             c+=1
