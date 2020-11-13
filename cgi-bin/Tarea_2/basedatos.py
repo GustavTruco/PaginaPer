@@ -211,6 +211,7 @@ if mensaje=="":
         print("Query5")
         records=cursor.fetchone()
         id_tip=records[0]
+        print(id_tip,id_dom)
         data=(id_tip,edades[i],colores[i],razas[i],esterilizados[i],vacunas[i],id_dom,)
         cursor.execute(query4,data)
         database.commit()
