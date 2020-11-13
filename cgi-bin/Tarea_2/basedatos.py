@@ -57,6 +57,22 @@ else:
         mensaje+="<br> -Ingrese un correo electrónico válido"
 
 
+    tipos=form.getlist("tipo-mascota")
+    edades=form.getlist("edad-mascota")
+    for edad in edades:
+        if not edad.isdigit() or edad<0:
+            mensaje+="<br> -Ingrese una edad para su mascota válida"
+    colores=form.getlist("color-mascota")
+    for color in colores:
+        if len(color)>30:
+            mensaje+="<br> -Ingrese un color de mascota válido"
+    razas=form.getlist("raza-mascota")
+    for raza in razas:
+        if len(raza)>30:
+            mensaje+="<br> -Ingrese una raza de mascota válida"
+    esterilizados=form.getlist("esterilizado-mascota")
+    vacunas=form.getlist("vacunas-mascota")
+
 if "sector" in keys:
     sector=form['sector'].value
     if len(sector)>100:
