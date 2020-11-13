@@ -160,9 +160,13 @@ if mensaje=="":
         nombres_archivos=[]
         for foto in fotos:
             fn=foto.filename
+            ext=os.path.splitext(fn)[1]
+            print(ext)
             nombres_archivos.append(fn)
-        allnombres_archivos.append(filenames)
+        allnombres_archivos.append(nombres_archivos)
         i+=1
+
+    
     print(allnombres_archivos)
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
