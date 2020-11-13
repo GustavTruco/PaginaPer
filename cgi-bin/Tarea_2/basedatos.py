@@ -100,6 +100,7 @@ print("""
             <div class="estatistics">
 """)
 print(tipos)
+print(edades)
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
