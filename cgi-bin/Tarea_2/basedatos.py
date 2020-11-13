@@ -179,7 +179,7 @@ if mensaje=="":
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
             "VALUES (NOW(),%s,%s,%s,%s,%s,%s,%s);")
-    query2=("Select * from comuna where nombre='%s';")
+    query2=("Select * from comuna where nombre=%s;")
     data2=(comuna)
     cursor.execute(query2,data2)
     records=cursor.fetchone()
