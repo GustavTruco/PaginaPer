@@ -59,7 +59,7 @@ function duplicar(el,th){
     }
     else{
         var count=0;
-        var name= th.name;
+        var name= th.previuosElementSibling.name;
         document.getElementsByName(name).forEach(function(element){
             if (element.parentNode==th.parentNode){
                 count=count+1;
@@ -77,13 +77,18 @@ function duplicar(el,th){
 }
 
 function fixFotoindex(parent){
+    if (parent.childNodes==NULL){
+        return 
+    }
     parent.childNodes.forEach(
         function (child){
             if (child.name=="foto-mascota"+String(index)){
                 child.name="foto-mascota"+String(index+1);
             }
+            fixFotoindex(child);
         }
     );
+
 }
 
 
