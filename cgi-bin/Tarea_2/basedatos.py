@@ -75,6 +75,8 @@ if "tipo-mascota-otro" in keys:
 
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
+print(tipos)
+print(otros)
 print("""
 <!DOCTYPE html>
 <html lang=es>
@@ -97,8 +99,8 @@ print("""
             <div class="estatistics">
 
 """)
-print(tipos)
-print(otros)
+
+
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
