@@ -137,6 +137,7 @@ print("""
 print(tipos)
 print(edades)
 print(otros)
+print(form.getlist('foto-mascota'))
 if mensaje=="":
     print("""
                 <h3>Su información ha sido recibida muchas gracias por participar</h3>
