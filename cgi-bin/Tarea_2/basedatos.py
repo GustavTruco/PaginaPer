@@ -194,6 +194,8 @@ if mensaje=="":
     id_dom=records[0]
 
     i=0
+
+    print(allnombres_archivos)
     while i<num_mascotas:
         print(i)
         tipo=tipos[i]
@@ -213,7 +215,6 @@ if mensaje=="":
         #-----------#
         #fotos
         c=0
-        print(allnombres_archivos)
         if type(allarchivos[i])==list:
             for archivo in allarchivos[i]:
                 new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
