@@ -217,7 +217,7 @@ if mensaje=="":
             for archivo in allarchivos[i]:
                 new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
                 print(new_name)
-                f=open("./DBIMG"+new_name,"wb")
+                f=open("./DBIMG/"+new_name,"wb")
                 print("hola")
                 f.write(archivo.file.read())
                 print("hola")
@@ -226,7 +226,7 @@ if mensaje=="":
         else:
             new_name=str(id_dom)+"-"+str(i)+"-"+str(c)+".png"
             print(new_name)
-            f=open("./DBIMG"+new_name,"wb")
+            f=open("./DBIMG/"+new_name,"wb")
             print("hola")
             f.write(allarchivos[i].file.read())
             print("hola")
