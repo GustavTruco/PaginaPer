@@ -210,6 +210,7 @@ if mensaje=="":
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
+        print("Query DONE")
         #-----------#
         #fotos
         #c=0
