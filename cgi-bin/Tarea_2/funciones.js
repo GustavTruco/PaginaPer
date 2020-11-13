@@ -59,6 +59,7 @@ function duplicar(el,th){
     }
     else{
         var count=0;
+        console.log(th.previuosElementSibling);
         var name= th.previuosElementSibling.name;
         document.getElementsByName(name).forEach(function(element){
             if (element.parentNode==th.parentNode){
@@ -77,7 +78,7 @@ function duplicar(el,th){
 }
 
 function fixFotoindex(parent){
-    if (parent.childNodes==NULL){
+    if (parent.childNodes==null){
         return 
     }
     parent.childNodes.forEach(
