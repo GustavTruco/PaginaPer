@@ -57,6 +57,18 @@ else:
         mensaje+="<br> -Ingrese un correo electrónico válido"
 
 
+if "sector" in keys:
+    sector=form['sector'].value
+    if len(sector)>100:
+        mensaje+="<br> -Ingrese un sector de vivienda válido"
+if "celular" in keys:
+    celular=form['celular'].value
+
+if "tipo-mascota-otro" in keys:
+    otros=form.getlist("tipo-mascota-otro")
+    for otro in otros:
+        if len(otro)>40:
+            mensaje+="<br> -Ingrese un tipo de mascota válido"
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("")
