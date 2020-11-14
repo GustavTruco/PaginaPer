@@ -71,23 +71,8 @@ for row in rows:
     print(f"""
                         <p>{dato[1]}</p>
                         <p>{calle}</p>
-                        <p>""")
-    query=("select tipo_mascota_id, id_domicilio from mascota_domicilio where domicilio_id=%s;")
-    cursor.execute(query,(dom_id,))
-    rows=cursor.fetchall()
-    for row in rows:
-        tipo_id=row[0]
-        query=("SELECT id,nombre from tipo_mascota where id=%s;")
-        cursor.execute(query,(tipo_id,))
-        datos=cursor.fetchone()
-        tipo=datos[1]
-        query=("select count(*),tipo_mascota_id from mascota_domicilio where domicilio_id=%s and tipo_mascota_id=%s;")
-        cursor.execute(query,(dom_id,tipo_id,))
-        datos=cursor.fetchone()
-        count=datos[0]
-        print(f"{tipo}: {count}")
-                         
-    print("""</p> <img src="img/perros2.jpeg" alt="Perros">
+                        """)      
+    print("""<p>Perro: 2</p> <img src="img/perros2.jpeg" alt="Perros">
             </div>""")   
                 
 print("""
