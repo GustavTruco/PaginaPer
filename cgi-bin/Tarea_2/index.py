@@ -4,6 +4,16 @@
 import cgi
 import cgitb; cgitb.enable()
 import html
+import mysql.connector
+
+database=mysql.connector.connect(
+            host="localhost",
+            user="cc500270_u",
+            password="cuDuisphar",
+            database="cc500270_db"
+        )
+
+cursor=database.cursor()
 
 print("Content-type: text/html; charset=UTF-8\r\n\r\n")
 print("""<!DOCTYPE html>
@@ -39,36 +49,48 @@ print("""<!DOCTYPE html>
                     <h4>Tipo-Cantidad</h4>
                     <h4>Fotos</h4>
                 </div>
-                <div class="elemento palido">
-                    <p>Las Condes</p>
-                    <p>Las Lomas</p>
-                    <p>Perro: 1</p>
-                    <img src="img/perro1.jpeg" alt="Perro">
-                </div>
-                <div class="elemento">
-                    <p>Peñañolen</p>
-                    <p>Nueva Dos</p>
-                    <p>Perro: 2</p>
-                    <img src="img/perros2.jpeg" alt="Perros">
-                </div>
-                <div class="elemento palido">
-                    <p>Ñuñoa</p>
-                    <p>Duble Almeyda</p>
-                    <p>Gato: 1</p>
-                    <img src="img/gato1.jpeg" alt="Gato">
-                </div>
-                <div class="elemento">
-                    <p>Macul</p>
-                    <p>Macul</p>
-                    <p>Otro: 1</p>
-                    <img src="img/Huron1.jpeg" alt="Huron">
-                </div>
-                <div class="elemento palido">
-                    <p>Ñuñoa</p>
-                    <p>Irarrázabal</p>
-                    <p>Hamster: 3</p>
-                    <img src="img/hamster3.png" alt="Hamsters">
-                </div>
+""")
+query=("select * from domicilio order by fecha_ingreso desc limit 5;")
+cursor.execute(query)
+rows=cursor.fetchall()
+
+for row in rows:
+    k=0
+    if k%2==0:
+        print(f"""<div class="elemento palido">"""
+        k=k+1
+    else:
+        print("""<div class="elemento">""")
+        k=k+1
+    dom_id=row[0]
+    comuna_id=row[2] 
+    calle=row[3]
+    query=("SELECT * from comuna where id=%s;")
+    cursor.execute(query,(comuna_id,))
+    dato=cursor.fetchone()
+    print(f"""
+                        <p>{dato[1]}</p>
+                        <p>{calle}</p>""")
+    query=("select tipo_mascota_id, id_domicilio from mascota_domicilio where domicilio_id=%s;")
+    cursor.execute(query,(dom_id,))
+    rows=cursor.fetchall()
+    for row in rows:
+        tipo_id=row[0]
+        query=("SELECT id,nombre from tipo_mascota where id=%s;")
+        cursor.execute(query,(tipo_id,))
+        datos=cursor.fetchone()
+        tipo=datos[1]
+        query=("select count(*),tipo_mascota_id from mascota_domicilio where domicilio_id=%s and tipo_mascota_id=%s;")
+        cursor.execute(query,(dom_id,tipo_id,))
+        datos=cursor.fetchone()
+        count=datos[0]
+        print(f"<p>{tipo}: {count}</p> ")
+                         
+    print("""<img src="img/perros2.jpeg" alt="Perros">
+            </div>""")   
+                
+print("""
+            
             </div>
         </div>
     </body>
