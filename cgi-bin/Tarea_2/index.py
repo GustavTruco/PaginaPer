@@ -57,7 +57,7 @@ rows=cursor.fetchall()
 for row in rows:
     k=0
     if k%2==0:
-        print(f"""<div class="elemento palido">"""
+        print(f"""<div class="elemento palido">""")
         k=k+1
     else:
         print("""<div class="elemento">""")
