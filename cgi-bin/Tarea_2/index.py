@@ -70,7 +70,8 @@ for row in rows:
     dato=cursor.fetchone()
     print(f"""
                         <p>{dato[1]}</p>
-                        <p>{calle}</p>""")
+                        <p>{calle}</p>
+                        <p>""")
     query=("select tipo_mascota_id, id_domicilio from mascota_domicilio where domicilio_id=%s;")
     cursor.execute(query,(dom_id,))
     rows=cursor.fetchall()
@@ -84,9 +85,9 @@ for row in rows:
         cursor.execute(query,(dom_id,tipo_id,))
         datos=cursor.fetchone()
         count=datos[0]
-        print(f"<p>{tipo}: {count}</p> ")
+        print(f"{tipo}: {count}")
                          
-    print("""<img src="img/perros2.jpeg" alt="Perros">
+    print("""</p> <img src="img/perros2.jpeg" alt="Perros">
             </div>""")   
                 
 print("""
