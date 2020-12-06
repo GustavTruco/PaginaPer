@@ -23,6 +23,9 @@ print("""<!DOCTYPE html>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/style.css">
         <title>Censo Mascotas</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+        <script src="js/map.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     </head>
     <body>
         <div class="content">
@@ -40,6 +43,10 @@ print("""<!DOCTYPE html>
                     listado de las mascotas censadas, las estadisticas de los datos recolectados e informar
                     de sus propias mascotas para contribuir en este censo. Por favor para navegar utilice el menú superior. 
                 </p>
+            </div>
+            <div id="mapcontainer">
+                <div id="mapid">
+                </div>
             </div>
             <div class="listado">
                 <h3>Últimas Viviendas Censadas</h3>

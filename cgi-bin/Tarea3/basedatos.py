@@ -176,8 +176,6 @@ for nombres in allnombres_archivos:
             mensaje+="<br> -Ingrese una imagen con formato válido"
             
 if mensaje=="":
-    print(tipos)
-    print(edades)
     #--------------------------------------#
     #Ingresar datos a la base de datos:
     query1=("INSERT INTO domicilio (fecha_ingreso,comuna_id,nombre_calle,numero,sector,nombre_contacto,email,celular)"
@@ -197,9 +195,7 @@ if mensaje=="":
     id_dom=records[0]
 
     i=0
-    print("STAR PET QUERY")
     while i<num_mascotas:
-        print(i)
         tipo=tipos[i]
         if tipo=="otro":
             query6=("INSERT INTO tipo_mascota (nombre) VALUES (%s);")
@@ -210,57 +206,19 @@ if mensaje=="":
             records=cursor.fetchone()
             tipo=records[0]
       
-        print(tipo,id_dom)
-
-        print(edades)
         edad=edades[i]
-        print(edad)
-
-        color=colores[i]
-        print(color)
-
+       color=colores[i]
         raza=razas[i]
-        print(raza)
-
         esterilizado=esterilizados[i]
-        print(esterilizado)
 
         vacuna=vacunas[i]
-        print(vacuna)
+
 
         query4=("INSERT INTO mascota_domicilio (tipo_mascota_id,edad,color,raza,esterilizado,vacunas_al_dia,domicilio_id)"
             "VALUES (%s,%s,%s,%s,%s,%s,%s);")
         data=(int(tipo),int(edades[i]),colores[i],razas[i],int(esterilizados[i]),int(vacunas[i]),id_dom,)
         cursor.execute(query4,data)
         database.commit()
-        print("END QUERY")
-        
-        #-----------#
-        #fotos
-        c=0
-          
-        dir_path=os.path.dirname(os.path.realpath(__file__))
-        print(dir_path)
-        if (len(allnombres_archivos[i])>1):
-            print("2 archivo")
-            for archivo in allarchivos[i]:
-                new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
-                f=open("./DBIGM/"+new_n,"wb+")
-                f.write(archivo.value)
-                f.close
-                print("FILE SAVED")
-                c+=1
-        else:
-            new_n=str(id_com)+str(id_dom)+str(i)+str(c)+".png"
-            archivo=allarchivos[i]
-            print("1 archivo")
-            f=open("./DBIGM/"+new_n,"wb+")
-            f.write(archivo.value)
-            f.close
-            print("FILE SAVED")
-            c+=1
-    
-        #-----------#
         i+=1
 
 
