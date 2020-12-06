@@ -25,7 +25,7 @@ print("""<!DOCTYPE html>
         <title>Censo Mascotas</title>  
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-        <script src="map.js"></script>
+        
     </head>
     <body>
         <div class="content">
@@ -47,6 +47,7 @@ print("""<!DOCTYPE html>
             <div id="mapcontainer">
                 <div id="mapid">
                 </div>
+            <script src="map.js"></script>
             </div>
             <div class="listado">
                 <h3>Últimas Viviendas Censadas</h3>
