@@ -22,10 +22,10 @@ print("""<!DOCTYPE html>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/style.css">
-        <title>Censo Mascotas</title>
-        <script src="map.js"></script>
+        <title>Censo Mascotas</title>  
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="map.js"></script>
     </head>
     <body>
         <div class="content">
