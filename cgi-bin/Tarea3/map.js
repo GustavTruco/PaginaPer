@@ -1386,6 +1386,7 @@ let comunas = {
 }
 
 function init() {
+    var L = window.L;
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
     xhr.open('GET', 'maps.py');
