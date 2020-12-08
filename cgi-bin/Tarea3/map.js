@@ -1434,7 +1434,7 @@ let emptyPopup = L.popup({
     offset: [0, -30]
 })
 
-function createPopUp(e, comuna) {
+function onMarkerClick(e, comuna) {
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
     xhr.open('GET', 'mapinfo.py');
