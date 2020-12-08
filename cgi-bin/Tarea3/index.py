@@ -45,6 +45,7 @@ print("""<!DOCTYPE html>
                 </p>
             </div>
             <div id="mapcontainer">
+                <h3>Mapa de Viviendas Censadas</h3>
                 <div id="mapid">
                 </div>
             <script src="map.js"></script>
