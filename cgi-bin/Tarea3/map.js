@@ -1400,9 +1400,8 @@ function init() {
                 cantidad = info[key];
                 marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
                 marker.title = key;
-                marker.bindPopup(createPopUp())
                 marker.on("click",function(ev){
-                    marker.bindPopup(popupContent).openPopup();;
+                    marker.bindPopup(createPopUp()).openPopup();;
             });
             marker.addTo(mymap);
             }
