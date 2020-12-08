@@ -38,6 +38,6 @@ for row in record:
     query=("SELECT * from comuna where id=%s;")
     c.execute(query,(id_com,))
     dato=c.fetchone()
-    json[dato[1]]=suma
+    jsdata[dato[1]]=suma
 
 print(json.dumps(jsdata))
