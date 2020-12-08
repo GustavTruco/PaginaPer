@@ -7,6 +7,7 @@ import cgitb; cgitb.enable()
 import mysql.connector
 import re
 import sys
+import codecs
 import os
 import json
 from io import TextIOWrapper
