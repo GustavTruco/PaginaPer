@@ -44,12 +44,6 @@ print("""<!DOCTYPE html>
                     de sus propias mascotas para contribuir en este censo. Por favor para navegar utilice el menú superior. 
                 </p>
             </div>
-            <div id="mapcontainer">
-                <h3>Mapa de Viviendas Censadas</h3>
-                <div id="mapid">
-                </div>
-            <script src="map.js"></script>
-            </div>
             <div class="listado">
                 <h3>Últimas Viviendas Censadas</h3>
                 <div class="titulos">
@@ -86,6 +80,12 @@ for row in rows:
                 
 print("""
             
+            </div>
+            <div id="mapcontainer">
+                <h3>Mapa de Viviendas Censadas</h3>
+                <div id="mapid">
+                </div>
+            <script src="map.js"></script>
             </div>
         </div>
     </body>
