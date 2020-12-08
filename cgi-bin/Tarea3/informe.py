@@ -26,6 +26,7 @@ print("""
         <link rel="stylesheet" href="styles/style.css">
         <script src="funciones.js"></script>
         <title>Censo Mascotas</title>
+        
     </head>
     <body>
         <div class="content">

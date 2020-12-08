@@ -1386,6 +1386,13 @@ let comunas = {
 }
 
 function init() {
+    var Icon = L.icon({
+        iconUrl: '/img/map_icon.png',
+        iconSize:     [38, 95], // size of the icon
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
     var L = window.L;
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
@@ -1396,7 +1403,7 @@ function init() {
         let keys = Object.keys(comunas);
         keys.forEach((key) => {
             if (info.hasOwnProperty(key)) {
-                let marker = L.marker([comunas[key]['lat'], comunas[key]['lng']]).addTo(mymap);
+                let marker = L.marker([comunas[key]['lat'], comunas[key]['lng']], {icon: Icon}).addTo(mymap);
                 cantidad = info[key];
                 marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
                 marker.title = key;
