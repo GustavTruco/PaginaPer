@@ -1401,7 +1401,7 @@ function init() {
                 marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
                 marker.title = key;
                 marker.on("click",function(ev){
-                    marker.bindPopup(createPopUp()).openPopup();;
+                    onMarkerClick(e, key);
             });
             marker.addTo(mymap);
             }
@@ -1494,7 +1494,10 @@ function createPopUp(e, comuna) {
                     </div>`});
 
         }
-        return content;
+        popup
+            .setLatLng(e.latlng)
+            .setContent(content)
+            .openOn(mymap);
     }
     console.log(comuna);
     formdata.append('comuna', comuna);
