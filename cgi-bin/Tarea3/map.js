@@ -1443,7 +1443,12 @@ function onMarkerClick(e, comuna) {
     xhr.onerror = () => {
         errorMessage('Error en la conexión con el servidor. Esto puede causar que los gráficos no se vean. Porfavor vuelva a intentarlo mas tarde');
     }
-    xhr.open('POST', 'map.py');
+    xhr.open('POST', 'mapinfo.py');
+    let formdata = new FormData();
+    console.log(comuna);
+    formdata.append('comuna', comuna);
+    xhr.send(formdata);
+
     xhr.onload = (data) => {
         let datatext = data.currentTarget.responseText;
         if (xhr.status != 200 || datatext.includes('ERROR')) {
@@ -1484,12 +1489,11 @@ function onMarkerClick(e, comuna) {
                     vacunado = `<i class="fas fa-question" style="color:grey"></i>`;
                     break;
                 }
-                domicilio['fotos'].forEach((elem) => {
-                    console.log(esterilizado);
-                    console.log(vacunado)
-                    ;
-                    content += `<div class="popupDiv">
-                    <img src="${elem[0]}" alt="${elem[1]}" class="popupImage">
+                
+                console.log(esterilizado);
+                console.log(vacunado);
+                content += `<div class="popupDiv">
+                    <img src="img/perros2.jpeg" alt="foto_mascota" class="popupImage">
                     <table class="table popupTable table-sm table-striped">
                     <tr><td><strong>edad</strong></td><td>${
                     domicilio['edad']}<td></tr>
@@ -1498,22 +1502,15 @@ function onMarkerClick(e, comuna) {
                     <tr><td><strong>raza</strong></td><td>${domicilio['raza']}<td></tr>
                     <tr><td><strong>esterilizado</strong></td><td>${esterilizado}<td></tr>
                     <tr><td><strong>vacunas</strong></td><td>${vacunado}</td></tr>
-                    <tr><td><a href="./detail.py?id=${domicilio['domicilio_id']}">Ver Censo</a></td></tr>
+                    <tr><td><a href="info.py">Ver Censo</a></td></tr>
                     </table>
-                    </div>`
+                    </div>`});
 
-
-                });
-            });
             popup
             .setLatLng(e.latlng)
             .setContent(content)
             .openOn(mymap);
         }
     }
-    let formdata = new FormData();
-    console.log(comuna);
-    formdata.append('comuna', comuna);
-    xhr.send(formdata);
 }
 

@@ -547,6 +547,7 @@ button:hover{
 #mapcontainer h3{
     font-size: 50px;
     text-align: center;
+    margin-top: 50px;
     margin-bottom: 25px;
     text-shadow: 2px 2px #c7c6c1;
 }
