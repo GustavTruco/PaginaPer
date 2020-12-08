@@ -5,7 +5,7 @@ import cgitb
 import html
 import codecs
 import sys
-import pymysql
+import mysql.connector
 import json
 
 # noinspection PyUnresolvedReferences
