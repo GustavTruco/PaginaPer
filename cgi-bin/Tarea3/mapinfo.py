@@ -12,8 +12,8 @@ import json
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout.detach())
 cgitb.enable()
 
-#print('Content-type: text/html; charset=UTF-8')
-#print('')
+print('Content-type: text/html; charset=UTF-8')
+print('')
 
 def getTipo(id_tipo):
     query="Select * from tipo_mascota where id=%s"

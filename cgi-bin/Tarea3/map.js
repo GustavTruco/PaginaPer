@@ -1438,7 +1438,7 @@ let emptyPopup = L.popup({
 function createPopUp(e, comuna) {
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
-    xhr.open('POST', 'mapinfo.py');
+    xhr.open('GET', 'mapinfo.py');
     let formdata = new FormData();
     xhr.onload = (data) => {
         let datatext = data.currentTarget.responseText;
