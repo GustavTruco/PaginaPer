@@ -1437,18 +1437,8 @@ let emptyPopup = L.popup({
 function onMarkerClick(e, comuna) {
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
-    xhr.ontimeout = () => {
-        errorMessage('Error en la conexión con el servidor. Esto puede causar que los gráficos no se vean. Porfavor vuelva a intentarlo mas tarde');
-    }
-    xhr.onerror = () => {
-        errorMessage('Error en la conexión con el servidor. Esto puede causar que los gráficos no se vean. Porfavor vuelva a intentarlo mas tarde');
-    }
     xhr.open('POST', 'mapinfo.py');
     let formdata = new FormData();
-    console.log(comuna);
-    formdata.append('comuna', comuna);
-    xhr.send(formdata);
-
     xhr.onload = (data) => {
         let datatext = data.currentTarget.responseText;
         let info = JSON.parse(datatext);
@@ -1459,7 +1449,8 @@ function onMarkerClick(e, comuna) {
             emptyPopup.setLatLng(e.latlng)
             .setContent(content)
             .openOn(mymap);
-        } else {
+        }
+        else {
             info['results'].forEach((domicilio) => {
                 let esterilizado = "";
                 let vacunado = "";
@@ -1507,6 +1498,10 @@ function onMarkerClick(e, comuna) {
             .setContent(content)
             .openOn(mymap);
         }
+        
     }
+    console.log(comuna);
+    formdata.append('comuna', comuna);
+    xhr.send(formdata);
 }
 
