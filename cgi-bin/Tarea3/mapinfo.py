@@ -52,7 +52,7 @@ if 'comuna' in datos:
         raza=row[4]
         esterilizado=[5]
         vacunas=[6]
-        lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza"=raza,"esterilizado"=esterilizado,"vacunas"=vacunas})
+        lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
     
     print(json.dumps(lista_dom))
     
