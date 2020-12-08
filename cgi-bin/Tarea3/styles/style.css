@@ -536,8 +536,9 @@ button:hover{
    }
 }
 #mapid { 
-    height: 300px;
-    width: 300px;
+    margin: auto;
+    height: 500px;
+    width: 500px;
 }
 
 .oculto{

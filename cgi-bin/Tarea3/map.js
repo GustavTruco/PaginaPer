@@ -1443,7 +1443,7 @@ function onMarkerClick(e, comuna) {
     xhr.onerror = () => {
         errorMessage('Error en la conexión con el servidor. Esto puede causar que los gráficos no se vean. Porfavor vuelva a intentarlo mas tarde');
     }
-    xhr.open('POST', './util/maps.py');
+    xhr.open('POST', 'map.py');
     xhr.onload = (data) => {
         let datatext = data.currentTarget.responseText;
         if (xhr.status != 200 || datatext.includes('ERROR')) {
