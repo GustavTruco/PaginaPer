@@ -1,5 +1,9 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
 import cgi
-import cgitb
+import cgitb; cgitb.enable()
 import mysql.connector
 import re
 import sys
