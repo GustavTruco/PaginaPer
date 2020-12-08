@@ -44,9 +44,11 @@ query="Select * from comuna where nombre=%s;"
 c.execute(query,(comuna,))
 dato=c.fetchone()
 id_com=dato[0]
+print(id_com)
 query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%d);"
 c.execute(query,(id_com,))
 datos=c.fetchall()
+print(datos)
 for row in datos:
     tipo=getTipo(row[1])
     edad=row[2]
