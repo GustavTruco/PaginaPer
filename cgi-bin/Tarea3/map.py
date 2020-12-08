@@ -1,5 +1,5 @@
 import cgi
-import cgitb; cgitb.enable()
+import cgitb
 import mysql.connector
 import re
 import sys
