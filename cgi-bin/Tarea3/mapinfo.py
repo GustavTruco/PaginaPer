@@ -45,7 +45,7 @@ c.execute(query,(comuna,))
 dato=c.fetchone()
 id_com=dato[0]
 print(id_com)
-query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%d);"
+query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%s);"
 c.execute(query2,(id_com,))
 datos=c.fetchall()
 print(datos)
