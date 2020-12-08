@@ -32,7 +32,7 @@ sql="select domicilio.comuna_id as id_comuna, count(domicilio.id) as suma From d
 c.execute(sql)
 record= c.fetchall()
 jsdata={}
-for row in records:
+for row in record:
     id_com= row[0]
     suma=row[1]
     query=("SELECT * from comuna where id=%s;")
