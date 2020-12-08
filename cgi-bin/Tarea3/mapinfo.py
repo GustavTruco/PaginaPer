@@ -27,6 +27,7 @@ datos = cgi.FieldStorage()  # get, post
 jsondata={}
 lista_dom=[]
 
+print('comuna' in datos)
 if 'comuna' in datos:
     comuna=html.escape(datos.getvalue('comuna'))
     comuna=sql.escape(comuna)
