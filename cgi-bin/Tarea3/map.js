@@ -1400,8 +1400,9 @@ function init() {
                 cantidad = info[key];
                 marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
                 marker.title = key;
-                marker.on('click', (e) => {
-                onMarkerClick(e, key);
+                marker.bindPopup()
+                marker.on("click",function(ev){
+                    layer.openPopup();
             });
             marker.addTo(mymap);
             }
@@ -1434,7 +1435,7 @@ let emptyPopup = L.popup({
     offset: [0, -30]
 })
 
-function onMarkerClick(e, comuna) {
+function createPopUp(e, comuna) {
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
     xhr.open('POST', 'mapinfo.py');
@@ -1493,15 +1494,12 @@ function onMarkerClick(e, comuna) {
                     </table>
                     </div>`});
 
-            popup
-            .setLatLng(e.latlng)
-            .setContent(content)
-            .openOn(mymap);
         }
         
     }
     console.log(comuna);
     formdata.append('comuna', comuna);
     xhr.send(formdata);
+    return content;
 }
 
