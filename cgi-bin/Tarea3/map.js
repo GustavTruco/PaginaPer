@@ -1400,7 +1400,7 @@ function init() {
                 cantidad = info[key];
                 marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
                 marker.title = key;
-                marker.on("click",function(ev){
+                marker.on("click",(e) => {
                     onMarkerClick(e, key);
             });
             marker.addTo(mymap);
