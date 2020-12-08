@@ -27,7 +27,6 @@ datos = cgi.FieldStorage()  # get, post
 jsondata={}
 lista_dom=[]
 
-print('comuna' in datos)
 if 'comuna' in datos:
     comuna=html.escape(datos.getvalue('comuna'))
     comuna=sql.escape(comuna)
@@ -44,11 +43,9 @@ query="Select * from comuna where nombre=%s;"
 c.execute(query,(comuna,))
 dato=c.fetchone()
 id_com=dato[0]
-print(id_com)
 query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%s);"
 c.execute(query2,(id_com,))
 datos=c.fetchall()
-print(datos)
 for row in datos:
     tipo=getTipo(row[1])
     edad=row[2]
@@ -56,7 +53,6 @@ for row in datos:
     raza=row[4]
     esterilizado=[5]
     vacunas=[6]
-    print(tipo,edad,color,raza,esterilizado,vacunas)
     lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
 
 jsondata["results"]=lista_dom
