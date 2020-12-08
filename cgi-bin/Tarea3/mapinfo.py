@@ -24,36 +24,39 @@ def getTipo(id_tipo):
 
 # Obtiene los datos por post
 datos = cgi.FieldStorage()  # get, post
+jsondata={}
+lista_dom=[]
+
 if 'comuna' in datos:
-    jsondata={}
-    lista_dom=[]
     comuna=html.escape(datos.getvalue('comuna'))
     comuna=sql.escape(comuna)
-    database=mysql.connector.connect(
+else:
+    comuna="Gorbea"
+database=mysql.connector.connect(
             host="localhost",
             user="cc500270_u",
             password="cuDuisphar",
             database="cc500270_db"
         )
-    c = database.cursor()
-    query="Select * from comuna where nombre=%s;"
-    c.execute(query,(comuna,))
-    dato=c.fetchone()
-    id_com=dato[0]
-    query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%s);"
-    c.execute(query,(id_com,))
-    datos=c.fetchall()
-    for row in datos:
-        tipo=getTipo(row[1])
-        edad=row[2]
-        color=row[3]
-        raza=row[4]
-        esterilizado=[5]
-        vacunas=[6]
-        lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
-    
-    jsondata["results"]=lista_dom
-    print(json.dumps(jsondata))
+c = database.cursor()
+query="Select * from comuna where nombre=%s;"
+c.execute(query,(comuna,))
+dato=c.fetchone()
+id_com=dato[0]
+query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%s);"
+c.execute(query,(id_com,))
+datos=c.fetchall()
+for row in datos:
+    tipo=getTipo(row[1])
+    edad=row[2]
+    color=row[3]
+    raza=row[4]
+    esterilizado=[5]
+    vacunas=[6]
+    lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
+
+jsondata["results"]=lista_dom
+print(json.dumps(jsondata))
     
 
 
