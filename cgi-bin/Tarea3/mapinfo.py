@@ -43,7 +43,7 @@ query="Select * from comuna where nombre=%s;"
 c.execute(query,(comuna,))
 dato=c.fetchone()
 id_com=dato[0]
-query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%s);"
+query2= "Select * from mascota_domicilio where domicilio_id in (select id from domicilio where comuna_id=%d);"
 c.execute(query,(id_com,))
 datos=c.fetchall()
 for row in datos:
@@ -53,6 +53,7 @@ for row in datos:
     raza=row[4]
     esterilizado=[5]
     vacunas=[6]
+    print(tipo,edad,color,raza,esterilizado,vacunas)
     lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
 
 jsondata["results"]=lista_dom
