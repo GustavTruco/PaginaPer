@@ -1495,11 +1495,11 @@ function createPopUp(e, comuna) {
                     </div>`});
 
         }
-        
+        return content;
     }
     console.log(comuna);
     formdata.append('comuna', comuna);
     xhr.send(formdata);
-    return content;
+   
 }
 
