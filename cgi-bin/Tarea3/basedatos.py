@@ -207,7 +207,7 @@ if mensaje=="":
             tipo=records[0]
       
         edad=edades[i]
-       color=colores[i]
+        color=colores[i]
         raza=razas[i]
         esterilizado=esterilizados[i]
 
