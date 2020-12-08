@@ -1,6 +1,5 @@
-#!C:\Users\Pablo\AppData\Local\Programs\Python\Python37\python.exe
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 import cgi
 import cgitb
 import html
