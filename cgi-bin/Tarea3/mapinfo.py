@@ -21,8 +21,6 @@ def getTipo(id_tipo):
     dato=c.fetchone()
     return dato[1]
 
-print('Content-type: text/html; charset=UTF-8')
-print('')
 
 # Obtiene los datos por post
 datos = cgi.FieldStorage()  # get, post
@@ -54,7 +52,8 @@ if 'comuna' in datos:
         vacunas=[6]
         lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
     
-    print(json.dumps(lista_dom))
+    jsondata["results"]=lista_dom
+    print(json.dumps(jsondata))
     
 
 

@@ -1464,7 +1464,7 @@ function onMarkerClick(e, comuna) {
             .setContent(content)
             .openOn(mymap);
         } else {
-            info.forEach((domicilio) => {
+            info['results'].forEach((domicilio) => {
                 let esterilizado = "";
                 let vacunado = "";
                 switch (domicilio['esterilizado']) {
