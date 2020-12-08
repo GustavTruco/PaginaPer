@@ -1389,7 +1389,7 @@ function init() {
     var L = window.L;
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
-    xhr.open('GET', 'maps.py');
+    xhr.open('GET','map.py');
     xhr.onload = (data) => {
         let dataText = data.currentTarget.responseText;
         let info = JSON.parse(dataText);
