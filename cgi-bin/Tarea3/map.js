@@ -1395,17 +1395,16 @@ function init() {
         let info = JSON.parse(dataText);
         let keys = Object.keys(comunas);
         keys.forEach((key) => {
-            let marker = L.marker([comunas[key]['lat'], comunas[key]['lng']]).addTo(mymap);
-            let cantidad = 0;
             if (info.hasOwnProperty(key)) {
+                let marker = L.marker([comunas[key]['lat'], comunas[key]['lng']]).addTo(mymap);
                 cantidad = info[key];
-            }
-            marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
-            marker.title = key;
-            marker.on('click', (e) => {
+                marker.bindTooltip('Comuna: ' + key + '<br>Cantidad: ' + cantidad);
+                marker.title = key;
+                marker.on('click', (e) => {
                 onMarkerClick(e, key);
             });
             marker.addTo(mymap);
+            }
         });
     }
     xhr.send();
