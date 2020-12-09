@@ -1456,41 +1456,50 @@ function onMarkerClick(e, comuna) {
                 let vacunado = "";
                 switch (domicilio['esterilizado']) {
                 case 0:
-                    esterilizado = `<i class="fas fa-times-circle" style="color:red"></i>`;
+                    esterilizado = `<img src="cruz.svg" alt="none" class="Icon">`;
                     break;
                 case 1:
-                    esterilizado = `<i class="fas fa-check" style="color:green"></i>`;
+                    esterilizado = `<img src="ticket.svg" alt="none" class="Icon">`;
                     break;
                 case 2:
-                    esterilizado = `<i class="fas fa-question" style="color:grey"></i>`;
+                    esterilizado = `<img src="slash.svg" alt="none" class="Icon">`;
                     break;
                 }
                 switch (domicilio['vacunas']) {
                 case 0:
-                    vacunado = `<i class="fas fa-times-circle" style="color:red"></i>`;
+                    vacunado = `<img src="cruz.svg" alt="none" class="Icon">`;
                     break;
                 case 1:
-                    vacunado = `<i class="fas fa-check" style="color:green"></i>`;
+                    vacunado = `<img src="ticket.svg" alt="none" class="Icon">`;
                     break;
                 case 2:
-                    vacunado = `<i class="fas fa-question" style="color:grey"></i>`;
+                    vacunado = `<img src="slash.svg" alt="none" class="Icon">`;
                     break;
                 }
                 
                 console.log(esterilizado);
                 console.log(vacunado);
-                content += `<div class="popupDiv">
+                content += `<div class="popup">
                     <img src="img/perros2.jpeg" alt="foto_mascota" class="popupImage">
-                    <table class="table popupTable table-sm table-striped">
-                    <tr><td><strong>edad</strong></td><td>${
-                    domicilio['edad']}<td></tr>
-                    <tr><td><strong>color</strong></td><td>${domicilio['color']}<td></tr>
-                    <tr><td><strong>tipo</strong></td><td>${domicilio['tipo']}<td></tr>
-                    <tr><td><strong>raza</strong></td><td>${domicilio['raza']}<td></tr>
-                    <tr><td><strong>esterilizado</strong></td><td>${esterilizado}<td></tr>
-                    <tr><td><strong>vacunas</strong></td><td>${vacunado}</td></tr>
-                    <tr><td><a href="info.py">Ver Censo</a></td></tr>
-                    </table>
+                    
+                    <div class="popUpInfo">
+                        <h4>Tipo</h4> <p>${domicilio['tipo']}</p>
+                    </div>
+                    <div class="popUpInfo">
+                        <h4>Edad</h4> <p>${domicilio['edad']}</p>
+                    </div>
+                    <div class="popUpInfo">
+                        <h4>Raza</h4> <p>${domicilio['raza']}</p>
+                    </div>
+                    <div class="popUpInfo">
+                        <h4>Color</h4> <p>${domicilio['color']}</p>
+                    </div>
+                    <div class="popUpInfo">
+                        <h4>Esterilizado</h4>${esterilizado}
+                     </div>
+                    <div class="popUpInfo">
+                        <h4>Vacunas</h4>${esterilizado}
+                    </div>
                     </div>`});
 
         }
