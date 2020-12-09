@@ -29,9 +29,8 @@ lista_dom=[]
 
 if 'comuna' in datos:
     comuna=html.escape(datos.getvalue('comuna'))
-    comuna=sql.escape(comuna)
 else:
-    comuna="Gorbea"
+    comuna="Quintero"
 database=mysql.connector.connect(
             host="localhost",
             user="cc500270_u",

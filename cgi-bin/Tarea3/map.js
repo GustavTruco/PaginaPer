@@ -1439,6 +1439,9 @@ function onMarkerClick(e, comuna) {
     xhr.timeout = 1000;
     xhr.open('GET', 'mapinfo.py');
     let formdata = new FormData();
+    console.log(comuna);
+    formdata.append('comuna', comuna);
+    xhr.send(formdata);
     xhr.onload = (data) => {
         let datatext = data.currentTarget.responseText;
         let info = JSON.parse(datatext);
@@ -1508,9 +1511,6 @@ function onMarkerClick(e, comuna) {
             .setContent(content)
             .openOn(mymap);
     }
-    console.log(comuna);
-    formdata.append('comuna', comuna);
-    xhr.send(formdata);
    
 }
 
