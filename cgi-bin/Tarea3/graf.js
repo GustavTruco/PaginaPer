@@ -50,6 +50,7 @@ function graficos() {
             bar.series[1].setData(catData);
             prevGatosData = catData;
         }
+        console.log("Charts Updated");
     }
     xhr.send();
 }
@@ -93,6 +94,7 @@ function PieGraph(obj) {
             data: typesData
         }]
     });
+    console.log("PieChart Created");
     return chart;
 }
 
@@ -134,6 +136,7 @@ function LineGraph(obj) {
             data: censosData
         }]
     });
+    console.log("LineChart Created");
     return chart;
 }
 
@@ -191,6 +194,7 @@ function BarGraph(obj) {
             data: obj['gatos']
         }]
     });
+    console.log("BarChart Created");
     return chart;
 }
 
@@ -207,6 +211,7 @@ function init() {
         barras = perrosGatosGraph(info['BarChart']);
     }
     xhr.send();
+    console.log("Charts Created");
 }
 
 
