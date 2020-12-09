@@ -10,6 +10,7 @@ import sys
 import codecs
 import os
 import json
+import datetime
 from io import TextIOWrapper
 
 database=mysql.connector.connect(
@@ -58,7 +59,7 @@ def getLineChartData():
     c.execute(query)
     datos=c.fetchall()
     for row in datos:
-        jsondata[row[0]]=row[1]
+        jsondata[row[0].strftime("%d/%m/%Y)"]=row[1]
     return jsondata
 
 def getBarChartData():
