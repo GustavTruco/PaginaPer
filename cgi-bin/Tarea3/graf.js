@@ -7,6 +7,11 @@ let prevTiposData;
 let prevPerrosData;
 let prevGatosData;
 
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    setInterval(graficos, 5000);
+})
+
 function graficos() {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'graf.py');
