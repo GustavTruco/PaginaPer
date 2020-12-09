@@ -46,7 +46,7 @@ def getCantidadMascotas(id_tipo):
 def getPieChartData():
     jsondata={}
     query="select * from tipo_mascota;"
-    c.execute(query,(id_tipo,))
+    c.execute(query)
     datos=c.fetchall()
     for row in datos:
         jsondata[row[1]]=getCantidadMascotas(row[0])
