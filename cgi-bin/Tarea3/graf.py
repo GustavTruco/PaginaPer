@@ -55,7 +55,7 @@ def getPieChartData():
 def getLineChartData():
     jsondata={}
     query="select cast(fecha_ingreso as Date), count(id) from domicilio group by cast(fecha_ingreso as Date);"
-    c.execute(query,(id_tipo,))
+    c.execute(query)
     datos=c.fetchall()
     for row in datos:
         jsondata[row[0]]=row[1]
