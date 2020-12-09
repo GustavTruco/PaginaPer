@@ -206,9 +206,9 @@ function init() {
     xhr.onload = (data) => {
         let dataText = data.currentTarget.responseText;
         let info = JSON.parse(dataText);
-        lineas = censosGraph(info['LineChart']);
+        line = censosGraph(info['LineChart']);
         pie = tiposGraph(info['PieChart']);
-        barras = perrosGatosGraph(info['BarChart']);
+        bar = perrosGatosGraph(info['BarChart']);
     }
     xhr.send();
     console.log("Charts Created");
