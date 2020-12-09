@@ -76,6 +76,7 @@ function graficos() {
 function PieGraph(obj) {
     let typesData = [];
     let keys = Object.keys(obj).reverse();
+    console.log(keys);
     for (let i = 0; i < keys.length; i++) {
         typesData.push({
             name: keys[i],
