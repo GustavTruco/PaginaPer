@@ -73,8 +73,8 @@ def getBarChartData():
     return jsondata
 
 jsondata={}
-jsondata["PieChart"]=getPieChartData
-jsondata["LineChart"]=getLineChartData
-jsondata["BarChart"]=getBarChartData
+jsondata["PieChart"]=getPieChartData()
+jsondata["LineChart"]=getLineChartData()
+jsondata["BarChart"]=getBarChartData()
 
 print(json.dumps(jsondata))
