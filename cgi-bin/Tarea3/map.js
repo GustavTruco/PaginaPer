@@ -1505,7 +1505,7 @@ function onMarkerClick(e, comuna) {
                      </div>
                     <div class="popUpInfo">
                         <h4>Vacunas:</h4>`;
-                content += esterilizado;
+                content += vacunado;
                 content +=`
                     </div>
                     <a href="info.py" target="_blank" rel="">Ver mas...</a>
