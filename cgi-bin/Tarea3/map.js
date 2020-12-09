@@ -1487,24 +1487,29 @@ function onMarkerClick(e, comuna) {
                     <img src="img/perros2.jpeg" alt="foto_mascota" class="popupImage">
                     
                     <div class="popUpInfo">
-                        <h4>Tipo</h4> <p>${domicilio['tipo']}</p>
+                        <h4>Tipo:</h4> <p>${domicilio['tipo']}</p>
                     </div>
                     <div class="popUpInfo">
-                        <h4>Edad</h4> <p>${domicilio['edad']}</p>
+                        <h4>Edad:</h4> <p>${domicilio['edad']}</p>
                     </div>
                     <div class="popUpInfo">
-                        <h4>Raza</h4> <p>${domicilio['raza']}</p>
+                        <h4>Raza:</h4> <p>${domicilio['raza']}</p>
                     </div>
                     <div class="popUpInfo">
-                        <h4>Color</h4> <p>${domicilio['color']}</p>
+                        <h4>Color:</h4> <p>${domicilio['color']}</p>
                     </div>
                     <div class="popUpInfo">
-                        <h4>Esterilizado</h4>${esterilizado}
+                        <h4>Esterilizado:</h4>`;
+                content+=esterilizado;
+                content+=`
                      </div>
                     <div class="popUpInfo">
-                        <h4>Vacunas</h4>${esterilizado}
+                        <h4>Vacunas:</h4>`;
+                content += esterilizado;
+                content +=`
                     </div>
-                    </div>`});
+                    </div>`;
+                });
 
         }
         popup
