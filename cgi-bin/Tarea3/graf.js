@@ -102,7 +102,7 @@ function LineGraph(obj) {
     keys.forEach((key) => {
         censosData.push(obj[key]);
     });
-    prevCensos = censosData;
+    prevCensosData = censosData;
     let chart = Highcharts.chart('graficoLineas', {
         chart: {
             type: 'line'
@@ -152,8 +152,8 @@ function BarGraph(obj) {
         'Noviembre',
         'Diciembre'
     ];
-    prevPerros = obj['perros'];
-    prevGatos = obj['gatos'];
+    prevPerrosData = obj['perros'];
+    prevGatosData = obj['gatos'];
     let chart = Highcharts.chart('graficoBarras', {
         chart: {
             type: 'column'
