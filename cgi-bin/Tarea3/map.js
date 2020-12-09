@@ -1508,7 +1508,9 @@ function onMarkerClick(e, comuna) {
                 content += esterilizado;
                 content +=`
                     </div>
-                    </div>`;
+                    <a href="info.py" target="_blank" rel="">Ver mas...</a>
+                    </div>`
+                
                 });
 
         }
