@@ -149,7 +149,7 @@ function LineGraph(obj) {
         tooltip: {
             pointFormat: '{point.y}'
         },
-        colors: ['#251f44', '#d3dbff', '#ffe0f7', '#fe91ca'],
+        colors: ['#5a4c49', '#d3dbff', '#ffe0f7', '#fe91ca'],
         series: [{
             name: 'Cantidad de Censos',
             data: censosData
@@ -204,7 +204,7 @@ function BarGraph(obj) {
             shared: true,
             useHTML: true
         },
-        colors: ['#251f44', '#fe91ca', '#d3dbff', '#ffe0f7'], 
+        colors: ['#5a4c49', '#c7c6c1', '#d3dbff', '#ffe0f7'], 
         series: [{
             name: 'Perros',
             data: obj['perros']

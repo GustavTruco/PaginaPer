@@ -50,7 +50,8 @@ def getPieChartData():
     c.execute(query)
     datos=c.fetchall()
     for row in datos:
-        jsondata[row[1]]=getCantidadMascotas(row[0])
+        if getCantidadMascotas(row[0])!=0:
+            jsondata[row[1]]=getCantidadMascotas(row[0])
     return jsondata
 
 def getLineChartData():
