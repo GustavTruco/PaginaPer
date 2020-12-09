@@ -38,7 +38,7 @@ def checkMonth(id_tipo,month):
     return dato[0]
 
 def getCantidadMascotas(id_tipo):
-    query="select tipo_mascota_id, count(id) from mascota_domicilio where tipo_mascota_id=15;"
+    query="select tipo_mascota_id, count(id) from mascota_domicilio where tipo_mascota_id=%s;"
     c.execute(query,(id_tipo,))
     dato=c.fetchone()
     return dato[1]
