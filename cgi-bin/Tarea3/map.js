@@ -1442,6 +1442,7 @@ function onMarkerClick(e, comuna) {
     console.log(comuna);
     formdata.append('comuna', comuna);
     xhr.send(formdata);
+    console.log("data sent");
     xhr.onload = (data) => {
         let datatext = data.currentTarget.responseText;
         let info = JSON.parse(datatext);
@@ -1510,6 +1511,7 @@ function onMarkerClick(e, comuna) {
             .setLatLng(e.latlng)
             .setContent(content)
             .openOn(mymap);
+        console.log('data loaded');
     }
    
 }
