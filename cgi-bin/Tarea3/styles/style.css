@@ -555,3 +555,12 @@ button:hover{
     display: none;
 }
 
+.popup {
+    display: inline;
+}
+.popupImage {
+    width: 100px;
+}
+.Icon{
+    width: 50px;
+}
