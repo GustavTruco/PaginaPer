@@ -1437,7 +1437,7 @@ let emptyPopup = L.popup({
 function onMarkerClick(e, comuna) {
     let xhr = new XMLHttpRequest();
     xhr.timeout = 1000;
-    xhr.open('GET', 'mapinfo.py');
+    xhr.open('POST', 'mapinfo.py');
     let formdata = new FormData();
     console.log(comuna);
     formdata.append('comuna', comuna);
