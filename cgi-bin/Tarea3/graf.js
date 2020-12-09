@@ -7,10 +7,23 @@ let prevTiposData;
 let prevPerrosData;
 let prevGatosData;
 
-document.addEventListener('DOMContentLoaded', () => {
-    init();
-    setInterval(graficos, 5000);
-})
+
+function init() {
+    console.log('INIT');
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'graf.py');
+    xhr.timeout = 1000;
+    xhr.onload = (data) => {
+        let dataText = data.currentTarget.responseText;
+        let info = JSON.parse(dataText);
+        line = LineGraph(info['LineChart']);
+        pie = PieGraph(info['PieChart']);
+        bar = BarGraph(info['BarChart']);
+    }
+    xhr.send();
+    console.log("Charts Created");
+}
+
 
 function graficos() {
     let xhr = new XMLHttpRequest();
@@ -35,8 +48,8 @@ function graficos() {
             })
         }
 
-        let dogData = info['BarChar']['perro'];
-        let catData = info['BarChar']['gato'];
+        let dogData = info['BarChart']['perro'];
+        let catData = info['BarChart']['gato'];
 
         if(JSON.stringify(prevCensosData) != JSON.stringify(LineData)) {
             line.xAxis[0].update({categories: linekeys});
@@ -203,20 +216,9 @@ function BarGraph(obj) {
     return chart;
 }
 
-function init() {
-    console.log('INIT');
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'graf.py');
-    xhr.timeout = 1000;
-    xhr.onload = (data) => {
-        let dataText = data.currentTarget.responseText;
-        let info = JSON.parse(dataText);
-        line = LineGraph(info['LineChart']);
-        pie = PieGraph(info['PieChart']);
-        bar = BarGraph(info['BarChart']);
-    }
-    xhr.send();
-    console.log("Charts Created");
-}
 
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    setInterval(graficos, 5000);
+})
 
