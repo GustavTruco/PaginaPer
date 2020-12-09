@@ -570,6 +570,9 @@ button:hover{
     height: 75px;
     padding: 5px;
 }
+.popup h4{
+    padding: 0 5px;
+}
 .Icon{
     width: 20px;
 }

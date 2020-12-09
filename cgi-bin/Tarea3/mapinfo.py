@@ -50,8 +50,8 @@ for row in datos:
     edad=row[2]
     color=row[3]
     raza=row[4]
-    esterilizado=[5]
-    vacunas=[6]
+    esterilizado=row[5]
+    vacunas=row[6]
     lista_dom.append({"tipo":tipo,"edad":edad,"color":color,"raza":raza,"esterilizado":esterilizado,"vacunas":vacunas})
 
 jsondata["results"]=lista_dom
