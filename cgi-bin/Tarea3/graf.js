@@ -31,7 +31,7 @@ function graficos() {
         for (let i = 0; i < PieKeys.length; i++) {
             PieData.push({
                 name: PieKeys[i],
-                y: info['tipos'][PieKeys[i]]
+                y: info['PieChart'][PieKeys[i]]
             })
         }
 
@@ -211,9 +211,9 @@ function init() {
     xhr.onload = (data) => {
         let dataText = data.currentTarget.responseText;
         let info = JSON.parse(dataText);
-        line = censosGraph(info['LineChart']);
-        pie = tiposGraph(info['PieChart']);
-        bar = perrosGatosGraph(info['BarChart']);
+        line = LineGraph(info['LineChart']);
+        pie = PieGraph(info['PieChart']);
+        bar = BarGraph(info['BarChart']);
     }
     xhr.send();
     console.log("Charts Created");
