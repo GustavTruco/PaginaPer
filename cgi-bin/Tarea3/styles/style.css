@@ -556,11 +556,16 @@ button:hover{
 }
 
 .popup {
-    display: inline;
+    display: flex;
+}
+
+.popup div {
+    display: flex;
+
 }
 .popupImage {
     width: 100px;
 }
 .Icon{
-    width: 50px;
+    width: 100px;
 }
