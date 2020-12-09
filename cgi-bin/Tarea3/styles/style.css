@@ -561,11 +561,14 @@ button:hover{
 
 .popup div {
     display: flex;
+    align-items: center;
+    text-align: center;
 
 }
 .popupImage {
     width: 100px;
     height: 75px;
+    padding: 5px;
 }
 .Icon{
     width: 20px;
